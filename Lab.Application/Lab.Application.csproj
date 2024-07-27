@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Ex.Application</RootNamespace>
+        <AssemblyName>Ex.Application</AssemblyName>
+        <PackageId>Ex.Application</PackageId>
+        <Authors>Ex.Application</Authors>
+        <Company>Ex.Application</Company>
+        <Product>Ex.Application</Product>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+      <PackageReference Include="PhoenixFramework.Application" Version="1.3.2" />
+      <PackageReference Include="PhoenixFramework.Core" Version="1.1.3" />
+      <PackageReference Include="PhoenixFramework.Identity" Version="1.1.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lab.Application.Contract\Lab.Application.Contract.csproj" />
+      <ProjectReference Include="..\Lab.Domain\Lab.Domain.csproj" />
+      <ProjectReference Include="..\Lab.Infrastructure.Persist\Lab.Infrastructure.Persist.csproj" />
+    </ItemGroup>
+
+</Project>

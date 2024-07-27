@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Lab.Infrastructure.Query.Contracts</RootNamespace>
+    </PropertyGroup>
+
+
+
+    <ItemGroup>
+      <PackageReference Include="PhoenixFramework.Company" Version="1.1.1" />
+      <PackageReference Include="PhoenixFramework.Domain" Version="1.2.3" />
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lab.Application.Contract\Lab.Application.Contract.csproj" />
+    </ItemGroup>
+
+</Project>

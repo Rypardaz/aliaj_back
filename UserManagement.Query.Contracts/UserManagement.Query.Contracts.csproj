@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PhoenixFramework.Company" Version="1.1.1" />
+    <PackageReference Include="PhoenixFramework.Domain" Version="1.2.3" />
+  </ItemGroup>
+  
+</Project>

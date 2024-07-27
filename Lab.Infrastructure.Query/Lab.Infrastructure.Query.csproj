@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Lab.Infrastructure.Query</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lab.Application.Contract\Lab.Application.Contract.csproj" />
+      <ProjectReference Include="..\Lab.Infrastructure.Persist\Lab.Infrastructure.Persist.csproj" />
+      <ProjectReference Include="..\Lab.Infrastructure.Query.Contract\Lab.Infrastructure.Query.Contract.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="PhoenixFramework.Dapper" Version="1.0.9" />
+    </ItemGroup>
+
+</Project>

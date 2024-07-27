@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Lab.Presentation.Facade.Contract</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lab.Application.Contract\Lab.Application.Contract.csproj" />
+      <ProjectReference Include="..\Lab.Infrastructure.Query.Contract\Lab.Infrastructure.Query.Contract.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,164 @@
+@model Phoenix.SSO.Quickstart.Account.LoginViewModel
+
+<div class="auth-fluid">
+
+    <div class="auth-fluid-form-box">
+        <div class="align-items-center d-flex h-100">
+            <div class="card-body">
+
+                <div class="auth-brand text-center text-lg-start">
+                    <div class="auth-logo">
+                        <a href="index.html" class="logo logo-dark text-center">
+                            <span class="logo-lg">
+                                @* <img src="" alt="" style="width: 150px; height: 150px;"> *@
+                            </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light text-center">
+                            <span class="logo-lg">
+                                @* <img src="" alt="" height="22"> *@
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <h4 class="mt-0">سامانه کنترل تولید شرکت آلیاژ جوش آریا</h4>
+                <p class="text-muted mb-4">لطفا برای ورود به سامانه، اطلاعات کاربری خود را وارد نمایید</p>
+
+                <partial name="_ValidationSummary"/>
+
+                <form asp-route="Login">
+                    <input type="hidden" asp-for="ReturnUrl" value="@Model.ReturnUrl"/>
+                    <input type="hidden" asp-for="GeneratedCaptcha" value="@Model.GeneratedCaptcha"/>
+
+                    <div class="mb-2">
+                        <label asp-for="Username" class="form-label">نام کاربری</label>
+                        <input class="form-control" asp-for="Username" id="username" autocomplete="off">
+                    </div>
+
+                    <div class="mb-2">
+                        <label asp-for="Password" class="form-label">رمز عبور</label>
+                        <div class="input-group input-group-merge">
+                            <input asp-for="Password" type="password" id="password" class="form-control" autocomplete="off">
+                        </div>
+                    </div>
+
+                    @if (Model.HasCaptcha)
+                    {
+                        <div
+                            class="align-items-center justify-content-around d-flex mb-2 bg-captcha">
+                            <b>@Model.GeneratedCaptcha</b>
+                        </div>
+
+                        <div class="mb-2">
+                            <div class="input-group input-group-merge">
+                                <input type="text" asp-for="EnteredCaptcha" id="captcha" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                    }
+
+                    <div class="d-grid text-center mt-2">
+                        <span class="indicator-progress d-none" id="waitingText">
+                            لطفا منتظر بمانید...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                        </span>
+
+                        <button class="align-items-center btn btn-primary d-flex justify-content-center" name="button"
+                                id="loginButton" value="login" onclick="showWaiting()">
+                            <i class="fa-2x fas fa-fingerprint mx-1"></i>
+                            <span> ورود به سامانه </span>
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    @{
+        var random = new Random();
+        var wallpaper = "/assets/wallpapers/" + random.Next(6, 7) + ".jpg";
+    }
+
+    <div class="auth-fluid-right">
+        <div class="auth-user-testimonial">
+        </div>
+    </div>
+
+</div>
+
+@* <div class="login-page"> *@
+@* *@
+@*     <partial name="_ValidationSummary"/> *@
+@* *@
+@*     <div class="row justify-content-center"> *@
+@* *@
+@*         @if (Model.EnableLocalLogin) *@
+@*         { *@
+@*             <div class="col-sm-6"> *@
+@*                 <div class="card"> *@
+@*                     <div class="bg-success-subtle card-header"> *@
+@*                         <h4>لطفا اطلاعات کاربری را وارد نمایید</h4> *@
+@*                     </div> *@
+@* *@
+@*                     <div class="card-body"> *@
+@*                         <form asp-route="Login"> *@
+@*                             <input type="hidden" asp-for="ReturnUrl"/> *@
+@* *@
+@*                             <div class="form-group"> *@
+@*                                 <label asp-for="Username">نام کاربری</label> *@
+@*                                 <input class="form-control mt-1" asp-for="Username" autocomplete="off" autofocus> *@
+@*                             </div> *@
+@*                             <div class="form-group mt-2"> *@
+@*                                 <label asp-for="Password">کلمه رمز</label> *@
+@*                                 <input type="password" class="form-control mt-1" asp-for="Password" autocomplete="off"> *@
+@*                             </div> *@
+@*                             @if (Model.AllowRememberLogin) *@
+@*                             { *@
+@*                                 <div class="form-group mt-3"> *@
+@*                                     <div class="form-check"> *@
+@*                                         <input class="form-check-input" asp-for="RememberLogin"> *@
+@*                                         <label class="form-check-label" asp-for="RememberLogin"> *@
+@*                                             مرا به خاطر بسپار *@
+@*                                         </label> *@
+@*                                     </div> *@
+@*                                 </div> *@
+@*                             } *@
+@*                             <button class="btn btn-primary mt-3" name="button" value="login">بررسی اطلاعات</button> *@
+@*                             $1$ <button class="btn btn-secondary" name="button" value="cancel">Cancel</button> #1# *@
+@*                         </form> *@
+@*                     </div> *@
+@*                 </div> *@
+@*             </div> *@
+@*         } *@
+@* *@
+@*         $1$ @if (Model.VisibleExternalProviders.Any()) #1# *@
+@*         $1$ { #1# *@
+@*         $1$     <div class="col-sm-6"> #1# *@
+@*         $1$         <div class="card"> #1# *@
+@*         $1$             <div class="card-header"> #1# *@
+@*         $1$                 <h2>External Account</h2> #1# *@
+@*         $1$             </div> #1# *@
+@*         $1$             <div class="card-body"> #1# *@
+@*         $1$                 <ul class="list-inline"> #1# *@
+@*         $1$                     @foreach (var provider in Model.VisibleExternalProviders) #1# *@
+@*         $1$                     { #1# *@
+@*         $1$                         <li class="list-inline-item"> #1# *@
+@*         $1$                             <a class="btn btn-secondary" #1# *@
+@*         $1$                                asp-controller="External" #1# *@
+@*         $1$                                asp-action="Challenge" #1# *@
+@*         $1$                                asp-route-scheme="@provider.AuthenticationScheme" #1# *@
+@*         $1$                                asp-route-returnUrl="@Model.ReturnUrl"> #1# *@
+@*         $1$                                 @provider.DisplayName #1# *@
+@*         $1$                             </a> #1# *@
+@*         $1$                         </li> #1# *@
+@*         $1$                     } #1# *@
+@*         $1$                 </ul> #1# *@
+@*         $1$             </div> #1# *@
+@*         $1$         </div> #1# *@
+@*         @*     </div> *@
+@*         @* } *@
+@* *@
+@*     </div> *@
+@* </div> *@
