@@ -3,6 +3,7 @@ using PhoenixFramework.Identity;
 using Ex.Application.Contracts.Salon;
 using Ex.Domain.SalonAgg.Service;
 using Ex.Domain.SalonAgg;
+using Ex.Domain.ListItemAgg;
 
 namespace Ex.Application
 {
@@ -16,21 +17,27 @@ namespace Ex.Application
         private readonly IClaimHelper _claimHelper;
         private readonly ISalonRepository _salonRepository;
         private readonly ISalonService _salonService;
+        private readonly IListItemRepository _listItemRepository;
 
         public SalonCommandHandler(IClaimHelper claimHelper
             , ISalonRepository salonRepository
-            , ISalonService salonService)
+            , ISalonService salonService,
+IListItemRepository listItemRepository)
         {
             _claimHelper = claimHelper;
             _salonRepository = salonRepository;
             _salonService = salonService;
+            _listItemRepository = listItemRepository;
         }
 
         public Guid Handle(CreateSalon command)
         {
             var creator = _claimHelper.GetCurrentUserGuid();
-            var salon = new Salon(creator, command.Name, command.HasGas, command.HasWire, command.HasWireScrew,
+            var type = _listItemRepository.GetIdBy(command.TypeGuid);
+
+            var salon = new Salon(creator, command.Name, command.Code, type, command.HasGas, command.HasWire, command.HasWireScrew,
                 command.HasPowder, _salonService);
+            
             _salonRepository.Create(salon);
             return salon.Guid;
         }
@@ -39,7 +46,9 @@ namespace Ex.Application
         {
             var actor = _claimHelper.GetCurrentUserGuid();
             var salon = _salonRepository.Load(command.Guid);
-            salon.Edit(actor, command.Name, command.HasGas, command.HasWire, command.HasWireScrew,
+            var type = _listItemRepository.GetIdBy(command.TypeGuid);
+
+            salon.Edit(actor, command.Name, command.Code, type, command.HasGas, command.HasWire, command.HasWireScrew,
                 command.HasPowder, _salonService);
         }
 

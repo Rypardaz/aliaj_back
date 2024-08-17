@@ -9,7 +9,7 @@ namespace Lab.Infrastructure.Query
     public class PersonnelQueryHandler :
         IQueryHandler<List<PersonnelViewModel>>,
         IQueryHandler<EditPersonnel, Guid>,
-        IQueryHandler<List<PersonnelComboModel>, Guid>
+        IQueryHandler<List<PersonnelComboModel>, Guid?>
     {
         private readonly BaseDapperRepository _dapperRepository;
 
@@ -25,7 +25,7 @@ namespace Lab.Infrastructure.Query
                 Type = QueryTypes.List
             });
 
-        List<PersonnelComboModel> IQueryHandler<List<PersonnelComboModel>, Guid>.Handle(Guid salonGuid)
+        List<PersonnelComboModel> IQueryHandler<List<PersonnelComboModel>, Guid?>.Handle(Guid? salonGuid)
         {
             return _dapperRepository.SelectFromSp<PersonnelComboModel>(QueryConstants.GetPersonnelFor, new
             {

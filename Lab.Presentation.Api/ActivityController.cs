@@ -45,8 +45,8 @@ namespace Lab.Presentation.Api
         public IActionResult GetDetails(Guid guid)
             => new JsonResult(_queryFacade.GetDetails(guid));
 
-        [HttpGet("GetForCombo")]
-        public IActionResult GetForCombo()
-            => new JsonResult(_queryFacade.Combo());
+        [HttpGet("GetForCombo/{salonGuid?}")]
+        public IActionResult GetForCombo(Guid? salonGuid)
+            => new JsonResult(_queryFacade.Combo(salonGuid));
     }
 }

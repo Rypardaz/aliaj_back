@@ -8,7 +8,6 @@ namespace Lab.Infrastructure.Query.Contracts.Machine
         public string Name { get; set; }
         public string Salon { get; set; }
         public byte HeadCount { get; set; }
-        public int Capacity { get; set; }
         public string Description { get; set; }
         public string IsActiveStr { get; set; }
     }

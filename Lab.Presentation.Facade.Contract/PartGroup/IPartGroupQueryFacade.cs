@@ -11,6 +11,6 @@ namespace Lab.Presentation.Facade.Contract.PartGroup
         List<PartGroupViewModel> List();
         [HasPermission("BasicInformation_OperationType_Edit")]
         EditPartGroup GetDetails(Guid guid);
-        List<PartGroupComboModel> Combo();
+        List<PartGroupComboModel> Combo(Guid? salonGuid);
     }
 }

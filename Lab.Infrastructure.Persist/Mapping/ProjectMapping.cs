@@ -12,6 +12,7 @@ namespace Lab.Infrastructure.Persist.Mapping
             builder.HasKey(x => x.Id);
 
             builder.Ignore(x => x.IsLocked);
+            builder.Ignore(x => x.IsRemoved);
 
             builder.HasMany(x => x.Details)
                 .WithOne(x => x.Project)

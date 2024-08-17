@@ -6,6 +6,7 @@ using Lab.Infrastructure.Persist.Mapping;
 using Ex.Domain.DailyRecordAgg;
 using Ex.Domain.MachineLogAgg;
 using Ex.Domain.MachineAgg;
+using Ex.Domain.WorkCalendarAgg;
 
 namespace Lab.Infrastructure.Persist;
 
@@ -19,6 +20,7 @@ public class LaboratoryCommandContext : DbContext /*, IDbContext*/
     public DbSet<PhoenixFramework.Logging.OperationLog> OperationLog { get; set; }
     public DbSet<MachineLog> MachineLog { get; set; }
     public DbSet<Machine> Machine { get; set; }
+    public DbSet<WorkCalendar> WorkCalendar { get; set; }
     public LaboratoryCommandContext(DbContextOptions<LaboratoryCommandContext> options) : base(options)
     {
     }

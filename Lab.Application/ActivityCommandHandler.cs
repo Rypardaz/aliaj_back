@@ -4,6 +4,7 @@ using Ex.Domain.ActivityAgg.Service;
 using Ex.Application.Contracts.Activity;
 using PhoenixFramework.Application.Command;
 using Ex.Domain.ListItemAgg;
+using Ex.Domain.SalonAgg;
 
 namespace Ex.Application
 {
@@ -18,16 +19,18 @@ namespace Ex.Application
         private readonly IActivityRepository _activityRepository;
         private readonly IActivityService _activityService;
         private readonly IListItemRepository _listItemRepository;
+        private readonly ISalonRepository _salonRepository;
 
         public ActivityCommandHandler(IClaimHelper claimHelper
             , IActivityRepository activityRepository
             , IActivityService activityService,
-            IListItemRepository listItemRepository)
+            IListItemRepository listItemRepository, ISalonRepository salonRepository)
         {
             _claimHelper = claimHelper;
             _activityRepository = activityRepository;
             _activityService = activityService;
             _listItemRepository = listItemRepository;
+            _salonRepository = salonRepository;
         }
 
         public Guid Handle(CreateActivity command)
@@ -38,21 +41,28 @@ namespace Ex.Application
             if (command.SourceGuid is not null)
                 sourceId = _listItemRepository.GetIdBy(command.SourceGuid.Value);
 
-            var activity = new Activity(creator, command.Name, command.Type, command.SubType, sourceId, command.IsOther, _activityService);
+            var salonIds = command.SalonGuids.Select(salonGuid => _salonRepository.GetIdBy(salonGuid)).ToList();
+
+            var activity = new Activity(creator, command.Code, command.Name, command.Type, command.SubType, sourceId,
+                command.IsOther, salonIds, _activityService);
+            
             _activityRepository.Create(activity);
+            
             return activity.Guid;
         }
 
         public void Handle(EditActivity command)
         {
             var actor = _claimHelper.GetCurrentUserGuid();
-            var activity = _activityRepository.Load(command.Guid);
-            
+            var activity = _activityRepository.Load(command.Guid, "Salons");
+
             int? sourceId = null;
             if (command.SourceGuid is not null)
                 sourceId = _listItemRepository.GetIdBy(command.SourceGuid.Value);
-            
-            activity.Edit(actor, command.Name, command.Type, command.SubType, sourceId, command.IsOther, _activityService);
+
+            var salonIds = command.SalonGuids.Select(salonGuid => _salonRepository.GetIdBy(salonGuid)).ToList();
+            activity.Edit(actor, command.Code, command.Name, command.Type, command.SubType, sourceId, command.IsOther,
+                salonIds, _activityService);
         }
 
         public void Handle(RemoveActivity command)

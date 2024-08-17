@@ -15,6 +15,6 @@ namespace Lab.Presentation.Facade.Query
 
         public List<PartViewModel> List() => _queryBus.Dispatch<List<PartViewModel>>();
 
-        public List<PartComboModel> Combo() => _queryBus.Dispatch<List<PartComboModel>>();
+        public List<PartComboModel> Combo(Guid? salonGuid) => _queryBus.Dispatch<List<PartComboModel>, Guid?>(salonGuid);
     }
 }

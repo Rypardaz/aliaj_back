@@ -6,6 +6,8 @@ namespace Ex.Application.Contracts.Activity
     public class CreateActivity : ICommand
     {
         [Required]
+        public required string Code { get; set; }
+        [Required]
         public required string Name { get; set; }
         [Required]
         public required int Type { get; set; }
@@ -15,5 +17,7 @@ namespace Ex.Application.Contracts.Activity
         public Guid? SourceGuid { get; set; }
 
         public bool IsOther { get; set; }
+
+        public List<Guid> SalonGuids { get; set; }
     }
 }

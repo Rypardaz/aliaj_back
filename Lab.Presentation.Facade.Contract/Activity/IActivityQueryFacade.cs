@@ -11,6 +11,6 @@ namespace Lab.Presentation.Facade.Contract.Activity
         List<ActivityViewModel> List();
         [HasPermission("BasicInformation_OperationType_Edit")]
         EditActivity GetDetails(Guid guid);
-        List<ActivityComboModel> Combo();
+        List<ActivityComboModel> Combo(Guid? salonGuid);
     }
 }

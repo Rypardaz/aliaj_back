@@ -10,7 +10,8 @@ namespace Ex.Application.Contracts.Project
         public Guid ProjectTypeGuid { get; set; }
         public Guid SalonGuid { get; set; }
         public string DeliveryDate { get; set; }
-        public string Description { get; set; }
+        public string? Description { get; set; }
+        public Guid? ReplacementWireTypeGuid { get; set; }
         public Guid IsActive { get; set; }
         public List<ProjectDetailOperations> Details { get; set; }
     }

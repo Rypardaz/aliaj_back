@@ -27,15 +27,15 @@ namespace Lab.Presentation.Api
 
         [HttpPost("Delete/{guid:guid}")]
         public void Delete(Guid guid) =>
-           _commandFacade.Delete(guid);
+            _commandFacade.Delete(guid);
 
         [HttpPost("Activate/{guid:guid}")]
         public void Activate(Guid guid) =>
-       _commandFacade.Activate(guid);
+            _commandFacade.Activate(guid);
 
         [HttpPost("DeActivate/{guid:guid}")]
         public void DeActivate(Guid guid) =>
-          _commandFacade.Deactivate(guid);
+            _commandFacade.Deactivate(guid);
 
         [HttpGet("GetList")]
         public IActionResult List()
@@ -45,8 +45,8 @@ namespace Lab.Presentation.Api
         public IActionResult GetDetails(Guid guid)
             => new JsonResult(_queryFacade.GetDetails(guid));
 
-        [HttpGet("GetForCombo/{salonGuid:guid}")]
-        public IActionResult GetForCombo(Guid salonGuid)
+        [HttpGet("GetForCombo/{salonGuid?}")]
+        public IActionResult GetForCombo(Guid? salonGuid)
             => new JsonResult(_queryFacade.Combo(salonGuid));
     }
 }

@@ -1,3 +1,4 @@
+using Ex.Domain.ActivityAgg;
 using Microsoft.EntityFrameworkCore;
 using Lab.Infrastructure.Persist.Mapping;
 using Ex.Domain.PartGroupAgg;
@@ -12,6 +13,8 @@ public class LaboratoryQueryContext : DbContext /*, IDbContext*/
     public DbSet<Part> Part { get; set; }
     public DbSet<Project> Projects { get; set; }
     public DbSet<ProjectDetail> ProjectDetails { get; set; }
+    public DbSet<Activity> Activities { get; set; }
+    public DbSet<ActivitySalon> ActivitySalons { get; set; }
 
     public LaboratoryQueryContext(DbContextOptions<LaboratoryQueryContext> options) : base(options)
     {

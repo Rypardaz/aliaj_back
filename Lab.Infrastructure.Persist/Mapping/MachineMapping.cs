@@ -15,7 +15,6 @@ namespace Lab.Infrastructure.Persist.Mapping
             builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
             builder.Property(x => x.SalonId);
             builder.Property(x => x.HeadCount);
-            builder.Property(x => x.Capacity);
             builder.Property(x => x.Description);
             builder.Property(x => x.IsActive);
             builder.Property(x => x.Guid);

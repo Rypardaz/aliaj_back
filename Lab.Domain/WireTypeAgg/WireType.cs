@@ -8,26 +8,25 @@ namespace Ex.Domain.WireTypeAgg
         public long WireTypeGroupId { get; set; }
         public string Name { get; private set; }
         public decimal? WireSize { get; private set; }
+        public int? SourceGuid { get; private set; }
 
         protected WireType() { }
 
-        public WireType(Guid creator, long wireTypeGroupId, string name, decimal? wireSize, IWireTypeService service) :
+        public WireType(Guid creator, long wireTypeGroupId, string name, decimal? wireSize, int? sourceGuid, IWireTypeService service) :
         base(creator)
         {
-            service.ThrowWhenDuplicatedName(wireTypeGroupId, name);
-
             WireTypeGroupId = wireTypeGroupId;
             Name = name;
             WireSize = wireSize;
+            SourceGuid = sourceGuid;
         }
 
-        public void Edit(Guid actor, long wireTypeGroupId, string name, decimal? wireSize, IWireTypeService service)
+        public void Edit(Guid actor, long wireTypeGroupId, string name, decimal? wireSize, int? sourceGuid, IWireTypeService service)
         {
-            service.ThrowWhenDuplicatedName(wireTypeGroupId, name, Id);
-
             WireTypeGroupId = wireTypeGroupId;
             Name = name;
             WireSize = wireSize;
+            SourceGuid = sourceGuid;
 
             Modified(actor);
         }

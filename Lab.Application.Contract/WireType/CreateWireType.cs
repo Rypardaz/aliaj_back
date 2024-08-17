@@ -11,5 +11,7 @@ namespace Ex.Application.Contracts.WireType
         public required string Name { get; set; }
 
         public decimal? WireSize { get; set; }
+
+        public Guid? SourceGuid { get; set; }
     }
 }

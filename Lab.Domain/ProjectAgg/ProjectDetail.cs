@@ -15,10 +15,11 @@ namespace Ex.Domain.ProjectAgg
         public decimal? WireThickness { get; set; }
         public decimal? WireConsumption { get; set; }
         public long? PowderTypeId { get; set; }
+        public string? Description { get; private set; }
         public Project Project { get; set; }
 
         public ProjectDetail(long partId, string partCode, long? gasTypeId, long? wireTypeId, long? wireScrewId,
-            decimal? wireThickness, decimal? wireConsumption, long? powderTypeId)
+            decimal? wireThickness, decimal? wireConsumption, long? powderTypeId, string? description)
         {
             Guid = Guid.NewGuid();
             PartId = partId;
@@ -29,10 +30,11 @@ namespace Ex.Domain.ProjectAgg
             WireThickness = wireThickness;
             WireConsumption = wireConsumption;
             PowderTypeId = powderTypeId;
+            Description = description;
         }
 
         public void Edit(long partId, string partCode, long? gasTypeId, long? wireTypeId, long? wireScrewId, decimal? wireThickness,
-            decimal? wireConsumption, long? powderTypeId)
+            decimal? wireConsumption, long? powderTypeId, string? description)
         {
             PartId = partId;
             PartCode = partCode;
@@ -42,6 +44,7 @@ namespace Ex.Domain.ProjectAgg
             WireThickness = wireThickness;
             WireConsumption = wireConsumption;
             PowderTypeId = powderTypeId;
+            Description = description;
         }
     }
 }

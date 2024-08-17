@@ -15,7 +15,6 @@ namespace Lab.Infrastructure.Query
 
         public WireScrewQueryHandler(BaseDapperRepository dapperRepository)
         {
-
             _dapperRepository = dapperRepository;
         }
 
@@ -29,7 +28,7 @@ namespace Lab.Infrastructure.Query
         {
             return _dapperRepository.SelectFromSp<WireScrewComboModel>(QueryConstants.GetWireScrewFor, new
             {
-                Type = QueryTypes.Combo,
+                Type = QueryTypes.Combo
             });
         }
 

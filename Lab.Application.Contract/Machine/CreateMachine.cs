@@ -13,8 +13,7 @@ namespace Ex.Application.Contracts.Machine
         public Guid SalonGuid { get; set; }
         [Required]
         public required byte HeadCount { get; set; }
-        [Required]
-        public required int Capacity { get; set; }
         public string? Description { get; set; }
+        public string? Ip { get; set; }
     }
 }

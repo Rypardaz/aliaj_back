@@ -7,6 +7,8 @@ using Ex.Domain.SalonAgg;
 using Ex.Domain.MachineAgg;
 using Ex.Domain.ListItemAgg;
 using Ex.Domain.TaskMasterAgg;
+using PhoenixFramework.Core.Exceptions;
+using System.ComponentModel;
 
 namespace Ex.Application
 {
@@ -23,7 +25,8 @@ namespace Ex.Application
         private readonly ISalonRepository _salonRepository;
 
         public DailyRecordCommandHandler(IClaimHelper claimHelper, IDailyRecordRepository dailyRecordRepository,
-            IDailyRecordService dailyRecordService, IListItemRepository listItemRepository, IMachineRepository machineRepository, ISalonRepository salonRepository)
+            IDailyRecordService dailyRecordService, IListItemRepository listItemRepository,
+            IMachineRepository machineRepository, ISalonRepository salonRepository)
         {
             _claimHelper = claimHelper;
             _dailyRecordRepository = dailyRecordRepository;
@@ -39,6 +42,10 @@ namespace Ex.Application
             var shiftId = _listItemRepository.GetIdBy(command.ShiftGuid);
             var machineId = _machineRepository.GetIdBy(command.MachineGuid);
             var salonId = _salonRepository.GetIdBy(command.SalonGuid);
+
+            if (_dailyRecordRepository.Exists(x =>
+                    x.Date == command.Date && x.ShiftId == shiftId && x.MachineId == machineId))
+                throw new DuplicatedDataEnteredException();
 
             var dailyRecord = new DailyRecord(creator, salonId, command.Date, shiftId, machineId, command.Head,
                 command.Description, command.TotalHours, command.TotalActivityHours, command.TotalWeldingActivityHours,
@@ -58,6 +65,11 @@ namespace Ex.Application
 
             var shiftId = _listItemRepository.GetIdBy(command.ShiftGuid);
             var machineId = _machineRepository.GetIdBy(command.MachineGuid);
+
+            if (_dailyRecordRepository.Exists(x =>
+                    x.Date == command.Date && x.ShiftId == shiftId && x.MachineId == machineId &&
+                    x.Guid != command.Guid))
+                throw new DuplicatedDataEnteredException();
 
             dailyRecord.Edit(actor, command.Date, shiftId, machineId, command.Head, command.Description,
                 command.TotalHours, command.TotalActivityHours, command.TotalWeldingActivityHours,

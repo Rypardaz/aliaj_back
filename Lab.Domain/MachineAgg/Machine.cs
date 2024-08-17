@@ -9,13 +9,15 @@ namespace Ex.Domain.MachineAgg
         public string Name { get; set; }
         public long? SalonId { get; set; }
         public byte HeadCount { get; set; }
-        public int Capacity { get; set; }
         public string? Description { get; set; }
+        public string? Ip { get; private set; }
 
-        protected Machine() { }
+        protected Machine()
+        {
+        }
 
-        public Machine(Guid creator, string code, string name, long? salonId, byte headCount, int capacity, string? description, IMachineService service) :
-        base(creator)
+        public Machine(Guid creator, string code, string name, long? salonId, byte headCount, string? description,
+            string? ip, IMachineService service) : base(creator)
         {
             service.ThrowWhenDuplicatedCode(code);
             service.ThrowWhenDuplicatedName(name);
@@ -24,11 +26,12 @@ namespace Ex.Domain.MachineAgg
             Name = name;
             SalonId = salonId;
             HeadCount = headCount;
-            Capacity = capacity;
             Description = description;
+            Ip = ip;
         }
 
-        public void Edit(Guid actor, string code, string name, long? salonId, byte headCount, int capacity, string? description, IMachineService service)
+        public void Edit(Guid actor, string code, string name, long? salonId, byte headCount, string? description,
+            string? ip, IMachineService service)
         {
             service.ThrowWhenDuplicatedCode(code, Id);
             service.ThrowWhenDuplicatedName(name, Id);
@@ -37,8 +40,8 @@ namespace Ex.Domain.MachineAgg
             Name = name;
             SalonId = salonId;
             HeadCount = headCount;
-            Capacity = capacity;
             Description = description;
+            Ip = ip;
 
             Modified(actor);
         }

@@ -6,5 +6,6 @@ namespace Lab.Infrastructure.Query.Contracts.Activity
     {
         public int Type { get; set; }
         public int SubType { get; set; }
+        public string Code { get; set; }
     }
 }

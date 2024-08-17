@@ -7,11 +7,11 @@ namespace Ex.Domain.PartAgg
     {
         public long PartGroupId { get; set; }
         public string Name { get; set; }
-        public int? StandardWireConsumption { get; set; }
+        public decimal? StandardWireConsumption { get; set; }
 
         protected Part() { }
 
-        public Part(Guid creator, long partGroupId, string name, int? standardWireConsumption, IPartService service) :
+        public Part(Guid creator, long partGroupId, string name, decimal? standardWireConsumption, IPartService service) :
         base(creator)
         {
             service.ThrowWhenDuplicatedName(partGroupId, name);
@@ -21,7 +21,7 @@ namespace Ex.Domain.PartAgg
             StandardWireConsumption = standardWireConsumption;
         }
 
-        public void Edit(Guid actor, long partGroupId, string name, int? standardWireConsumption, IPartService service)
+        public void Edit(Guid actor, long partGroupId, string name, decimal? standardWireConsumption, IPartService service)
         {
             service.ThrowWhenDuplicatedName(partGroupId, name, Id);
 

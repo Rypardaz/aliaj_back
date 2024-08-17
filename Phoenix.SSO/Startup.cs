@@ -36,19 +36,15 @@ public class Startup
                 options.Events.RaiseSuccessEvents = true;
                 options.EmitStaticAudienceClaim = true;
             })
-            //.AddProfileService<ProfileService>()
             .AddCustomTokenRequestValidator<CustomTokenRequestValidator>();
-            // .AddTestUsers(TestUsers.Users);
 
         var tokenExpiryTime = int.Parse(Configuration["TokenExpiryTime"]) * 60;
         var allowedOrigins = Configuration.GetSection("AllowedOrigins").Get<string[]>();
 
-        // in-memory, code config
         builder.AddInMemoryIdentityResources(IdentityServiceConfiguration.IdentityResources());
         builder.AddInMemoryApiScopes(IdentityServiceConfiguration.ApiScopes());
         builder.AddInMemoryClients(IdentityServiceConfiguration.Clients(tokenExpiryTime, allowedOrigins));
 
-        // not recommended for production - you need to store your key material somewhere secure
         builder.AddDeveloperSigningCredential();
 
         builder.Services.AddTransient<IPasswordHasher, PasswordHasher>();

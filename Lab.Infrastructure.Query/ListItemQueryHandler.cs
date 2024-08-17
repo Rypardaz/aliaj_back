@@ -14,6 +14,6 @@ namespace Lab.Infrastructure.Query
         }
 
         public List<ListItemComboModel> Handle(int listGroupId) => 
-            _dapper.Select<ListItemComboModel>($"SELECT Id, Title = Name, Guid FROM tbListItem WHERE ListGroupId = {listGroupId}");
+            _dapper.Select<ListItemComboModel>($"SELECT Id, Title = Name, Guid, Code FROM tbListItem WHERE ListGroupId = {listGroupId}");
     }
 }

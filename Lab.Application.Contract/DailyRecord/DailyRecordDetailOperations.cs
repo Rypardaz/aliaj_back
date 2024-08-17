@@ -12,6 +12,7 @@
         public Guid? GasTypeGuid { get; set; }
         public Guid? PowderTypeGuid { get; set; }
         public Guid? WireTypeGuid { get; set; }
+        public string? WireTypeName { get; set; }
         public Guid? WireScrewGuid { get; set; }
         public decimal? WireConsumption { get; set; }
     }

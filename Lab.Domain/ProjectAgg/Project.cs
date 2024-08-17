@@ -12,6 +12,7 @@ namespace Ex.Domain.ProjectAgg
         public long SalonId { get; private set; }
         public string DeliveryDate { get; private set; }
         public string? Description { get; private set; }
+        public long? ReplacementWireTypeId { get; private set; }
         public List<ProjectDetail> Details { get; private set; }
 
         protected Project()
@@ -19,8 +20,8 @@ namespace Ex.Domain.ProjectAgg
         }
 
         public Project(Guid creator, string code, string name, long taskMasterId, long projectTypeId,
-            long salonId, string deliveryDate, int isActive, string? description, IProjectService projectService) 
-            : base(creator)
+            long salonId, string deliveryDate, int isActive, string? description, long? replacementWireTypeId,
+            IProjectService projectService) : base(creator)
         {
             Code = code;
             Name = name;
@@ -29,12 +30,14 @@ namespace Ex.Domain.ProjectAgg
             SalonId = salonId;
             DeliveryDate = deliveryDate;
             Description = description;
+            ReplacementWireTypeId = replacementWireTypeId;
 
             SetActivation(isActive);
         }
 
         public void Edit(Guid actor, string code, string name, long taskMasterId, long projectTypeId,
-            long salonId, string deliveryDate, int isActive, string? description, IProjectService projectService)
+            long salonId, string deliveryDate, int isActive, string? description, long? replacementWireTypeId,
+            IProjectService projectService)
         {
             Code = code;
             Name = name;
@@ -43,6 +46,7 @@ namespace Ex.Domain.ProjectAgg
             SalonId = salonId;
             DeliveryDate = deliveryDate;
             Description = description;
+            ReplacementWireTypeId = replacementWireTypeId;
 
             SetActivation(isActive);
             Modified(actor);

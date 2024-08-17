@@ -1,29 +1,32 @@
-﻿using Ex.Domain.PartGroupAgg.Service;
-using PhoenixFramework.Domain;
+﻿using PhoenixFramework.Domain;
+using Ex.Domain.PartGroupAgg.Service;
 
-namespace Ex.Domain.PartGroupAgg
+namespace Ex.Domain.PartGroupAgg;
+
+public class PartGroup : AuditableAggregateRootBase<long>
 {
-    public class PartGroup : AuditableAggregateRootBase<long>
+    public string Name { get; set; }
+    public long SalonId { get; set; }
+
+    protected PartGroup()
     {
-        public string Name { get; set; }
+    }
 
-        protected PartGroup() {}
+    public PartGroup(Guid creator, string name, long salonId, IPartGroupService service) : base(creator)
+    {
+        service.ThrowWhenDuplicatedName(name);
 
-        public PartGroup(Guid creator, string name, IPartGroupService service) :
-        base(creator)
-        {
-            service.ThrowWhenDuplicatedName(name);
+        Name = name;
+        SalonId = salonId;
+    }
 
-            Name = name;
-        }
+    public void Edit(Guid actor, string name, long salonId, IPartGroupService service)
+    {
+        service.ThrowWhenDuplicatedName(name, Id);
 
-        public void Edit(Guid actor, string name, IPartGroupService service)
-        {
-            service.ThrowWhenDuplicatedName(name, Id);
+        Name = name;
+        SalonId = salonId;
 
-            Name = name;
-
-            Modified(actor);
-        }
+        Modified(actor);
     }
 }

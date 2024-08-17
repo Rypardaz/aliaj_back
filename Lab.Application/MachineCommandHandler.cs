@@ -8,11 +8,11 @@ using Ex.Domain.SalonAgg;
 namespace Ex.Application
 {
     public class MachineCommandHandler :
-    ICommandHandler<CreateMachine, Guid>,
-    ICommandHandler<EditMachine>,
-    ICommandHandler<RemoveMachine>,
-    ICommandHandler<ActivateMachine>,
-    ICommandHandler<DeactivateMachine>
+        ICommandHandler<CreateMachine, Guid>,
+        ICommandHandler<EditMachine>,
+        ICommandHandler<RemoveMachine>,
+        ICommandHandler<ActivateMachine>,
+        ICommandHandler<DeactivateMachine>
     {
         private readonly IClaimHelper _claimHelper;
         private readonly IMachineRepository _machineRepository;
@@ -34,7 +34,8 @@ namespace Ex.Application
         {
             var creator = _claimHelper.GetCurrentUserGuid();
             var salonId = _salonRepository.GetIdBy(command.SalonGuid);
-            var machine = new Machine(creator, command.Code, command.Name, salonId, command.HeadCount, command.Capacity, command.Description, _machineService);
+            var machine = new Machine(creator, command.Code, command.Name, salonId, command.HeadCount,
+                command.Description, command.Ip, _machineService);
             _machineRepository.Create(machine);
             return machine.Guid;
         }
@@ -44,7 +45,8 @@ namespace Ex.Application
             var actor = _claimHelper.GetCurrentUserGuid();
             var machine = _machineRepository.Load(command.Guid);
             var salonId = _salonRepository.GetIdBy(command.SalonGuid);
-            machine.Edit(actor, command.Code, command.Name, salonId, command.HeadCount, command.Capacity, command.Description, _machineService);
+            machine.Edit(actor, command.Code, command.Name, salonId, command.HeadCount, command.Description, command.Ip,
+                _machineService);
         }
 
         public void Handle(RemoveMachine command)
@@ -52,6 +54,7 @@ namespace Ex.Application
             var machine = _machineRepository.Load(command.Guid);
             _machineRepository.Delete(machine);
         }
+
         public void Handle(ActivateMachine command)
         {
             var actor = _claimHelper.GetCurrentUserGuid();

@@ -9,13 +9,12 @@ namespace Lab.Infrastructure.Query
     public class PartGroupQueryHandler :
         IQueryHandler<List<PartGroupViewModel>>,
         IQueryHandler<EditPartGroup, Guid>,
-        IQueryHandler<List<PartGroupComboModel>>
+        IQueryHandler<List<PartGroupComboModel>, Guid?>
     {
         private readonly BaseDapperRepository _dapperRepository;
 
         public PartGroupQueryHandler(BaseDapperRepository dapperRepository)
         {
-
             _dapperRepository = dapperRepository;
         }
 
@@ -25,11 +24,12 @@ namespace Lab.Infrastructure.Query
                 Type = QueryTypes.List
             });
 
-        List<PartGroupComboModel> IQueryHandler<List<PartGroupComboModel>>.Handle()
+        List<PartGroupComboModel> IQueryHandler<List<PartGroupComboModel>, Guid?>.Handle(Guid? salonGuid)
         {
             return _dapperRepository.SelectFromSp<PartGroupComboModel>(QueryConstants.GetPartGroupFor, new
             {
-                Type = QueryTypes.Combo
+                Type = QueryTypes.Combo,
+                SalonGuid = salonGuid
             });
         }
 
@@ -39,6 +39,5 @@ namespace Lab.Infrastructure.Query
                 Type = QueryTypes.Edit,
                 Guid = guid
             });
-
     }
 }

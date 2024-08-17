@@ -7,5 +7,7 @@ namespace Ex.Application.Contracts.PartGroup
     {
         [Required]
         public required string Name { get; set; }
+
+        public Guid SalonGuid { get; set; }
     }
 }

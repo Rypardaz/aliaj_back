@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Formats.Asn1;
-using System.Security.Claims;
-using IdentityModel;
+﻿using System.Security.Claims;
 using IdentityServer4.Models;
+using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 
 namespace Phoenix.SSO.IdentitySettings;
@@ -32,14 +30,6 @@ public class IdentityServiceConfiguration
     {
         return new List<Client>
         {
-            // new()
-            // {
-            //     ClientId = "m2m.client",
-            //     ClientName = "Client Credentials Client",
-            //     AllowedGrantTypes = GrantTypes.ClientCredentials,
-            //     ClientSecrets = { new Secret("511536EF-F270-4058-80CA-1C89C192F69A".Sha256()) },
-            //     AllowedScopes = { "" }
-            // },
             new()
             {
                 ClientId = "PhoenixClientCode",

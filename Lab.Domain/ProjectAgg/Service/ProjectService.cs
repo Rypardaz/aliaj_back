@@ -4,6 +4,7 @@ using Ex.Domain.WireTypeAgg;
 using Ex.Domain.PowderTypeAgg;
 using Ex.Application.Contracts.Project;
 using Ex.Domain.WireScrewAgg;
+using PhoenixFramework.Core.Exceptions;
 
 namespace Ex.Domain.ProjectAgg.Service
 {
@@ -15,8 +16,8 @@ namespace Ex.Domain.ProjectAgg.Service
         private readonly IPowderTypeRepository _powderTypeRepository;
         private readonly IWireScrewRepository _wireScrewRepository;
 
-        public ProjectService(IPartRepository partRepository, IGasTypeRepository gasTypeRepository, 
-            IWireTypeRepository wireTypeRepository, IPowderTypeRepository powderTypeRepository, 
+        public ProjectService(IPartRepository partRepository, IGasTypeRepository gasTypeRepository,
+            IWireTypeRepository wireTypeRepository, IPowderTypeRepository powderTypeRepository,
             IWireScrewRepository wireScrewRepository)
         {
             _partRepository = partRepository;
@@ -59,16 +60,19 @@ namespace Ex.Domain.ProjectAgg.Service
                     }
 
                     detail.Edit(partId, incomming.PartCode, gasTypeId, wireTypeId, wireScrewId, incomming.WireThickness,
-                        incomming.WireConsumption, powderTypeId);
+                        incomming.WireConsumption, powderTypeId, incomming.Description);
                 }
                 else
                 {
                     var item = new ProjectDetail(partId, incomming.PartCode, gasTypeId, wireTypeId, wireScrewId,
-                        incomming.WireThickness, incomming.WireConsumption, powderTypeId);
+                        incomming.WireThickness, incomming.WireConsumption, powderTypeId, incomming.Description);
 
                     project.AddDetail(item);
                 }
             }
+
+            if (project.Details.GroupBy(x => x.PartCode).Any(x => x.Count() > 1))
+                throw new BusinessException("0", "کد قطعه تکراری وارد شده است، لطفا اصلاح کنید.");
         }
     }
 }

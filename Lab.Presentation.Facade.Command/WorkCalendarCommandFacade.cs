@@ -18,17 +18,20 @@ namespace Lab.Presentation.Facade.Command
             var query = "";
             foreach (var item in command.Items)
             {
-                string? description = string.IsNullOrWhiteSpace(item.Description) ? "NULL" : $"'{item.Description}'";
-                string? closedTypeId = item.ClosedTypeId is null? "NULL" : $"'{item.ClosedTypeId}'";
-                var isClosed = item.IsClosed ? 1 : 0 ;
+                var description = string.IsNullOrWhiteSpace(item.Description) ? "NULL" : $"'{item.Description}'";
+                var closedTypeId = item.ClosedTypeId is null ? "NULL" : $"'{item.ClosedTypeId}'";
+                var isClosed = item.IsClosed ? 1 : 0;
 
-                query += $@"UPDATE tbWorkCalendar SET
+                query += $"""
+                            UPDATE tbWorkCalendar SET
                                 WorkTime = {item.WorkTime},
                                 IsClosed = {isClosed},
                                 ClosedTypeId = {closedTypeId},
-                                Description = {description}
+                                Description = {description},
+                                StartTime = '{item.StartTime}',
+                                EndTime = '{item.EndTime}'
                              WHERE Id = {item.Id}
-                        ";
+                          """;
             }
 
             _repository.Execute(query);

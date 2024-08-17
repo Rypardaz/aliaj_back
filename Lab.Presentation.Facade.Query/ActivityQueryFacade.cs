@@ -15,7 +15,7 @@ namespace Lab.Presentation.Facade.Query
 
         public List<ActivityViewModel> List() => _queryBus.Dispatch<List<ActivityViewModel>>();
 
-        public List<ActivityComboModel> Combo() => 
-            _queryBus.Dispatch<List<ActivityComboModel>>();
+        public List<ActivityComboModel> Combo(Guid? salonGuid) => 
+            _queryBus.Dispatch<List<ActivityComboModel>, Guid?>(salonGuid);
     }
 }
