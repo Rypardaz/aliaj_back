@@ -14,7 +14,7 @@ namespace Ex.Domain.WireScrewAgg
         public WireScrew(Guid creator, long wireTypeId, int screw, decimal qty, IWireScrewService service) :
         base(creator)
         {
-            service.ThrowWhenDuplicatedScrew(wireTypeId, screw);
+            service.ThrowWhenDuplicatedScrew(screw);
 
             WireTypeId = wireTypeId;
             Screw = screw;
@@ -23,7 +23,7 @@ namespace Ex.Domain.WireScrewAgg
 
         public void Edit(Guid actor, long wireTypeId, int screw, decimal qty, IWireScrewService service)
         {
-            service.ThrowWhenDuplicatedScrew(wireTypeId, screw, Id);
+            service.ThrowWhenDuplicatedScrew(screw, Id);
 
             WireTypeId = wireTypeId;
             Screw = screw;

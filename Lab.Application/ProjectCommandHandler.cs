@@ -49,22 +49,25 @@ public class ProjectCommandHandler :
         if (_projectRepository.Exists(x => x.Code.ToLower() == command.Code.ToLower()))
             throw new BusinessException("0", "کد پروژه تکراری است.");
 
-        if (_projectRepository.Exists(x => x.Name == command.Name))
-            throw new BusinessException("0", "نام پروژه تکراری است.");
+        // if (_projectRepository.Exists(x => x.Name == command.Name))
+        //     throw new BusinessException("0", "نام پروژه تکراری است.");
 
         var taskMasterGuid = _taskMasterRepository.GetIdBy(command.TaskMasterGuid);
         var salonGuid = _salonRepository.GetIdBy(command.SalonGuid);
         var projectTypeId = _projectTypeRepository.GetIdBy(command.ProjectTypeGuid);
         var isActive = _listItemRepository.GetIdBy(command.IsActive);
 
-        long? replacementWireTypeId = null;
-
-        if (command.ReplacementWireTypeGuid is not null)
-            replacementWireTypeId = _wireTypeRepository.GetIdBy(command.ReplacementWireTypeGuid.Value);
-
         var project = new Project(creator, command.Code, command.Name, taskMasterGuid, projectTypeId,
-            salonGuid, command.DeliveryDate, isActive, command.Description, replacementWireTypeId,
-            _projectService);
+            salonGuid, command.DeliveryDate, isActive, command.Description, _projectService);
+
+        List<ProjectReplacementWireType>? replacementWireTypes = null;
+
+        if (command.ReplacementWireTypeGuids is not null)
+            replacementWireTypes = command.ReplacementWireTypeGuids
+                .Select(x => new ProjectReplacementWireType(creator, project.Id, _wireTypeRepository.GetIdBy(x)))
+                .ToList();
+
+        project.SetReplacements(replacementWireTypes);
 
         _projectService.SetDetails(project, command.Details);
 
@@ -75,26 +78,30 @@ public class ProjectCommandHandler :
     public void Handle(EditProject command)
     {
         var actor = _claimHelper.GetCurrentUserGuid();
-        var project = _projectRepository.Load(command.Guid, "Details");
+        var project = _projectRepository.Load(command.Guid, "Details,ReplacementWireTypes");
 
         if (_projectRepository.Exists(x => x.Code.ToLower() == command.Code.ToLower() && x.Guid != command.Guid))
             throw new BusinessException("0", "کد پروژه تکراری است.");
 
-        if (_projectRepository.Exists(x => x.Name == command.Name && x.Guid != command.Guid))
-            throw new BusinessException("0", "نام پروژه تکراری است.");
+        // if (_projectRepository.Exists(x => x.Name == command.Name && x.Guid != command.Guid))
+        //     throw new BusinessException("0", "نام پروژه تکراری است.");
 
         var taskMasterGuid = _taskMasterRepository.GetIdBy(command.TaskMasterGuid);
         var salonGuid = _salonRepository.GetIdBy(command.SalonGuid);
         var projectTypeId = _projectTypeRepository.GetIdBy(command.ProjectTypeGuid);
         var isActive = _listItemRepository.GetIdBy(command.IsActive);
 
-        long? replacementWireTypeId = null;
-
-        if (command.ReplacementWireTypeGuid is not null)
-            replacementWireTypeId = _wireTypeRepository.GetIdBy(command.ReplacementWireTypeGuid.Value);
-
         project.Edit(actor, command.Code, command.Name, taskMasterGuid, projectTypeId, salonGuid,
-            command.DeliveryDate, isActive, command.Description, replacementWireTypeId, _projectService);
+            command.DeliveryDate, isActive, command.Description, _projectService);
+
+        List<ProjectReplacementWireType>? replacementWireTypes = null;
+
+        if (command.ReplacementWireTypeGuids is not null)
+            replacementWireTypes = command.ReplacementWireTypeGuids
+                .Select(x => new ProjectReplacementWireType(actor, project.Id, _wireTypeRepository.GetIdBy(x)))
+                .ToList();
+
+        project.SetReplacements(replacementWireTypes);
 
         _projectService.SetDetails(project, command.Details);
     }

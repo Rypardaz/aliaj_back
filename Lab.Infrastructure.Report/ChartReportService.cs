@@ -53,6 +53,18 @@ public class ChartReportService : IChartReportService
         });
     }
 
+    public List<ChartViewModel> GetActivityChart(ChartSearchModel searchModel)
+    {
+        return _repository.SelectFromSp<ChartViewModel>("spActivityReport", new
+        {
+            ReportType = searchModel.Type,
+            searchModel.FromDate,
+            searchModel.ToDate,
+            searchModel.ActivityGuid,
+            searchModel.ActivitySubType
+        });
+    }
+
     public List<ChartViewModel> GetWireConsumptionChart(ChartSearchModel searchModel)
     {
         string? wireTypes = null;
@@ -76,12 +88,15 @@ public class ChartReportService : IChartReportService
             searchModel.Type,
             searchModel.FromDate,
             searchModel.ToDate,
+            searchModel.YearIds,
             searchModel.WeekId,
             searchModel.MonthId,
+            searchModel.ShiftGuid,
+            searchModel.ShowShift,
             WireTypeGuid = wireTypes,
             MachineGuid = machines,
             SalonGuid = salons,
-            PersonnelGuid = personnel
+            PersonnelGuid = personnel,
         });
     }
 }

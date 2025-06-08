@@ -1,10 +1,11 @@
-﻿using PhoenixFramework.Core;
+﻿using System;
+using System.Collections.Generic;
+using PhoenixFramework.Core;
 
-namespace Lab.Infrastructure.Report.Contract.Activity
+namespace Lab.Infrastructure.Report.Contract.Activity;
+
+public interface IActivityReportService : IReportService
 {
-    public interface IActivityReportService : IReportService
-    {
-        List<ActivityReportViewModel> GetActivityReport(ActivityReportSearchModel searchModel);
-    }
-
+    List<ActivityNameViewModel> GetActivityNames(Guid salonGuid);
+    List<ActivityReportViewModel> GetActivityReport(ActivityReportSearchModel searchModel);
 }

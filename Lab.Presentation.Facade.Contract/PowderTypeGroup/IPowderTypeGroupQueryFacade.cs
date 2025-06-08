@@ -7,9 +7,7 @@ namespace Lab.Presentation.Facade.Contract.PowderTypeGroup
 {
     public interface IPowderTypeGroupQueryFacade : IFacadeService
     {
-        [HasPermission("BasicInformation_OperationType")]
         List<PowderTypeGroupViewModel> List();
-        [HasPermission("BasicInformation_OperationType_Edit")]
         EditPowderTypeGroup GetDetails(Guid guid);
         List<PowderTypeGroupComboModel> Combo();
     }

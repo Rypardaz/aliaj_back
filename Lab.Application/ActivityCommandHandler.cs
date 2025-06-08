@@ -44,7 +44,7 @@ namespace Ex.Application
             var salonIds = command.SalonGuids.Select(salonGuid => _salonRepository.GetIdBy(salonGuid)).ToList();
 
             var activity = new Activity(creator, command.Code, command.Name, command.Type, command.SubType, sourceId,
-                command.IsOther, salonIds, _activityService);
+                command.IsOther, command.WithOutPersonnel, command.WithOutProject, salonIds, _activityService);
             
             _activityRepository.Create(activity);
             
@@ -62,7 +62,7 @@ namespace Ex.Application
 
             var salonIds = command.SalonGuids.Select(salonGuid => _salonRepository.GetIdBy(salonGuid)).ToList();
             activity.Edit(actor, command.Code, command.Name, command.Type, command.SubType, sourceId, command.IsOther,
-                salonIds, _activityService);
+                command.WithOutPersonnel, command.WithOutProject, salonIds, _activityService);
         }
 
         public void Handle(RemoveActivity command)

@@ -13,12 +13,12 @@ namespace Lab.Infrastructure.Persist.Repository
             this._context = context;
         }
 
-        public WorkCalendar GetBy(string date, int shiftId)
+        public WorkCalendar GetBy(string date, int shiftId, long salonId)
         {
             return _context.WorkCalendar
+                .Where(x => x.SalonId == salonId)
                 .Where(x => x.Date == date)
-                .Where(x => x.ShiftId == shiftId)
-                .First();
+                .First(x => x.ShiftId == shiftId);
         }
     }
 }

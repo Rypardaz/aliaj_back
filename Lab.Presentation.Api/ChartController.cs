@@ -15,7 +15,7 @@ public class ChartController : ControllerBase
     }
 
     [HttpPut("GetWireConsumptionChart")]
-    public IActionResult GetActivityNames([FromBody] ChartSearchModel searchModel)
+    public IActionResult GetWireConsumptionChart([FromBody] ChartSearchModel searchModel)
         => new JsonResult(_chartReportService.GetWireConsumptionChart(searchModel));
 
     [HttpPut("GetRandemanChart")]
@@ -25,6 +25,10 @@ public class ChartController : ControllerBase
     [HttpPut("GetWireConsumptionToStandardChart")]
     public IActionResult GetWireConsumptionToStandardChart([FromBody] ChartSearchModel searchModel)
         => new JsonResult(_chartReportService.GetWireConsumptionToStandardChart(searchModel));
+
+    [HttpPut("GetActivityChart")]
+    public IActionResult GetActivityChart([FromBody] ChartSearchModel searchModel)
+        => new JsonResult(_chartReportService.GetActivityChart(searchModel));
 
     [HttpPut("GetProjectChart")]
     public IActionResult GetProjectChart([FromBody] ChartSearchModel searchModel)

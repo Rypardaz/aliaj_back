@@ -8,6 +8,8 @@ namespace Lab.Infrastructure.Query.Contracts.WireScrew
         public string Screw { get; set; }
         public string WireSize { get; set; }
         public decimal Qty { get; set; }
+        public decimal WireConsumption { get; set; }
+        public decimal Diff { get; set; }
         public string IsActiveStr { get; set; }
     }
 }

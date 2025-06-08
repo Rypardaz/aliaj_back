@@ -17,7 +17,8 @@ namespace Ex.Application.Contracts.Activity
         public Guid? SourceGuid { get; set; }
 
         public bool IsOther { get; set; }
-
+        public bool WithOutPersonnel { get; set; }
+        public bool WithOutProject { get; set; }
         public List<Guid> SalonGuids { get; set; }
     }
 }

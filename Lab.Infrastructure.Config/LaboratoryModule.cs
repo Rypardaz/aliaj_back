@@ -123,7 +123,7 @@ public class LaboratoryModule : Module
              .InterceptedBy(typeof(SecurityInterceptor))
             .AsImplementedInterfaces();
 
-        var reportAssembly = typeof(ManagementReportService).Assembly;
+        var reportAssembly = typeof(DailyReportService).Assembly;
         builder.RegisterAssemblyTypes(reportAssembly)
             .Where(t => t.Name.EndsWith("ReportService"))
             .InstancePerLifetimeScope()

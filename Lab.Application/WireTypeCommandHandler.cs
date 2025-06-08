@@ -4,7 +4,6 @@ using Ex.Domain.WireTypeAgg;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
 using Ex.Domain.WireTypeGroupAgg;
-using PhoenixFramework.Core.Exceptions;
 using Ex.Domain.ListItemAgg;
 
 namespace Ex.Application
@@ -40,14 +39,10 @@ namespace Ex.Application
             var creator = _claimHelper.GetCurrentUserGuid();
             var wireTypeGroupId = _wireTypeGroupRepository.GetIdBy(command.WireTypeGroupGuid);
 
-            int? sourceId = null;
-            if (command.SourceGuid is not null)
-                sourceId = _listItemRepository.GetIdBy(command.SourceGuid.Value);
-
             //if (_wireTypeRepository.Exists(x => x.Name == command.Name && x.WireTypeGroupId == wireTypeGroupId && x.WireSize == command.WireSize))
             //    throw new BusinessException("0", "اطلاعات وارد شده تکراری است.");
 
-            var wireType = new WireType(creator, wireTypeGroupId, command.Name, command.WireSize, sourceId, _wireTypeService);
+            var wireType = new WireType(creator, wireTypeGroupId, command.Code, command.Name, command.WireSize, _wireTypeService);
             _wireTypeRepository.Create(wireType);
             return wireType.Guid;
         }
@@ -57,15 +52,11 @@ namespace Ex.Application
             var actor = _claimHelper.GetCurrentUserGuid();
             var wireTypeGroupId = _wireTypeGroupRepository.GetIdBy(command.WireTypeGroupGuid);
 
-            int? sourceId = null;
-            if (command.SourceGuid is not null)
-                sourceId = _listItemRepository.GetIdBy(command.SourceGuid.Value);
-
             //if (_wireTypeRepository.Exists(x => x.Name == command.Name && x.WireTypeGroupId == wireTypeGroupId && x.WireSize == command.WireSize && x.Guid != command.Guid))
             //    throw new BusinessException("0", "اطلاعات وارد شده تکراری است.");
 
             var wireType = _wireTypeRepository.Load(command.Guid);
-            wireType.Edit(actor, wireTypeGroupId, command.Name, command.WireSize, sourceId, _wireTypeService);
+            wireType.Edit(actor, wireTypeGroupId, command.Code, command.Name, command.WireSize, _wireTypeService);
         }
 
         public void Handle(RemoveWireType command)

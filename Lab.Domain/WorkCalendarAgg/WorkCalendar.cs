@@ -4,6 +4,7 @@ namespace Ex.Domain.WorkCalendarAgg;
 
 public class WorkCalendar : AggregateRootBase<int>
 {
+    public long SalonId { get; private set; }
     public string Date { get; private set; }
     public int MonthId { get; private set; }
     public string Month { get; private set; }

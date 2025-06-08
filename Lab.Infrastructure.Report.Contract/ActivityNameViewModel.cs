@@ -1,9 +1,8 @@
-﻿namespace Lab.Infrastructure.Report.Contract
+﻿namespace Lab.Infrastructure.Report.Contract;
+
+public class ActivityNameViewModel
 {
-    public class ActivityNameViewModel
-    {
-        public int ColId { get; set; }
-        public string ActivityName { get; set; }
-        public int SubType { get; set; }
-    }
+    public int ActivityId { get; set; }
+    public string ActivityName { get; set; }
+    public int Type { get; set; }
 }

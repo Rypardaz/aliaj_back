@@ -1,15 +1,14 @@
-﻿namespace Lab.Infrastructure.Report.Contract.PersonnelReport
+﻿namespace Lab.Infrastructure.Report.Contract.PersonnelReport;
+
+public class PersonnelReportViewModel
 {
-    public class PersonnelReportViewModel
-    {
-        public string PartGroup { get; set; }
-        public string Part { get; set; }
-        public string PartCode { get; set; }
-        public string PersonnelTime { get; set; }
-        public int WireConsumption { get; set; }
-        public decimal AvgWireConsumption { get; set; }
-        public  int StandartWireConsumptionPart { get; set; }
-        public  decimal StandartWireConsumption { get; set; }
-        public  int ConsumptionPercent{ get; set; }
-    }
+    public string? ProjectCode { get; set; }
+    public string? TaskMasterName { get; set; }
+    public string? PartName { get; set; }
+    public string? StandardWireConsumptionPerHours { get; set; }
+    public string? TotalHoursReported { get; set; }
+    public string? HoursInProduction { get; set; }
+    public string? WireConsumption { get; set; }
+    public string? StandardWireConsumption { get; set; }
+    public string? Randeman { get; set; }
 }

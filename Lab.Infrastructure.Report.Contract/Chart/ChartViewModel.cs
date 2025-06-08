@@ -1,9 +1,14 @@
-﻿namespace Lab.Infrastructure.Report.Contract.Chart
+﻿namespace Lab.Infrastructure.Report.Contract.Chart;
+
+public class ChartViewModel
 {
-    public class ChartViewModel
-    {
-        public string X { get; set; }
-        public long Y { get; set; }
-        public long YStandard { get; set; }
-    }
+    public string Title { get; set; }
+    public long ShiftTitle { get; set; }
+    public long WireConsumption { get; set; }
+    public long WeldingTime { get; set; }
+    public long StandardWireConsumption { get; set; }
+    public long Randeman { get; set; }
+
+    public string X { get; set; }
+    public string Y { get; set; }
 }

@@ -17,6 +17,7 @@ namespace Lab.Infrastructure.Query
         {
             return _repository.SelectFromSp<WorkCalendarViewModel>("spGetWorkCalendarFor", new
             {
+                searchModel.SalonGuid,
                 searchModel.YearId,
                 searchModel.MonthId
             });

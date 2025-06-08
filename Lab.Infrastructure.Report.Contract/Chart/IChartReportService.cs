@@ -6,5 +6,6 @@
         List<ChartViewModel> GetRandemanChart(ChartSearchModel searchModel);
         List<ChartViewModel> GetWireConsumptionToStandardChart(ChartSearchModel searchModel);
         List<ChartViewModel> GetProjectChart(ChartSearchModel searchModel);
+        List<ChartViewModel> GetActivityChart(ChartSearchModel searchModel);
     }
 }

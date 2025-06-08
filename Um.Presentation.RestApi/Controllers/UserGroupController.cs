@@ -45,7 +45,7 @@ namespace Um.Presentation.RestApi.Controllers
             _roleApplication.Edit(command);
         }
 
-        [HttpDelete("{guid:guid}")]
+        [HttpPost("Delete/{guid:guid}")]
         public void Delete(Guid guid)
         {
             _roleApplication.Delete(guid);

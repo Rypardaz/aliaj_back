@@ -7,9 +7,9 @@ namespace Lab.Presentation.Facade.Contract.WireType
 {
     public interface IWireTypeQueryFacade : IFacadeService
     {
-        [HasPermission("BasicInformation_OperationType")]
+        
         List<WireTypeViewModel> List();
-        [HasPermission("BasicInformation_OperationType_Edit")]
+        
         EditWireType GetDetails(Guid guid);
         List<WireTypeComboModel> Combo();
     }

@@ -44,7 +44,10 @@ namespace Ex.Application
             var salonId = _salonRepository.GetIdBy(command.SalonGuid);
 
             if (_dailyRecordRepository.Exists(x =>
-                    x.Date == command.Date && x.ShiftId == shiftId && x.MachineId == machineId))
+                    x.Date == command.Date &&
+                    x.ShiftId == shiftId &&
+                    x.MachineId == machineId &&
+                    x.Head == command.Head))
                 throw new DuplicatedDataEnteredException();
 
             var dailyRecord = new DailyRecord(creator, salonId, command.Date, shiftId, machineId, command.Head,
@@ -68,7 +71,7 @@ namespace Ex.Application
 
             if (_dailyRecordRepository.Exists(x =>
                     x.Date == command.Date && x.ShiftId == shiftId && x.MachineId == machineId &&
-                    x.Guid != command.Guid))
+                    x.Guid != command.Guid && x.Head == command.Head))
                 throw new DuplicatedDataEnteredException();
 
             dailyRecord.Edit(actor, command.Date, shiftId, machineId, command.Head, command.Description,
@@ -83,7 +86,7 @@ namespace Ex.Application
         {
             var actor = _claimHelper.GetCurrentUserGuid();
             var dailyRecord = _dailyRecordRepository.Load(command.Guid);
-            dailyRecord.Remove(actor);
+            _dailyRecordRepository.Delete(dailyRecord);
         }
     }
 }

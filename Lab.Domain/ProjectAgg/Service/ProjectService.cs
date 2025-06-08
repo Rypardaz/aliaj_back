@@ -71,8 +71,8 @@ namespace Ex.Domain.ProjectAgg.Service
                 }
             }
 
-            if (project.Details.GroupBy(x => x.PartCode).Any(x => x.Count() > 1))
-                throw new BusinessException("0", "کد قطعه تکراری وارد شده است، لطفا اصلاح کنید.");
+            // if (project.Details.GroupBy(x => x.PartCode).Any(x => x.Count() > 1))
+            //     throw new BusinessException("0", "کد قطعه تکراری وارد شده است، لطفا اصلاح کنید.");
         }
     }
 }

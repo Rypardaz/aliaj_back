@@ -1,25 +1,39 @@
 ﻿using Lab.Infrastructure.Report.Contract.ByPart;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report
+namespace Lab.Infrastructure.Report;
+
+public class ByPartReportService : IByPartReportService
 {
-    public class ByPartReportService: IByPartReportService
+    private readonly BaseDapperRepository _repository;
+
+    public ByPartReportService(BaseDapperRepository repository)
     {
-        private readonly BaseDapperRepository _repository;
+        _repository = repository;
+    }
 
-        public ByPartReportService(BaseDapperRepository repository)
+    public List<ByPartReportViewModel> GetByPartReport(ByPartReportSearchModel searchModel)
+    {
+        string? weekIds = null;
+        if (searchModel.WeekIds is not null)
+            weekIds = string.Join(",", searchModel.WeekIds);
+
+        string? monthIds = null;
+        if (searchModel.MonthIds is not null)
+            monthIds = string.Join(",", searchModel.MonthIds);
+
+        string? yearIds = null;
+        if (searchModel.YearIds is not null)
+            yearIds = string.Join(",", searchModel.YearIds);
+
+        return _repository.SelectFromSp<ByPartReportViewModel>("spByPartReport", new
         {
-            _repository = repository;
-        }
-
-        public List<ByPartReportViewModel> GetByPartReport(ByPartReportSearchModel searchModel) =>
-            _repository.SelectFromSp<ByPartReportViewModel>("spByPartReport", new
-            {
-                searchModel.SalonGuid,
-                searchModel.WeekId,
-                searchModel.MonthId,
-                searchModel.FromDate,
-                searchModel.ToDate
-            });
+            searchModel.SalonGuid,
+            WeekIds = weekIds,
+            MonthIds = monthIds,
+            YearIds = yearIds, 
+            searchModel.FromDate,
+            searchModel.ToDate
+        });
     }
 }

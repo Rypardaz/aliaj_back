@@ -13,6 +13,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="PhoenixFramework.Application" Version="1.3.2" />
       <PackageReference Include="PhoenixFramework.Core" Version="1.1.3" />
       <PackageReference Include="PhoenixFramework.Domain" Version="1.2.3" />
       <PackageReference Include="PhoenixFramework.EntityFramework" Version="1.1.8" />

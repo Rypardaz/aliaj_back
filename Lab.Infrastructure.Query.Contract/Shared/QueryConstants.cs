@@ -17,8 +17,11 @@
         public const string GetMachineFor = "dbo.spGetMachineFor";
         public const string GetProjectFor = "dbo.spGetProjectFor";
         public const string GetProjectDetailFor = "dbo.spGetProjectDetail";
+        public const string GetProjectReplacementWireTypes = "dbo.spGetProjectReplacementWireTypes";
         public const string GetDailyRecordFor = "dbo.spGetDailyRecordFor";
         public const string GetWireScrewFor = "dbo.spGetWireScrewFor";
         public const string GetProjectTypeFor = "dbo.spGetProjectTypeFor";
+        public const string GetTicketFor = "dbo.spGetTicketFor";
+        public const string GetProjectStep = "dbo.GetProjectStep";
     }
 }

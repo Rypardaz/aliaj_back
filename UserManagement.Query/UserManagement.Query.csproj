@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="PhoenixFramework.Application" Version="1.3.2" />
     <PackageReference Include="PhoenixFramework.Dapper" Version="1.0.9" />
   </ItemGroup>
 

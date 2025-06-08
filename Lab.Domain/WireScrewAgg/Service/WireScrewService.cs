@@ -15,10 +15,9 @@ namespace Ex.Domain.WireScrewAgg.Service
             _wireScrewRepository = wireScrewRepository;
         }
 
-        public void ThrowWhenDuplicatedScrew(long wireTypeId, int screw, long? id = null)
+        public void ThrowWhenDuplicatedScrew(int screw, long? id = null)
         {
-            _predicate = x => x.WireTypeId == wireTypeId;
-            _predicate = _predicate.And(x => x.Screw == screw);
+            _predicate = x => x.Screw == screw;
 
             if (id is not null)
                 _predicate = _predicate.And(x => x.Id != id);

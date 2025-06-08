@@ -70,7 +70,7 @@ public class RoleApplication : IRoleApplication
     public void Delete(Guid guid)
     {
         var role = _roleRepository.Load(guid);
-
+        
         _roleRepository.Delete(role);
         _roleRepository.SaveChanges();
     }

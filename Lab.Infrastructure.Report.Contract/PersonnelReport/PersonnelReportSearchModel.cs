@@ -1,11 +1,14 @@
-﻿namespace Lab.Infrastructure.Report.Contract.PersonnelReport
+﻿namespace Lab.Infrastructure.Report.Contract.PersonnelReport;
+
+public class PersonnelReportSearchModel
 {
-    public class PersonnelReportSearchModel
-    {
-        public Guid PersonnelGuid { get; set; }
-        public int? WeekId { get; set; }
-        public int? MonthId { get; set; }
-        public string? FromDate { get; set; }
-        public string? ToDate { get; set; }
-    }
+    public Guid? SalonGuid { get; set; }
+    public Guid? PersonnelGuid { get; set; }
+    public Guid? ShiftGuid { get; set; }
+    public List<int>? WeekIds { get; set; }
+    public List<int>? MonthIds { get; set; }
+    public List<int>? YearIds { get; set; }
+    public string? FromDate { get; set; }
+    public string? ToDate { get; set; }
+    public int Type { get; set; }
 }

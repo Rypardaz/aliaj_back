@@ -1,22 +1,30 @@
-﻿using Lab.Infrastructure.Report.Contract.ProjectReport;
-using PhoenixFramework.Dapper;
+﻿using PhoenixFramework.Dapper;
+using Lab.Infrastructure.Report.Contract.ProjectReport;
 
-namespace Lab.Infrastructure.Report
+namespace Lab.Infrastructure.Report;
+
+public class ProjectReportService : IProjectReportService
 {
-    public class ProjectReportService : IProjectReportService
+    private readonly BaseDapperRepository _repository;
+
+    public ProjectReportService(BaseDapperRepository repository)
     {
-        private readonly BaseDapperRepository _repository;
-
-        public ProjectReportService(BaseDapperRepository repository)
-        {
-            _repository = repository;
-        }
-
-        public List<ProjectReportViewModel> GetProjectReport(ProjectReportSearchModel searchModel) =>
-            _repository.SelectFromSp<ProjectReportViewModel>("spProjectReport", new
-            {
-                searchModel.ProjectGuid,
-            });
+        _repository = repository;
     }
-}
 
+    public List<ProjectWireTypeViewModel> GetProjectWireTypes(ProjectReportSearchModel searchModel)
+    {
+        return _repository.SelectFromSp<ProjectWireTypeViewModel>("spProjectReport", new
+        {
+            ReportType = 0,
+            searchModel.ProjectGuid
+        });
+    }
+
+    public List<ProjectReportViewModel> GetProjectReport(ProjectReportSearchModel searchModel) =>
+        _repository.SelectFromSp<ProjectReportViewModel>("spProjectReport", new
+        {
+            ReportType = 1,
+            searchModel.ProjectGuid
+        });
+}

@@ -48,7 +48,7 @@ public class UserController : ControllerBase
         return a;
     }
 
-    [HttpPost("{guid:guid}")]
+    [HttpPost("Delete/{guid:guid}")]
     public void Delete(Guid guid)
     {
         _userApplication.Delete(guid);

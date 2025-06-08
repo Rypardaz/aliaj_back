@@ -2,21 +2,24 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping
+namespace Lab.Infrastructure.Persist.Mapping;
+
+public class ProjectMapping : IEntityTypeConfiguration<Project>
 {
-    public class ProjectMapping : IEntityTypeConfiguration<Project>
+    public void Configure(EntityTypeBuilder<Project> builder)
     {
-        public void Configure(EntityTypeBuilder<Project> builder)
-        {
-            builder.ToTable("tbProject");
-            builder.HasKey(x => x.Id);
+        builder.ToTable("tbProject");
+        builder.HasKey(x => x.Id);
 
-            builder.Ignore(x => x.IsLocked);
-            builder.Ignore(x => x.IsRemoved);
+        builder.Ignore(x => x.IsLocked);
+        builder.Ignore(x => x.IsRemoved);
 
-            builder.HasMany(x => x.Details)
-                .WithOne(x => x.Project)
-                .HasForeignKey(x => x.ProjectId);
-        }
+        builder.HasMany(x => x.Details)
+            .WithOne(x => x.Project)
+            .HasForeignKey(x => x.ProjectId);
+
+        builder.HasMany(x => x.ReplacementWireTypes)
+            .WithOne(x => x.Project)
+            .HasForeignKey(x => x.ProjectId);
     }
 }

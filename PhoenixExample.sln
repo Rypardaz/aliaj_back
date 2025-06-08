@@ -75,9 +75,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8F697B3D-2684-4264-A11F-E6ED07FD04B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Infrastructure.Report.Contract", "Lab.Infrastructure.Report.Contract\Lab.Infrastructure.Report.Contract.csproj", "{9B394EAD-D299-4233-BE80-5AF1BF293321}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab.Infrastructure.Report.Contract", "Lab.Infrastructure.Report.Contract\Lab.Infrastructure.Report.Contract.csproj", "{9B394EAD-D299-4233-BE80-5AF1BF293321}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Infrastructure.Report", "Lab.Infrastructure.Report\Lab.Infrastructure.Report.csproj", "{ABB93CAD-CAE6-4D00-9B37-666980531251}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab.Infrastructure.Report", "Lab.Infrastructure.Report\Lab.Infrastructure.Report.csproj", "{ABB93CAD-CAE6-4D00-9B37-666980531251}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

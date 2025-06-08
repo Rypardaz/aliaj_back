@@ -45,7 +45,7 @@ public class PartGroupController : ControllerBase
     public IActionResult GetDetails(Guid guid)
         => new JsonResult(_queryFacade.GetDetails(guid));
 
-    [HttpGet("GetForCombo/{salonGuid}")]
+    [HttpGet("GetForCombo/{salonGuid?}")]
     public IActionResult GetForCombo(Guid? salonGuid)
         => new JsonResult(_queryFacade.Combo(salonGuid));
 }

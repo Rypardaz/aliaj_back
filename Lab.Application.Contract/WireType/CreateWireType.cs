@@ -7,11 +7,10 @@ namespace Ex.Application.Contracts.WireType
     {
         [Required]
         public Guid WireTypeGroupGuid { get; set; }
+        public string Code { get; set; }
         [Required]
         public required string Name { get; set; }
 
         public decimal? WireSize { get; set; }
-
-        public Guid? SourceGuid { get; set; }
     }
 }

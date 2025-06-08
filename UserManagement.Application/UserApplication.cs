@@ -99,7 +99,7 @@ public class UserApplication : IUserApplication
     public void Edit(EditUser command)
     {
         var actor = _claimHelper.GetCurrentUserGuid();
-        var user = _userRepository.Load(command.Guid, "Passwords");
+        var user = _userRepository.Load(command.Guid, "Passwords,Roles");
         var roleIds = _roleRepository.GetIdBatchBy(command.RoleGuids);
 
         if (_userRepository.Exists(x => x.Username == command.Username && x.Guid != command.Guid))
