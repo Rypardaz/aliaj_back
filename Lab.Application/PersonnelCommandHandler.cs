@@ -19,7 +19,8 @@ namespace Ex.Application
         private readonly IPersonnelService _personnelService;
         private readonly ISalonRepository _salonRepository;
 
-        public PersonnelCommandHandler(IClaimHelper claimHelper, IPersonnelRepository personnelRepository, IPersonnelService personnelService, ISalonRepository salonRepository)
+        public PersonnelCommandHandler(IClaimHelper claimHelper, IPersonnelRepository personnelRepository,
+            IPersonnelService personnelService, ISalonRepository salonRepository)
         {
             _claimHelper = claimHelper;
             _personnelRepository = personnelRepository;
@@ -31,7 +32,8 @@ namespace Ex.Application
         {
             var creator = _claimHelper.GetCurrentUserGuid();
             var salonId = await _salonRepository.GetIdByAsync(command.SalonGuid);
-            var personnel = new Personnel(creator, command.Name, command.Code, command.Family, salonId, _personnelService);
+            var personnel = new Personnel(creator, command.Name, command.Code, command.Family, command.NationalCode,
+                salonId, _personnelService);
             await _personnelRepository.CreateAsync(personnel);
 
             return personnel.Guid;
@@ -42,7 +44,8 @@ namespace Ex.Application
             var actor = _claimHelper.GetCurrentUserGuid();
             var personnel = _personnelRepository.Load(command.Guid);
             var salonId = await _salonRepository.GetIdByAsync(command.SalonGuid);
-            personnel.Edit(actor, command.Name, command.Code, command.Family, salonId, _personnelService);
+            personnel.Edit(actor, command.Name, command.Code, command.Family, command.NationalCode, salonId,
+                _personnelService);
         }
 
         public void Handle(RemovePersonnel command)
@@ -50,6 +53,7 @@ namespace Ex.Application
             var personnel = _personnelRepository.Load(command.Guid);
             _personnelRepository.Delete(personnel);
         }
+
         public void Handle(ActivatePersonnel command)
         {
             var actor = _claimHelper.GetCurrentUserGuid();

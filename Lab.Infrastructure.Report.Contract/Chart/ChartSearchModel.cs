@@ -6,11 +6,11 @@ public class ChartSearchModel
     public string? FromDate { get; set; }
     public string? ToDate { get; set; }
     public int? YearIds { get; set; }
-    public int? MonthId { get; set; }
-    public int? WeekId { get; set; }
+    public List<int>? MonthIds { get; set; }
+    public List<int>? WeekIds { get; set; }
     public List<Guid>? WireTypeGuid { get; set; }
     public List<Guid>? MachineGuid { get; set; }
-    public List<Guid>? SalonGuid { get; set; }
+    public Guid? SalonGuid { get; set; }
     public List<Guid>? PersonnelGuid { get; set; }
     public Guid? ActivityGuid { get; set; }
     public int? ActivitySubType { get; set; }

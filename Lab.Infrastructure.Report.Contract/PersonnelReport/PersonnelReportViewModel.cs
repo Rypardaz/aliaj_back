@@ -2,6 +2,8 @@
 
 public class PersonnelReportViewModel
 {
+    public string Fullname { get; set; }
+    public string NationalCode { get; set; }
     public string? ProjectCode { get; set; }
     public string? TaskMasterName { get; set; }
     public string? PartName { get; set; }

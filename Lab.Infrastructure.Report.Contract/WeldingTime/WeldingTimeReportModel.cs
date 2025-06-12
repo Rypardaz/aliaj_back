@@ -2,7 +2,7 @@ namespace Lab.Infrastructure.Report.Contract.WeldingTime;
 
 public class WeldingTimeReportModel
 {
-    public string? DateTime { get; set; }
+    public string? Date_Time { get; set; }
     public string? DayOfWeek { get; set; }
     public string? ShiftWork { get; set; }
     public string? TotalTime { get; set; }
