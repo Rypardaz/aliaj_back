@@ -18,8 +18,4 @@
       <PackageReference Include="PhoenixFramework.Logging" Version="1.2.1" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Lab.Infrastructure.Log\Lab.Infrastructure.Log.csproj" />
-    </ItemGroup>
-
 </Project>
