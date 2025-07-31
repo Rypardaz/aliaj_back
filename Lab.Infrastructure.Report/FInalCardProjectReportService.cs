@@ -17,7 +17,9 @@ namespace Lab.Infrastructure.Report
         {
             return _repository.SelectFromSp<FinalCardProjectReportModel>("spfinalcardproject", new
             {
-                searchModel.ProjectGuid
+                searchModel.ProjectGuid,
+                searchModel.PartGuid,
+                searchModel.PartCode
             });
         }
     }

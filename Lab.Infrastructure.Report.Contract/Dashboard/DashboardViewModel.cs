@@ -16,6 +16,7 @@ public class DashboardViewModel
     public string Salon { get; set; }
     public string TaskMaster { get; set; }
     public string DeliveryDate { get; set; }
+    public string StartDate { get; set; }
     public string Progress { get; set; }
 
     public string ProductGroup { get; set; }
