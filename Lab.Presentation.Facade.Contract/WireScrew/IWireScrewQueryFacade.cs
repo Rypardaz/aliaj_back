@@ -10,5 +10,6 @@ namespace Lab.Presentation.Facade.Contract.WireScrew
         List<WireScrewViewModel> List();
         EditWireScrew GetDetails(Guid guid);
         List<WireScrewComboModel> Combo();
+        List<ProductionWireScrewViewModel> GetProductionWireScrews(ProductionWireScrewSearchModel searchModel);
     }
 }

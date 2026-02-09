@@ -16,5 +16,8 @@ namespace Lab.Presentation.Facade.Query
         public List<WireScrewViewModel> List() => _queryBus.Dispatch<List<WireScrewViewModel>>();
 
         public List<WireScrewComboModel> Combo() => _queryBus.Dispatch<List<WireScrewComboModel>>();
+
+        public List<ProductionWireScrewViewModel> GetProductionWireScrews(ProductionWireScrewSearchModel searchModel) =>
+            _queryBus.Dispatch<List<ProductionWireScrewViewModel>, ProductionWireScrewSearchModel>(searchModel);
     }
 }

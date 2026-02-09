@@ -41,9 +41,9 @@ public class IdentityServiceConfiguration
                 FrontChannelLogoutUri = "https://localhost:5001/signout-oidc",
                 PostLogoutRedirectUris = { "http://localhost:4200" },
 
-                //RedirectUris = { "http://192.168.2.21:8083/#/challange" },
-                //FrontChannelLogoutUri = "http://192.168.2.21:8080/signout-oidc",
-                //PostLogoutRedirectUris = { "http://192.168.2.21:8083" },
+                //RedirectUris = { "http://192.168.2.22:8083/#/challange" },
+                //FrontChannelLogoutUri = "http://192.168.2.22:8080/signout-oidc",
+                //PostLogoutRedirectUris = { "http://192.168.2.22:8083" },
 
                 IdentityTokenLifetime = tokenExpiryTime,
                 AuthorizationCodeLifetime = tokenExpiryTime,

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Ex.Application.Contracts.WireScrew;
+using Lab.Infrastructure.Query.Contracts.WireScrew;
 using Lab.Presentation.Facade.Contract.WireScrew;
 
 namespace Lab.Presentation.Api
@@ -27,15 +28,15 @@ namespace Lab.Presentation.Api
 
         [HttpPost("Delete/{guid:guid}")]
         public void Delete(Guid guid) =>
-           _commandFacade.Delete(guid);
+            _commandFacade.Delete(guid);
 
         [HttpPost("Activate/{guid:guid}")]
         public void Activate(Guid guid) =>
-       _commandFacade.Activate(guid);
+            _commandFacade.Activate(guid);
 
         [HttpPost("DeActivate/{guid:guid}")]
         public void DeActivate(Guid guid) =>
-          _commandFacade.Deactivate(guid);
+            _commandFacade.Deactivate(guid);
 
         [HttpGet("GetList")]
         public IActionResult List()
@@ -48,5 +49,9 @@ namespace Lab.Presentation.Api
         [HttpGet("GetForCombo")]
         public IActionResult GetForCombo()
             => new JsonResult(_queryFacade.Combo());
+
+        [HttpPut("GetProductionWireScrews")]
+        public IActionResult GetProductionWireScrews([FromBody] ProductionWireScrewSearchModel searchModel)
+            => new JsonResult(_queryFacade.GetProductionWireScrews(searchModel));
     }
 }

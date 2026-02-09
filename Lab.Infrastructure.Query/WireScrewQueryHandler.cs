@@ -9,7 +9,8 @@ namespace Lab.Infrastructure.Query
     public class WireScrewQueryHandler :
         IQueryHandler<List<WireScrewViewModel>>,
         IQueryHandler<EditWireScrew, Guid>,
-        IQueryHandler<List<WireScrewComboModel>>
+        IQueryHandler<List<WireScrewComboModel>>,
+        IQueryHandler<List<ProductionWireScrewViewModel>, ProductionWireScrewSearchModel>
     {
         private readonly BaseDapperRepository _dapperRepository;
 
@@ -38,5 +39,9 @@ namespace Lab.Infrastructure.Query
                 Type = QueryTypes.Edit,
                 Guid = guid
             });
+
+        public List<ProductionWireScrewViewModel> Handle(ProductionWireScrewSearchModel searchModel) =>
+            _dapperRepository.SelectFromSp<ProductionWireScrewViewModel>(QueryConstants.spGetProductionWireScrew,
+                new { searchModel.Guid });
     }
 }
