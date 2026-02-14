@@ -9,7 +9,7 @@ public interface IProjectQueryFacade : IFacadeService
     List<ProjectViewModel> List(ProjectSearchModel searchModel);
 
     EditProject GetDetails(Guid guid);
-    List<ProjectComboModel> Combo();
+    List<ProjectComboModel> Combo(ProjectSearchModel searchModel);
     List<ProjectDetailComboModel> DetailsCombo(Guid projectGuid);
     List<ProjectReplacementWireTypeViewModel> GetReplacements(Guid projectGuid);
     List<ProjectStepViewModel> GetProjectStep(ProjectStepSearchModel searchModel);

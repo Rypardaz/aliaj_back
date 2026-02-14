@@ -14,6 +14,7 @@ public class User : AuditableAggregateRootBase<int>
 {
     private readonly IList<UserClaim> _claims;
     private IList<UserRole> _roles;
+    private IList<UserSalon> _salons;
 
     public string Username { get; private set; }
     public string NationalCode { get; private set; }
@@ -27,12 +28,14 @@ public class User : AuditableAggregateRootBase<int>
 
     public IReadOnlyCollection<UserClaim> Claims => new ReadOnlyCollection<UserClaim>(_claims);
     public IReadOnlyCollection<UserRole> Roles => new ReadOnlyCollection<UserRole>(_roles);
+    public IReadOnlyCollection<UserSalon> Salons => new ReadOnlyCollection<UserSalon>(_salons);
 
     protected User()
     {
     }
 
-    public User(Guid actor, IEnumerable<int> rolesIds, string username, string nationalCode, string mobile, string fullname, string employeeCode) : base(actor)
+    public User(Guid actor, IEnumerable<int> rolesIds, IEnumerable<int> salonIds, string username, string nationalCode,
+        string mobile, string fullname, string employeeCode) : base(actor)
     {
         NationalCode = nationalCode;
         Username = username;
@@ -42,16 +45,19 @@ public class User : AuditableAggregateRootBase<int>
         FailedLoginAttempts = 0;
 
         _roles = rolesIds.Select(x => new UserRole(Id, x)).ToList();
+        _salons = salonIds.Select(x => new UserSalon(Id, x)).ToList();
+
         ShouldChangePassword();
     }
 
-    public void Edit(IEnumerable<int> rolesIds, string fullname, string username, string nationalCode, string mobile,
-        string employeeCode)
+    public void Edit(IEnumerable<int> rolesIds, IEnumerable<int> salonIds, string fullname, string username,
+        string nationalCode, string mobile, string employeeCode)
     {
         NationalCode = nationalCode;
         EmployeeCode = employeeCode;
 
         _roles = rolesIds.Select(x => new UserRole(Id, x)).ToList();
+        _salons = salonIds.Select(x => new UserSalon(Id, x)).ToList();
 
         if (!string.IsNullOrEmpty(fullname)) Fullname = fullname;
         if (!string.IsNullOrEmpty(username)) Username = username;

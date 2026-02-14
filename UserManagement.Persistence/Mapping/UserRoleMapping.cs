@@ -20,3 +20,20 @@ public class UserRoleMapping : IEntityTypeConfiguration<UserRole>
         builder.Ignore(x => x.IsActive);
     }
 }
+
+public class UserSalonMapping : IEntityTypeConfiguration<UserSalon>
+{
+    public void Configure(EntityTypeBuilder<UserSalon> builder)
+    {
+        builder.ToTable("tbUserSalons");
+        builder.HasKey(x => x.Id);
+
+        builder.HasOne(x => x.User)
+            .WithMany(x => x.Salons)
+            .HasForeignKey(x => x.UserId);
+
+        builder.Ignore(x => x.Created);
+        builder.Ignore(x => x.CreatedBy);
+        builder.Ignore(x => x.IsActive);
+    }
+}

@@ -15,6 +15,7 @@ namespace Lab.Presentation.Facade.Query
 
         public List<PersonnelViewModel> List() => _queryBus.Dispatch<List<PersonnelViewModel>>();
 
-        public List<PersonnelComboModel> Combo(Guid? salonGuid) => _queryBus.Dispatch<List<PersonnelComboModel>, Guid?>(salonGuid);
+        public List<PersonnelComboModel> Combo(PersonnelSearchModel searchModel) =>
+            _queryBus.Dispatch<List<PersonnelComboModel>, PersonnelSearchModel?>(searchModel);
     }
 }

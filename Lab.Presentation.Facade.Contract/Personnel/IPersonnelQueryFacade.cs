@@ -11,6 +11,6 @@ namespace Lab.Presentation.Facade.Contract.Personnel
         List<PersonnelViewModel> List();
         
         EditPersonnel GetDetails(Guid guid);
-        List<PersonnelComboModel> Combo(Guid? salonGuid);
+        List<PersonnelComboModel> Combo(PersonnelSearchModel salonGuid);
     }
 }

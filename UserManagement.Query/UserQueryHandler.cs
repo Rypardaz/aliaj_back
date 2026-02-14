@@ -47,34 +47,38 @@ public class UserQueryHandler :
     public EditUser Handle(EditUserSearchModel searchModel)
     {
         return _context.Users
-               .Include(x => x.Roles)
-               .Select(x => new EditUser
-               {
-                   Guid = x.Guid,
-                   Username = x.Username,
-                   NationalCode = x.NationalCode,
-                   Fullname = x.Fullname,
-                   Mobile = x.Mobile,
-                   EmployeeCode = x.EmployeeCode,
-                   RoleGuids = x.Roles.Select(x => x.Role.Guid).ToList()
-               }).AsNoTracking()
-               .FirstOrDefault(x => x.Guid == searchModel.Guid);
+            .Include(x => x.Roles)
+            .Select(x => new EditUser
+            {
+                Guid = x.Guid,
+                Username = x.Username,
+                NationalCode = x.NationalCode,
+                Fullname = x.Fullname,
+                Mobile = x.Mobile,
+                EmployeeCode = x.EmployeeCode,
+                RoleGuids = x.Roles.Select(x => x.Role.Guid).ToList(),
+                SalonIds = x.Salons.Select(x => x.SalonId).ToList()
+            }).AsNoTracking()
+            .FirstOrDefault(x => x.Guid == searchModel.Guid);
     }
 
     List<UserComboModel> IQueryHandler<List<UserComboModel>>.Handle()
-        => _repository.SelectFromSp<UserComboModel>(UserSpName, new { Type = QueryOutputs.Combo });
+    {
+        var currentUserGuid = _claimHelper.GetCurrentUserGuid(); 
+        return _repository.SelectFromSp<UserComboModel>(UserSpName, new { Type = QueryOutputs.Combo, UserGuid = currentUserGuid });
+    }
 
     public async Task<UserInformationViewModel> Handle()
     {
         var currentUserGuid = _claimHelper.GetCurrentUserGuid();
 
         var userInfo = await (from user in _context.Users
-                              where user.Guid == currentUserGuid
-                              select new
-                              {
-                                  user.Fullname,
-                                  user.PasswordExpired
-                              }).FirstOrDefaultAsync();
+            where user.Guid == currentUserGuid
+            select new
+            {
+                user.Fullname,
+                user.PasswordExpired
+            }).FirstOrDefaultAsync();
 
         return new UserInformationViewModel
         {
@@ -129,23 +133,23 @@ public class UserQueryHandler :
         searchModel.EndDate = searchModel.EndDatePer.ToGeorgianDateTime();
 
         var usersessions = await (from session in _context.UserSessions
-                                  where session.Created.Date >= searchModel.StartDate.Value.Date
-                                        && session.Created.Date <= searchModel.EndDate.Value.Date
-                                  select (new UserSessionViewModel
-                                  {
-                                      Guid = session.Guid,
-                                      UserGuid = session.UserGuid,
-                                      IsSuccessful = session.IsSuccessful,
-                                      IsSuccessfulTitle = session.IsSuccessful ? "ورود موفق" : "ورود ناموفق",
-                                      ClientIpAddress = session.ClientIpAddress,
-                                      Created = session.Created.ToFarsiFull(),
-                                      CreatedEng = session.Created,
-                                      Fullname = session.UserFullname,
-                                      Username = session.Username,
-                                      CompanyTitle = session.CompanyTitle,
-                                      OrganizationChartTitle = session.OrganizationChartTitle,
-                                      NationalCode = session.NationalCode,
-                                  })).OrderByDescending(x => x.CreatedEng)
+                where session.Created.Date >= searchModel.StartDate.Value.Date
+                      && session.Created.Date <= searchModel.EndDate.Value.Date
+                select (new UserSessionViewModel
+                {
+                    Guid = session.Guid,
+                    UserGuid = session.UserGuid,
+                    IsSuccessful = session.IsSuccessful,
+                    IsSuccessfulTitle = session.IsSuccessful ? "ورود موفق" : "ورود ناموفق",
+                    ClientIpAddress = session.ClientIpAddress,
+                    Created = session.Created.ToFarsiFull(),
+                    CreatedEng = session.Created,
+                    Fullname = session.UserFullname,
+                    Username = session.Username,
+                    CompanyTitle = session.CompanyTitle,
+                    OrganizationChartTitle = session.OrganizationChartTitle,
+                    NationalCode = session.NationalCode,
+                })).OrderByDescending(x => x.CreatedEng)
             .ToListAsync();
 
         if (searchModel.UserGuid != null)

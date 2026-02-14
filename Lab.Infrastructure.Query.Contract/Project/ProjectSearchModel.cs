@@ -6,5 +6,6 @@
         public int SearchType { get; set; } // 1, 2, 3
         public string? FromDate { get; set; }
         public string? ToDate { get; set; }
+        public bool OnlyActive { get; set; }
     }
 }

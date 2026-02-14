@@ -39,8 +39,8 @@ public class ProjectController : ControllerBase
         => new JsonResult(_queryFacade.GetDetails(guid));
 
     [HttpGet("GetForCombo")]
-    public IActionResult GetForCombo()
-        => new JsonResult(_queryFacade.Combo());
+    public IActionResult GetForCombo([FromQuery] ProjectSearchModel searchModel)
+        => new JsonResult(_queryFacade.Combo(searchModel));
 
     [HttpGet("DetailsCombo/{projectGuid:guid}")]
     public IActionResult DetailsCombo(Guid projectGuid)

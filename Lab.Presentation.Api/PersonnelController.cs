@@ -1,4 +1,5 @@
 ﻿using Ex.Application.Contracts.Personnel;
+using Lab.Infrastructure.Query.Contracts.Personnel;
 using Lab.Presentation.Facade.Contract.Personnel;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,8 +46,8 @@ namespace Lab.Presentation.Api
         public IActionResult GetDetails(Guid guid)
             => new JsonResult(_queryFacade.GetDetails(guid));
 
-        [HttpGet("GetForCombo/{salonGuid?}")]
-        public IActionResult GetForCombo(Guid? salonGuid)
-            => new JsonResult(_queryFacade.Combo(salonGuid));
+        [HttpGet("GetForCombo")]
+        public IActionResult GetForCombo([FromQuery] PersonnelSearchModel searchModel)
+            => new JsonResult(_queryFacade.Combo(searchModel));
     }
 }

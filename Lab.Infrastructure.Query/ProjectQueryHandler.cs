@@ -10,7 +10,7 @@ namespace Lab.Infrastructure.Query;
 public class ProjectQueryHandler :
     IQueryHandler<List<ProjectViewModel>, ProjectSearchModel>,
     IQueryHandler<EditProject, Guid>,
-    IQueryHandler<List<ProjectComboModel>>,
+    IQueryHandler<List<ProjectComboModel>, ProjectSearchModel>,
     IQueryHandler<List<ProjectDetailComboModel>, Guid>,
     IQueryHandler<List<ProjectReplacementWireTypeViewModel>, Guid>,
     IQueryHandler<List<ProjectStepViewModel>, ProjectStepSearchModel>
@@ -18,12 +18,6 @@ public class ProjectQueryHandler :
     private readonly BaseDapperRepository _dapperRepository;
 
     public ProjectQueryHandler(BaseDapperRepository dapperRepository) => _dapperRepository = dapperRepository;
-
-    List<ProjectComboModel> IQueryHandler<List<ProjectComboModel>>.Handle() =>
-        _dapperRepository.SelectFromSp<ProjectComboModel>(QueryConstants.GetProjectFor, new
-        {
-            Type = QueryTypes.Combo
-        });
 
     public EditProject Handle(Guid guid)
     {
@@ -72,7 +66,7 @@ public class ProjectQueryHandler :
         });
     }
 
-        List<ProjectDetailComboModel> IQueryHandler<List<ProjectDetailComboModel>, Guid>.Handle(Guid projectGuid)
+    List<ProjectDetailComboModel> IQueryHandler<List<ProjectDetailComboModel>, Guid>.Handle(Guid projectGuid)
     {
         return _dapperRepository.SelectFromSp<ProjectDetailComboModel>(
             QueryConstants.GetProjectDetailFor, new
@@ -101,5 +95,15 @@ public class ProjectQueryHandler :
                 searchModel.PartGuid,
                 searchModel.partCode
             });
+    }
+
+    List<ProjectComboModel> IQueryHandler<List<ProjectComboModel>, ProjectSearchModel>.Handle(
+        ProjectSearchModel searchModel)
+    {
+        return _dapperRepository.SelectFromSp<ProjectComboModel>(QueryConstants.GetProjectFor, new
+        {
+            Type = QueryTypes.Combo,
+            searchModel.OnlyActive
+        });
     }
 }

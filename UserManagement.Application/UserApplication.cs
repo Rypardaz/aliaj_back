@@ -86,7 +86,8 @@ public class UserApplication : IUserApplication
         if (_userRepository.Exists(x => x.Username == command.Username))
             throw new BusinessException("0", "کاربر با این نام کاربری قبلا ثبت شده است.");
 
-        var user = new User(creator, roleIds, command.Username, command.NationalCode, command.Mobile, command.Fullname, command.EmployeeCode);
+        var user = new User(creator, roleIds, command.SalonIds, command.Username, command.NationalCode, command.Mobile,
+            command.Fullname, command.EmployeeCode);
 
         var passwordLifetimeDays = int.Parse(_configuration["PasswordLifetimeDays"]);
         var forbiddenOldPasswordsCount = int.Parse(_configuration["ForbiddenOldPasswordsCount"]);
@@ -99,13 +100,14 @@ public class UserApplication : IUserApplication
     public void Edit(EditUser command)
     {
         var actor = _claimHelper.GetCurrentUserGuid();
-        var user = _userRepository.Load(command.Guid, "Passwords,Roles");
+        var user = _userRepository.Load(command.Guid, "Passwords,Roles,Salons");
         var roleIds = _roleRepository.GetIdBatchBy(command.RoleGuids);
 
         if (_userRepository.Exists(x => x.Username == command.Username && x.Guid != command.Guid))
             throw new BusinessException("0", "کاربر با این نام کاربری قبلا ثبت شده است.");
 
-        user.Edit(roleIds, command.Fullname, command.Username, command.NationalCode, command.Mobile, command.EmployeeCode);
+        user.Edit(roleIds, command.SalonIds, command.Fullname, command.Username, command.NationalCode, command.Mobile,
+            command.EmployeeCode);
 
         if (!string.IsNullOrWhiteSpace(command.Password))
         {

@@ -7,6 +7,7 @@ namespace UserManagement.Application.Contracts.Commands.User
     public class CreateUser : ICommand
     {
         public List<Guid> RoleGuids { get; set; }
+        public List<int> SalonIds { get; set; }
         public string Username { get; set; }
         public string NationalCode { get; set; }
         public string Password { get; set; }

@@ -16,7 +16,8 @@ public class ProjectQueryFacade : IProjectQueryFacade
     public List<ProjectViewModel> List(ProjectSearchModel searchModel) =>
         _queryBus.Dispatch<List<ProjectViewModel>, ProjectSearchModel>(searchModel);
 
-    public List<ProjectComboModel> Combo() => _queryBus.Dispatch<List<ProjectComboModel>>();
+    public List<ProjectComboModel> Combo(ProjectSearchModel searchModel) =>
+        _queryBus.Dispatch<List<ProjectComboModel>, ProjectSearchModel>(searchModel);
 
     public List<ProjectDetailComboModel> DetailsCombo(Guid projectGuid) =>
         _queryBus.Dispatch<List<ProjectDetailComboModel>, Guid>(projectGuid);

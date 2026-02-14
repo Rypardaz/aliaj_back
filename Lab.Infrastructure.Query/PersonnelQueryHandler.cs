@@ -9,13 +9,12 @@ namespace Lab.Infrastructure.Query
     public class PersonnelQueryHandler :
         IQueryHandler<List<PersonnelViewModel>>,
         IQueryHandler<EditPersonnel, Guid>,
-        IQueryHandler<List<PersonnelComboModel>, Guid?>
+        IQueryHandler<List<PersonnelComboModel>, PersonnelSearchModel>
     {
         private readonly BaseDapperRepository _dapperRepository;
 
         public PersonnelQueryHandler(BaseDapperRepository dapperRepository)
         {
-
             _dapperRepository = dapperRepository;
         }
 
@@ -25,15 +24,6 @@ namespace Lab.Infrastructure.Query
                 Type = QueryTypes.List
             });
 
-        List<PersonnelComboModel> IQueryHandler<List<PersonnelComboModel>, Guid?>.Handle(Guid? salonGuid)
-        {
-            return _dapperRepository.SelectFromSp<PersonnelComboModel>(QueryConstants.GetPersonnelFor, new
-            {
-                Type = QueryTypes.Combo,
-                SalonGuid = salonGuid
-            });
-        }
-
         public EditPersonnel Handle(Guid guid) =>
             _dapperRepository.SelectFromSpFirstOrDefault<EditPersonnel>(QueryConstants.GetPersonnelFor, new
             {
@@ -41,5 +31,14 @@ namespace Lab.Infrastructure.Query
                 Guid = guid
             });
 
+        public List<PersonnelComboModel> Handle(PersonnelSearchModel searchModel)
+        {
+            return _dapperRepository.SelectFromSp<PersonnelComboModel>(QueryConstants.GetPersonnelFor, new
+            {
+                Type = QueryTypes.Combo,
+                searchModel.SalonGuid,
+                searchModel.OnlyActive
+            });
+        }
     }
 }
