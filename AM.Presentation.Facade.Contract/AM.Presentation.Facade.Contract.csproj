@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Lab.Presentation.Facade.Contract</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <FrameworkReference Include="Microsoft.AspNetCore.App" />
+      <PackageReference Include="PhoenixFramework.Application" Version="2.0.3" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\AM.Application.Contract\AM.Application.Contract.csproj" />
+      <ProjectReference Include="..\AM.Infrastructure.Query.Contract\AM.Infrastructure.Query.Contract.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Ex.Application.Contracts</RootNamespace>
+        <AssemblyName>Ex.Application.Contract</AssemblyName>
+        <PackageId>Ex.Application.Contract</PackageId>
+        <Authors>Ex.Application.Contract</Authors>
+        <Company>Ex.Application.Contract</Company>
+        <Product>Ex.Application.Contract</Product>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="PhoenixFramework.Application" Version="2.0.3" />
+      <PackageReference Include="PhoenixFramework.Identity" Version="2.0.3" />
+      <PackageReference Include="PhoenixFramework.Logging" Version="2.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="PhoenixFramework.Company">
+        <HintPath>..\..\..\..\..\..\home\hossein\.nuget\packages\phoenixframework.company\2.0.3\lib\net7.0\PhoenixFramework.Company.dll</HintPath>
+      </Reference>
+      <Reference Include="UserManagement.Query.Contracts">
+        <HintPath>..\ServiceHost\bin\Debug\net10.0\UserManagement.Query.Contracts.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

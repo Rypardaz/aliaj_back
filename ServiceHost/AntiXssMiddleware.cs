@@ -4,16 +4,11 @@ using System.Text;
 
 namespace ServiceHost;
 
-public class AntiXssMiddleware
+public class AntiXssMiddleware(RequestDelegate next)
 {
-    private readonly RequestDelegate _next;
+    private readonly RequestDelegate _next = next ?? throw new ArgumentNullException(nameof(next));
     private ErrorResponse _error;
     private readonly int _statusCode = (int)HttpStatusCode.BadRequest;
-
-    public AntiXssMiddleware(RequestDelegate next)
-    {
-        _next = next ?? throw new ArgumentNullException(nameof(next));
-    }
 
     public async Task Invoke(HttpContext context)
     {

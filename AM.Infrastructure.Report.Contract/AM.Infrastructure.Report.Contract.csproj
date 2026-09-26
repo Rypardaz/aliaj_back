@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Lab.Infrastructure.Report.Contract</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PhoenixFramework.Application" Version="2.0.3" />
+    <PackageReference Include="PhoenixFramework.Core" Version="2.0.3" />
+  </ItemGroup>
+
+</Project>

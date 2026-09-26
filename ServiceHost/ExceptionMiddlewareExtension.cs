@@ -2,52 +2,51 @@
 using Microsoft.AspNetCore.Diagnostics;
 using PhoenixFramework.Core.Exceptions;
 
-namespace ServiceHost
-{
-    public static class ExceptionMiddlewareExtension
-    {
-        public const int UserControlledErrorCode = 410;
+namespace ServiceHost;
 
-        public static void ConfigureExceptionHandler(this IApplicationBuilder app)
+public static class ExceptionMiddlewareExtension
+{
+    public const int UserControlledErrorCode = 410;
+
+    public static void ConfigureExceptionHandler(this IApplicationBuilder app)
+    {
+        app.UseExceptionHandler(appError =>
         {
-            app.UseExceptionHandler(appError =>
+            appError.Run(async context =>
             {
-                appError.Run(async context =>
+                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                context.Response.ContentType = "application/json";
+                var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
+                if (contextFeature != null)
                 {
-                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                    context.Response.ContentType = "application/json";
-                    var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
-                    if (contextFeature != null)
+                    var error = contextFeature.Error;
+                    if (error is BusinessException)
                     {
-                        var error = contextFeature.Error;
-                        if (error is BusinessException)
+                        context.Response.StatusCode = UserControlledErrorCode;
+                        await context.Response.WriteAsync(error.ToString());
+                    }
+                    else
+                    {
+                        if (error.InnerException is not null)
                         {
-                            context.Response.StatusCode = UserControlledErrorCode;
-                            await context.Response.WriteAsync(error.ToString());
+                            if (error.InnerException.Message.Contains("DELETE statement conflicted"))
+                            {
+                                context.Response.StatusCode = UserControlledErrorCode;
+                                await context.Response.WriteAsync("ردیف مورد نظر در سایر قسمت ها استفاده شده است.");
+                            }
+                            else if (error.Message.Contains("could not execute query"))
+                            {
+                                context.Response.StatusCode = UserControlledErrorCode;
+                                await context.Response.WriteAsync(error.InnerException.Message);
+                            }
                         }
                         else
                         {
-                            if (error.InnerException is not null)
-                            {
-                                if (error.InnerException.Message.Contains("DELETE statement conflicted"))
-                                {
-                                    context.Response.StatusCode = UserControlledErrorCode;
-                                    await context.Response.WriteAsync("ردیف مورد نظر در سایر قسمت ها استفاده شده است.");
-                                }
-                                else if (error.Message.Contains("could not execute query"))
-                                {
-                                    context.Response.StatusCode = UserControlledErrorCode;
-                                    await context.Response.WriteAsync(error.InnerException.Message);
-                                }
-                            }
-                            else
-                            {
-                                await context.Response.WriteAsync("خطایی رخ داده است.");
-                            }
+                            await context.Response.WriteAsync("خطایی رخ داده است.");
                         }
                     }
-                });
+                }
             });
-        }
+        });
     }
 }
