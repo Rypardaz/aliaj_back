@@ -1,6 +1,8 @@
-﻿namespace Ex.Application.Contracts.Role;
+﻿using PhoenixFramework.Application.Command;
 
-public class CreateRole
+namespace Ex.Application.Contracts.Role;
+
+public class CreateRole : ICommand
 {
     public string Title { get; set; }
     public List<int> Permissions { get; set; }
