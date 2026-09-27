@@ -1,6 +1,8 @@
-﻿namespace Ex.Application.Contracts.User;
+﻿using PhoenixFramework.Application.Command;
 
-public class ChangePassword
+namespace Ex.Application.Contracts.User;
+
+public class ChangePassword : ICommand
 {
     public int UserId { get; set; }
     public string Password { get; set; }

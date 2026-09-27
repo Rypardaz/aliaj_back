@@ -8,11 +8,10 @@ using PhoenixFramework.Identity;
 
 namespace Ex.Application;
 
-public class RoleApplication(
+public class RoleCommandHandler(
     IRoleRepository roleRepository,
     IRoleValidatorService roleValidatorService,
-    IClaimHelper claimHelper,
-    IQueryBus queryBus) :
+    IClaimHelper claimHelper) :
     ICommandHandler<CreateRole>,
     ICommandHandler<EditRole>,
     ICommandHandler<DeleteRole>

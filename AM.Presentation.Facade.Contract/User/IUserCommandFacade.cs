@@ -1,13 +1,14 @@
-﻿namespace Ex.Application.Contracts.User;
+using Ex.Application.Contracts.User;
+using PhoenixFramework.Core;
 
-public interface IUserApplication
+namespace Lab.Presentation.Facade.Contract.User;
+
+public interface IUserCommandFacade : IFacadeService
 {
     UserViewModel Login(Login command);
     void ChangePassword(ChangePassword command);
     void Create(CreateUser command);
     void Edit(EditUser command);
-    EditUser GetBy(Guid guid);
-    List<UserViewModel> GetList();
     void Delete(Guid guid);
     void Lock(Guid guid);
     void Unlock(Guid guid);

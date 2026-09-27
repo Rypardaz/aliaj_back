@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PhoenixFramework.Application" Version="2.0.3" />
-    <PackageReference Include="PhoenixFramework.Core" Version="2.0.3" />
+    <PackageReference Include="PhoenixFramework.Application" Version="2.0.8" />
+    <PackageReference Include="PhoenixFramework.Core" Version="2.0.8" />
   </ItemGroup>
 
 </Project>

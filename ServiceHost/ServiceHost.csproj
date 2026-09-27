@@ -20,8 +20,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="PhoenixFramework.Application" Version="2.0.3" />
-    <PackageReference Include="PhoenixFramework.Autofac" Version="2.0.3" />
+    <PackageReference Include="PhoenixFramework.Application" Version="2.0.8" />
+    <PackageReference Include="PhoenixFramework.Autofac" Version="2.0.8" />
   </ItemGroup>
 
 </Project>

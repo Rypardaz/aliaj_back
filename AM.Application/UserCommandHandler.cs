@@ -1,33 +1,40 @@
-﻿using Ex.Application.Contracts.User;
-using Ex.Domain.RoleAgg;
+﻿using Ex.Domain.RoleAgg;
 using Ex.Domain.UserAgg;
-using Microsoft.Extensions.Configuration;
-using PhoenixFramework.Application.Query;
-using PhoenixFramework.Core.Exceptions;
 using PhoenixFramework.Identity;
+using Ex.Application.Contracts.User;
+using PhoenixFramework.Core.Exceptions;
+using Microsoft.Extensions.Configuration;
+using PhoenixFramework.Application.Command;
 
 namespace Ex.Application;
 
-public class UserApplication(
+public class UserCommandHandler(
     IUserRepository userRepository,
     IPasswordHasher passwordHasher,
-    IQueryBus queryBus,
     IClaimHelper claimHelper,
     IRoleRepository roleRepository,
-    IConfiguration configuration)
-    : IUserApplication
+    IConfiguration configuration) :
+    ICommandHandler<Login, UserViewModel>,
+    ICommandHandler<ChangePassword>,
+    ICommandHandler<CreateUser>,
+    ICommandHandler<EditUser>,
+    ICommandHandler<DeleteUser>,
+    ICommandHandler<LockUser>,
+    ICommandHandler<UnlockUser>,
+    ICommandHandler<OpenSession>,
+    ICommandHandler<CloseSession>
 {
-    public UserViewModel Login(Login command)
+    public UserViewModel Handle(Login command)
     {
         var user = userRepository.GetByUsername(command.Username);
 
         if (user == null)
             throw new BusinessException("0", "نام کاربری یا کلمه عبور اشتباه است.");
 
-        //var (verified, _) = _passwordHasher.Check(user.Password, command.Password);
+        var (verified, _) = passwordHasher.Check(user.Passwords[0].Password, command.Password);
 
-        //if (!verified)
-        //    throw new BusinessException("0", "نام کاربری یا کلمه عبور اشتباه است.");
+        if (!verified)
+            throw new BusinessException("0", "نام کاربری یا کلمه عبور اشتباه است.");
 
         return new UserViewModel
         {
@@ -37,7 +44,7 @@ public class UserApplication(
         };
     }
 
-    public void ChangePassword(ChangePassword command)
+    public void Handle(ChangePassword command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var user = userRepository.Load(actor, "Passwords");
@@ -47,10 +54,9 @@ public class UserApplication(
         user.SetPassword(actor, command.Password, passwordLifetimeDays, forbiddenOldPasswordsCount, passwordHasher);
 
         userRepository.Update(user);
-        userRepository.SaveChanges();
     }
 
-    public void Create(CreateUser command)
+    public void Handle(CreateUser command)
     {
         var creator = claimHelper.GetCurrentUserGuid();
 
@@ -67,10 +73,9 @@ public class UserApplication(
         user.SetPassword(creator, command.Password, passwordLifetimeDays, forbiddenOldPasswordsCount, passwordHasher);
 
         userRepository.Create(user);
-        userRepository.SaveChanges();
     }
 
-    public void Edit(EditUser command)
+    public void Handle(EditUser command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var user = userRepository.Load(command.Guid, "Passwords,Roles,Salons");
@@ -91,46 +96,30 @@ public class UserApplication(
         }
 
         userRepository.Update(user);
-        userRepository.SaveChanges();
     }
 
-    public EditUser GetBy(Guid guid)
+    public void Handle(DeleteUser command)
     {
-        return queryBus.Dispatch<EditUser, EditUserSearchModel>(new EditUserSearchModel(guid));
-    }
-
-    public List<UserViewModel> GetList()
-    {
-        return queryBus.Dispatch<List<UserViewModel>>();
-    }
-
-    public void Delete(Guid guid)
-    {
-        var user = userRepository.Load(guid);
+        var user = userRepository.Load(command.Guid);
 
         userRepository.Delete(user);
-        userRepository.SaveChanges();
     }
 
-    public void Lock(Guid guid)
+    public void Handle(LockUser command)
     {
         var currentUserGuid = claimHelper.GetCurrentUserGuid();
-        var user = userRepository.Load(guid);
+        var user = userRepository.Load(command.Guid);
         user.Lock(currentUserGuid);
-
-        userRepository.SaveChanges();
     }
 
-    public void Unlock(Guid guid)
+    public void Handle(UnlockUser command)
     {
         var currentUserGuid = claimHelper.GetCurrentUserGuid();
-        var user = userRepository.Load(guid);
+        var user = userRepository.Load(command.Guid);
         user.ResetFailedLoginAttempts(currentUserGuid);
-
-        userRepository.SaveChanges();
     }
 
-    public void OpenSession(OpenSession command)
+    public void Handle(OpenSession command)
     {
         //var tokenExpiryTime = int.Parse(_configuration["TokenExpiryTime"]);
         //var currentUserGuid = _claimHelper.GetCurrentUserGuid();
@@ -142,11 +131,9 @@ public class UserApplication(
         //_userRepository.SaveChanges();
     }
 
-    public void CloseSession(Guid guid)
+    public void Handle(CloseSession command)
     {
-        var user = userRepository.Load(guid, "Sessions");
-        user.CloseAllSessions(guid);
-
-        userRepository.SaveChanges();
+        var user = userRepository.Load(command.Guid, "Sessions");
+        user.CloseAllSessions(command.Guid);
     }
 }

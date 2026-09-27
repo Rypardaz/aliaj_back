@@ -1,6 +1,8 @@
-﻿namespace Ex.Application.Contracts.User;
+﻿using PhoenixFramework.Application.Command;
 
-public class Login
+namespace Ex.Application.Contracts.User;
+
+public class Login : ICommand
 {
     public string Username { get; set; }
     public string Password { get; set; }
