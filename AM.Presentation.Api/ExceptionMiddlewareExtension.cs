@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Diagnostics;
 using PhoenixFramework.Core.Exceptions;
 
-namespace ServiceHost;
+namespace AM.Presentation.Api;
 
 public static class ExceptionMiddlewareExtension
 {

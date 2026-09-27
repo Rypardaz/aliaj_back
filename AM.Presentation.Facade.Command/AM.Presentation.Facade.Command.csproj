@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AM.Domain\AM.Domain.csproj" />
-      <ProjectReference Include="..\AM.Presentation.Api\AM.Presentation.Api.csproj" />
       <ProjectReference Include="..\AM.Presentation.Facade.Contract\AM.Presentation.Facade.Contract.csproj" />
     </ItemGroup>
 

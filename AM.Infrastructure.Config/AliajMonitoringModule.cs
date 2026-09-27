@@ -13,11 +13,10 @@ using Autofac.Extras.DynamicProxy;
 using Ex.Application;
 using Ex.Domain.PartGroupAgg.Service;
 using Lab.Infrastructure.Report;
-using Lab.Infrastructure.Report.Contract.Management;
 
 namespace Lab.Infrastructure.Config;
 
-public class LaboratoryModule(string connectionString) : Module
+public class AliajMonitoringModule(string connectionString) : Module
 {
     public string ConnectionString { get; set; } = connectionString;
 

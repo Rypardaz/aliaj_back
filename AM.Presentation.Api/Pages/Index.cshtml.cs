@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ServiceHost.Pages;
+namespace AM.Presentation.Api.Pages;
 
 public class IndexModel(ILogger<IndexModel> logger) : PageModel
 {

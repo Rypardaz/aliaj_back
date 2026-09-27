@@ -2,7 +2,7 @@
 using System.Net;
 using System.Text;
 
-namespace ServiceHost;
+namespace AM.Presentation.Api;
 
 public class AntiXssMiddleware(RequestDelegate next)
 {

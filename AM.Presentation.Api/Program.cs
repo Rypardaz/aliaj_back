@@ -1,5 +1,5 @@
 using System.IdentityModel.Tokens.Jwt;
-using ServiceHost;
+using AM.Presentation.Api;
 using System.IO.Compression;
 using System.Security.Claims;
 using Autofac;
@@ -79,7 +79,7 @@ if (string.IsNullOrWhiteSpace(connectionString))
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
     containerBuilder.RegisterModule<PhoenixFrameworkModule>();
-    containerBuilder.RegisterModule(new LaboratoryModule(connectionString));
+    containerBuilder.RegisterModule(new AliajMonitoringModule(connectionString));
 });
 
 var app = builder.Build();
