@@ -1,9 +1,8 @@
-﻿using Ex.Application.Contracts.Salon;
-using Lab.Infrastructure.Query.Contracts.Salon;
+﻿using AM.Application.Contracts.Salon;
+using AM.Infrastructure.Query.Contract.Salon;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.Salon;
+namespace AM.Presentation.Facade.Contract.Salon;
 
 public interface ISalonQueryFacade : IFacadeService
 {

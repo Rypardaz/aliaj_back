@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.PowderType;
-using Lab.Presentation.Facade.Contract.PowderType;
+﻿using AM.Application.Contracts.PowderType;
+using AM.Presentation.Facade.Contract.PowderType;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class PowderTypeCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : IPowderTypeCommandFacade

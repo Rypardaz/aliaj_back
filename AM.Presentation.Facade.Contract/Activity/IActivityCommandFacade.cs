@@ -1,8 +1,7 @@
-﻿using Ex.Application.Contracts.Activity;
+﻿using AM.Application.Contracts.Activity;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.Activity;
+namespace AM.Presentation.Facade.Contract.Activity;
 
 public interface IActivityCommandFacade : IFacadeService
 {

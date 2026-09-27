@@ -1,8 +1,8 @@
-using Ex.Application.Contracts.User;
-using Lab.Infrastructure.Query.Contracts.User;
+using AM.Application.Contracts.User;
+using AM.Infrastructure.Query.Contract.User;
 using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.User;
+namespace AM.Presentation.Facade.Contract.User;
 
 public interface IUserQueryFacade : IFacadeService
 {

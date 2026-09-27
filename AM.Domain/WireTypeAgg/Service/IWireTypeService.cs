@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.WireTypeAgg.Service;
+namespace AM.Domain.WireTypeAgg.Service;
 
 public interface IWireTypeService : IDomainService
 {

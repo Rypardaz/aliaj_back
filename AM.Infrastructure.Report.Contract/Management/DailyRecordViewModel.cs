@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Report.Contract.Management;
+﻿namespace AM.Infrastructure.Report.Contract.Management;
 
 public class DailyRecordViewModel
 {

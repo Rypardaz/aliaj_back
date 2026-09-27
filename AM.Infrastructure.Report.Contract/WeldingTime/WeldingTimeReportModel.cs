@@ -1,4 +1,4 @@
-namespace Lab.Infrastructure.Report.Contract.WeldingTime;
+namespace AM.Infrastructure.Report.Contract.WeldingTime;
 
 public class WeldingTimeReportModel
 {

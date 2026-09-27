@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Lab.Infrastructure.Report.Contract.BachReportOnDate;
+namespace AM.Infrastructure.Report.Contract.BachReportOnDate;
 
 public interface IBachReportOnDateReportService : IReportService
 {

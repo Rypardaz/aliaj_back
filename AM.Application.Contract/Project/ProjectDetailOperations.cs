@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.Project;
+﻿namespace AM.Application.Contracts.Project;
 
 public class ProjectDetailOperations
 {

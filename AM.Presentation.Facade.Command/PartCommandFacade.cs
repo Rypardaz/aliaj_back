@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.Part;
-using Lab.Presentation.Facade.Contract.Part;
+﻿using AM.Application.Contracts.Part;
+using AM.Presentation.Facade.Contract.Part;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class PartCommandFacade(
     ICommandBus commandBus,

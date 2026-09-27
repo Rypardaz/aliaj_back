@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Report.Contract.DailyRecordListProductUnitsReport;
+﻿namespace AM.Infrastructure.Report.Contract.DailyRecordListProductUnitsReport;
 
 public class DailyRecordListProductUnitsReportSearchModel
 {

@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.Personnel;
+﻿namespace AM.Application.Contracts.Personnel;
 
 public class EditPersonnel : CreatePersonnel
 {

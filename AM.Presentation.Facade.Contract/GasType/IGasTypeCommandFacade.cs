@@ -1,8 +1,7 @@
-﻿using Ex.Application.Contracts.GasType;
+﻿using AM.Application.Contracts.GasType;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.GasType;
+namespace AM.Presentation.Facade.Contract.GasType;
 
 public interface IGasTypeCommandFacade : IFacadeService
 {

@@ -1,9 +1,8 @@
-﻿using Ex.Application.Contracts.PowderType;
-using Lab.Infrastructure.Query.Contracts.PowderType;
+﻿using AM.Application.Contracts.PowderType;
+using AM.Infrastructure.Query.Contract.PowderType;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.PowderType;
+namespace AM.Presentation.Facade.Contract.PowderType;
 
 public interface IPowderTypeQueryFacade : IFacadeService
 {

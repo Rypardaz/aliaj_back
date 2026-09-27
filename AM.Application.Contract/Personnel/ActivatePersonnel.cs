@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.Personnel;
+namespace AM.Application.Contracts.Personnel;
 
 public class ActivatePersonnel(Guid guid) : ICommand
 {

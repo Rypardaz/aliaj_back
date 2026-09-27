@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.WireTypeGroup;
+﻿namespace AM.Application.Contracts.WireTypeGroup;
 
 public class EditWireTypeGroup : CreateWireTypeGroup
 {

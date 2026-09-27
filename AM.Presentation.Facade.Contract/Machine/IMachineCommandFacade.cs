@@ -1,8 +1,7 @@
-﻿using Ex.Application.Contracts.Machine;
+﻿using AM.Application.Contracts.Machine;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.Machine;
+namespace AM.Presentation.Facade.Contract.Machine;
 
 public interface IMachineCommandFacade : IFacadeService
 {

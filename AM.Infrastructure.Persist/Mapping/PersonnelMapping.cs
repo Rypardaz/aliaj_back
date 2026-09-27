@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using AM.Domain.PersonnelAgg;
 using Microsoft.EntityFrameworkCore;
-using Ex.Domain.PersonnelAgg;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 public class PersonnelMapping : IEntityTypeConfiguration<Personnel>
 {

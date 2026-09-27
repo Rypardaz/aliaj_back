@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.GasType;
-using Lab.Presentation.Facade.Contract.GasType;
+﻿using AM.Application.Contracts.GasType;
+using AM.Presentation.Facade.Contract.GasType;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

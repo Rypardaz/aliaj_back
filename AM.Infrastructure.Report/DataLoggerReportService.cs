@@ -1,8 +1,8 @@
-using PhoenixFramework.Dapper;
-using Lab.Infrastructure.Report.Contract.DataLogger;
+using AM.Infrastructure.Report.Contract.DataLogger;
 using PhoenixFramework.Application;
+using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class DataLoggerReportService(BaseDapperRepository repository) : IDataLoggerReportService
 {

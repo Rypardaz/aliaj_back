@@ -1,14 +1,14 @@
-using Ex.Domain.ActivityAgg;
+using AM.Domain.ActivityAgg;
+using AM.Domain.PartAgg;
+using AM.Domain.PartGroupAgg;
+using AM.Domain.ProjectAgg;
+using AM.Domain.RoleAgg;
+using AM.Domain.TicketAgg;
+using AM.Domain.UserAgg;
+using AM.Infrastructure.Persist.Mapping;
 using Microsoft.EntityFrameworkCore;
-using Lab.Infrastructure.Persist.Mapping;
-using Ex.Domain.PartGroupAgg;
-using Ex.Domain.PartAgg;
-using Ex.Domain.ProjectAgg;
-using Ex.Domain.RoleAgg;
-using Ex.Domain.TicketAgg;
-using Ex.Domain.UserAgg;
 
-namespace Lab.Infrastructure.Persist;
+namespace AM.Infrastructure.Persist;
 
 public class AliajQueryContext(DbContextOptions<AliajQueryContext> options)
     : DbContext(options) /*, IDbContext*/

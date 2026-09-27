@@ -1,12 +1,12 @@
-﻿using Ex.Domain.ActivityAgg;
-using PhoenixFramework.Identity;
-using Ex.Domain.ActivityAgg.Service;
-using Ex.Application.Contracts.Activity;
+﻿using AM.Application.Contracts.Activity;
+using AM.Domain.ActivityAgg;
+using AM.Domain.ActivityAgg.Service;
+using AM.Domain.ListItemAgg;
+using AM.Domain.SalonAgg;
 using PhoenixFramework.Application.Command;
-using Ex.Domain.ListItemAgg;
-using Ex.Domain.SalonAgg;
+using PhoenixFramework.Identity;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class ActivityCommandHandler(
     IClaimHelper claimHelper,

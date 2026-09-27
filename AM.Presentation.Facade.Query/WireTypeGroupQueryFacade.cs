@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.WireTypeGroup;
-using Lab.Infrastructure.Query.Contracts.WireTypeGroup;
-using Lab.Presentation.Facade.Contract.WireTypeGroup;
+﻿using AM.Application.Contracts.WireTypeGroup;
+using AM.Infrastructure.Query.Contract.WireTypeGroup;
+using AM.Presentation.Facade.Contract.WireTypeGroup;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class WireTypeGroupQueryFacade(IQueryBus queryBus) : IWireTypeGroupQueryFacade
 {

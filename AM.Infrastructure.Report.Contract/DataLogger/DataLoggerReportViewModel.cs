@@ -1,4 +1,4 @@
-namespace Lab.Infrastructure.Report.Contract.DataLogger;
+namespace AM.Infrastructure.Report.Contract.DataLogger;
 
 public class DataLoggerReportViewModel
 {

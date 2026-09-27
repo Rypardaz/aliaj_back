@@ -1,7 +1,7 @@
-﻿using Ex.Domain.MachineAgg;
+﻿using AM.Domain.MachineAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class MachineRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, Machine>(aliajCommandContext), IMachineRepository

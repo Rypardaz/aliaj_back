@@ -1,7 +1,7 @@
-﻿using Lab.Infrastructure.Report.Contract.FinalCardProject;
+﻿using AM.Infrastructure.Report.Contract.FinalCardProject;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class FInalCardProjectReportService(BaseDapperRepository repository) : IFinalCardProjectReportService
 {

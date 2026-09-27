@@ -1,4 +1,4 @@
-namespace Lab.Infrastructure.Report.Contract.MachineReport;
+namespace AM.Infrastructure.Report.Contract.MachineReport;
 
 public class MachineReportModel
 {

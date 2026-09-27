@@ -1,20 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Lab.Infrastructure.Report.Contract.ByPart;
-using Lab.Infrastructure.Report.Contract.Activity;
-using Lab.Infrastructure.Report.Contract.Dashboard;
-using Lab.Infrastructure.Report.Contract.DataLogger;
-using Lab.Infrastructure.Report.Contract.Management;
-using Lab.Infrastructure.Report.Contract.MachineReport;
-using Lab.Infrastructure.Report.Contract.ProjectReport;
-using Lab.Infrastructure.Report.Contract.PersonnelReport;
-using Lab.Infrastructure.Report.Contract.WeldingTime;
-using Lab.Infrastructure.Report.Contract.WireTypeConsumption;
-using Lab.Infrastructure.Report.Contract.FinalCardProject;
-using Lab.Infrastructure.Report.Contract.DailyRecordListReport;
-using Lab.Infrastructure.Report.Contract.BachReportOnDate;
-using Lab.Infrastructure.Report.Contract.DailyRecordListProductUnitsReport;
+﻿using AM.Infrastructure.Report.Contract.Activity;
+using AM.Infrastructure.Report.Contract.BachReportOnDate;
+using AM.Infrastructure.Report.Contract.ByPart;
+using AM.Infrastructure.Report.Contract.DailyRecordListProductUnitsReport;
+using AM.Infrastructure.Report.Contract.DailyRecordListReport;
+using AM.Infrastructure.Report.Contract.Dashboard;
+using AM.Infrastructure.Report.Contract.DataLogger;
+using AM.Infrastructure.Report.Contract.FinalCardProject;
+using AM.Infrastructure.Report.Contract.MachineReport;
+using AM.Infrastructure.Report.Contract.Management;
+using AM.Infrastructure.Report.Contract.PersonnelReport;
+using AM.Infrastructure.Report.Contract.ProjectReport;
+using AM.Infrastructure.Report.Contract.WeldingTime;
+using AM.Infrastructure.Report.Contract.WireTypeConsumption;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

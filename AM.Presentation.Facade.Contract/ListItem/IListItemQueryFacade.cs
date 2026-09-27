@@ -1,7 +1,7 @@
-﻿using Lab.Infrastructure.Query.Contracts.ListItem;
+﻿using AM.Infrastructure.Query.Contract.ListItem;
 using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.ListItem;
+namespace AM.Presentation.Facade.Contract.ListItem;
 
 public interface IListItemQueryFacade : IFacadeService
 {

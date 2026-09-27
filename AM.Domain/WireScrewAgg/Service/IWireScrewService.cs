@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.WireScrewAgg.Service;
+namespace AM.Domain.WireScrewAgg.Service;
 
 public interface IWireScrewService : IDomainService
 {

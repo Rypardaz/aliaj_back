@@ -1,7 +1,7 @@
-﻿using PhoenixFramework.Dapper;
-using Lab.Infrastructure.Report.Contract.Chart;
+﻿using AM.Infrastructure.Report.Contract.Chart;
+using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class ChartReportService(BaseDapperRepository repository) : IChartReportService
 {

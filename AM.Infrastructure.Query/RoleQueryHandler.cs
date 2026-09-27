@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.Role;
-using Lab.Infrastructure.Query.Contracts.Role;
+﻿using AM.Application.Contracts.Role;
+using AM.Infrastructure.Query.Contract.Role;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class RoleQueryHandler(BaseDapperRepository repository) :
     IQueryHandler<EditRole, Guid>,

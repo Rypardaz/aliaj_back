@@ -1,7 +1,7 @@
-﻿using PhoenixFramework.Application.Command;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.PartGroup;
+namespace AM.Application.Contracts.PartGroup;
 
 public class CreatePartGroup : ICommand
 {

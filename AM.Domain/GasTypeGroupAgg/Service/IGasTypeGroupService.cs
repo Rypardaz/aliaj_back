@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.GasTypeGroupAgg.Service;
+namespace AM.Domain.GasTypeGroupAgg.Service;
 
 public interface IGasTypeGroupService : IDomainService
 {

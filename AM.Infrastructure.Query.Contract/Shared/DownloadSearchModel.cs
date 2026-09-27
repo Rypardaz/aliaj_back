@@ -1,13 +1,4 @@
-﻿using PhoenixFramework.Application;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-namespace Lab.Infrastructure.Query.Contracts.Shared;
+﻿namespace AM.Infrastructure.Query.Contract.Shared;
 
 public class DownloadSearchModel
 {

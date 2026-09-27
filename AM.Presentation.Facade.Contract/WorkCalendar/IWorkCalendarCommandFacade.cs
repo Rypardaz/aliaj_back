@@ -1,7 +1,7 @@
-﻿using PhoenixFramework.Core;
-using Ex.Application.Contracts.WorkCalendar;
+﻿using AM.Application.Contracts.WorkCalendar;
+using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.WorkCalendar;
+namespace AM.Presentation.Facade.Contract.WorkCalendar;
 
 public interface IWorkCalendarCommandFacade : IFacadeService
 {

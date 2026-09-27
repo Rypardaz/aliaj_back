@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.User;
+namespace AM.Infrastructure.Query.Contract.User;
 
 public class UserComboModel : ComboBase
 {

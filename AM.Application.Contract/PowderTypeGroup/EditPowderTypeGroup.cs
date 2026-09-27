@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.PowderTypeGroup;
+﻿namespace AM.Application.Contracts.PowderTypeGroup;
 
 public class EditPowderTypeGroup : CreatePowderTypeGroup
 {

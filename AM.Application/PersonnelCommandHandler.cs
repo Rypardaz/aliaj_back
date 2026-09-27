@@ -1,11 +1,11 @@
-﻿using PhoenixFramework.Application.Command;
+﻿using AM.Application.Contracts.Personnel;
+using AM.Domain.PersonnelAgg;
+using AM.Domain.PersonnelAgg.Service;
+using AM.Domain.SalonAgg;
+using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
-using Ex.Application.Contracts.Personnel;
-using Ex.Domain.PersonnelAgg.Service;
-using Ex.Domain.PersonnelAgg;
-using Ex.Domain.SalonAgg;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class PersonnelCommandHandler(
     IClaimHelper claimHelper,

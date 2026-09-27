@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.PartGroup;
+namespace AM.Infrastructure.Query.Contract.PartGroup;
 
 public class PartGroupViewModel : ViewModelAbilities
 {

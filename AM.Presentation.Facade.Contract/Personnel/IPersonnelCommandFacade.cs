@@ -1,8 +1,7 @@
-﻿using Ex.Application.Contracts.Personnel;
+﻿using AM.Application.Contracts.Personnel;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.Personnel;
+namespace AM.Presentation.Facade.Contract.Personnel;
 
 public interface IPersonnelCommandFacade : IFacadeService
 {

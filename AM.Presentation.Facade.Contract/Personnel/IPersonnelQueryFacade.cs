@@ -1,9 +1,8 @@
-﻿using Ex.Application.Contracts.Personnel;
-using Lab.Infrastructure.Query.Contracts.Personnel;
+﻿using AM.Application.Contracts.Personnel;
+using AM.Infrastructure.Query.Contract.Personnel;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.Personnel;
+namespace AM.Presentation.Facade.Contract.Personnel;
 
 public interface IPersonnelQueryFacade : IFacadeService
 {

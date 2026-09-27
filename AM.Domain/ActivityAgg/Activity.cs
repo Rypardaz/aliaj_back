@@ -1,7 +1,7 @@
-﻿using Ex.Domain.ActivityAgg.Service;
+﻿using AM.Domain.ActivityAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.ActivityAgg;
+namespace AM.Domain.ActivityAgg;
 
 public class Activity : AuditableAggregateRootBase<long>
 {

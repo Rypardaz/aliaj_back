@@ -1,9 +1,9 @@
-using Ex.Application.Contracts.Ticket;
+using AM.Application.Contracts.Ticket;
+using AM.Infrastructure.Query.Contract.Ticket;
+using AM.Presentation.Facade.Contract.Ticket;
 using PhoenixFramework.Application.Query;
-using Lab.Presentation.Facade.Contract.Ticket;
-using Lab.Infrastructure.Query.Contracts.Ticket;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class TicketQueryFacade(IQueryBus queryBus) : ITicketQueryFacade
 {

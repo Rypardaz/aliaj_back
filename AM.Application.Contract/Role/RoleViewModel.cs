@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Ex.Application.Contracts.Role;
+namespace AM.Application.Contracts.Role;
 
 public class RoleViewModel : ViewModelAbilities
 {

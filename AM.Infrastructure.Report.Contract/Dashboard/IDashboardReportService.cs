@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using PhoenixFramework.Core;
 
-namespace Lab.Infrastructure.Report.Contract.Dashboard;
+namespace AM.Infrastructure.Report.Contract.Dashboard;
 
 public interface IDashboardReportService : IReportService
 {

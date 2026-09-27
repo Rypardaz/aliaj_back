@@ -1,8 +1,7 @@
-﻿using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
-using Ex.Application.Contracts.Project;
+﻿using AM.Application.Contracts.Project;
+using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.Project;
+namespace AM.Presentation.Facade.Contract.Project;
 
 public interface IProjectCommandFacade : IFacadeService
 {

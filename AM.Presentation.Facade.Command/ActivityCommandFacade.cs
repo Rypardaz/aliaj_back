@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.Activity;
-using Lab.Presentation.Facade.Contract.Activity;
+﻿using AM.Application.Contracts.Activity;
+using AM.Presentation.Facade.Contract.Activity;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class ActivityCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : IActivityCommandFacade

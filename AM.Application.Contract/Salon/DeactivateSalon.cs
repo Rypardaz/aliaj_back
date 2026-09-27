@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.Salon;
+namespace AM.Application.Contracts.Salon;
 
 public class DeactivateSalon(Guid guid) : ICommand
 {

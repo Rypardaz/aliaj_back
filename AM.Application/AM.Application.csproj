@@ -4,8 +4,6 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Ex.Application</RootNamespace>
-        <AssemblyName>Ex.Application</AssemblyName>
         <PackageId>Ex.Application</PackageId>
         <Authors>Ex.Application</Authors>
         <Company>Ex.Application</Company>

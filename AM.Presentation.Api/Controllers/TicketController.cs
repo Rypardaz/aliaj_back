@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Ex.Application.Contracts.Ticket;
-using Lab.Infrastructure.Query.Contracts.Ticket;
-using Lab.Presentation.Facade.Contract.Ticket;
+﻿using AM.Application.Contracts.Ticket;
+using AM.Infrastructure.Query.Contract.Ticket;
+using AM.Presentation.Facade.Contract.Ticket;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

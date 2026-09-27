@@ -1,7 +1,7 @@
-﻿using Ex.Domain.GasTypeGroupAgg.Service;
+﻿using AM.Domain.GasTypeGroupAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.GasTypeGroupAgg;
+namespace AM.Domain.GasTypeGroupAgg;
 
 public class GasTypeGroup : AuditableAggregateRootBase<long>
 {

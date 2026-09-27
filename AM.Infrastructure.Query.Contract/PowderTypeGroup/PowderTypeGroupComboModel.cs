@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.PowderTypeGroup;
+namespace AM.Infrastructure.Query.Contract.PowderTypeGroup;
 
 public class PowderTypeGroupComboModel : ComboBase
 {

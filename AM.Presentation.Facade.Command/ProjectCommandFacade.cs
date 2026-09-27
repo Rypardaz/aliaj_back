@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.Project;
+﻿using AM.Application.Contracts.Project;
+using AM.Presentation.Facade.Contract.Project;
 using PhoenixFramework.Application.Command;
-using Lab.Presentation.Facade.Contract.Project;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class ProjectCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : IProjectCommandFacade

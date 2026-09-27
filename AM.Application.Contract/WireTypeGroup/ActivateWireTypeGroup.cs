@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.WireTypeGroup;
+namespace AM.Application.Contracts.WireTypeGroup;
 
 public class ActivateWireTypeGroup(Guid guid) : ICommand
 {

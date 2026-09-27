@@ -1,12 +1,10 @@
-﻿using Ex.Application.Contracts.Role;
-using Ex.Domain.RoleAgg;
-using Ex.Domain.RoleAgg.Services;
-using Lab.Infrastructure.Query.Contracts.Role;
+﻿using AM.Application.Contracts.Role;
+using AM.Domain.RoleAgg;
+using AM.Domain.RoleAgg.Services;
 using PhoenixFramework.Application.Command;
-using PhoenixFramework.Application.Query;
 using PhoenixFramework.Identity;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class RoleCommandHandler(
     IRoleRepository roleRepository,

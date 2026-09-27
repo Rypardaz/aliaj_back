@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.Salon;
+﻿namespace AM.Application.Contracts.Salon;
 
 public class EditSalon : CreateSalon
 {

@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Lab.Infrastructure.Report.Contract.ByPart;
+namespace AM.Infrastructure.Report.Contract.ByPart;
 
 public interface IByPartReportService : IReportService
 {

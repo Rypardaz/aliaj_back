@@ -1,7 +1,7 @@
-﻿using Ex.Domain.GasTypeGroupAgg;
+﻿using AM.Domain.GasTypeGroupAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class GasTypeGroupRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, GasTypeGroup>(aliajCommandContext), IGasTypeGroupRepository

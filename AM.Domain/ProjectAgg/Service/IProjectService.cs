@@ -1,7 +1,7 @@
-﻿using Ex.Application.Contracts.Project;
+﻿using AM.Application.Contracts.Project;
 using PhoenixFramework.Core;
 
-namespace Ex.Domain.ProjectAgg.Service;
+namespace AM.Domain.ProjectAgg.Service;
 
 public interface IProjectService : IDomainService
 {

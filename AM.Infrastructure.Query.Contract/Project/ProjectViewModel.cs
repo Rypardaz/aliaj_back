@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.Project;
+namespace AM.Infrastructure.Query.Contract.Project;
 
 public class ProjectViewModel : ViewModelAbilities
 {

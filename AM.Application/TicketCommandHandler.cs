@@ -1,9 +1,9 @@
-using Ex.Domain.TicketAgg;
-using PhoenixFramework.Identity;
-using Ex.Application.Contracts.Ticket;
+using AM.Application.Contracts.Ticket;
+using AM.Domain.TicketAgg;
 using PhoenixFramework.Application.Command;
+using PhoenixFramework.Identity;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class TicketCommandHandler(ITicketRepository ticketRepository, IClaimHelper claimHelper)
     :

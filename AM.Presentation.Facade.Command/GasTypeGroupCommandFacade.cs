@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.GasTypeGroup;
-using Lab.Presentation.Facade.Contract.GasTypeGroup;
+﻿using AM.Application.Contracts.GasTypeGroup;
+using AM.Presentation.Facade.Contract.GasTypeGroup;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class GasTypeGroupCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : IGasTypeGroupCommandFacade

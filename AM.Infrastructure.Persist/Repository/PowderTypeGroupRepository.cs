@@ -1,7 +1,7 @@
-﻿using Ex.Domain.PowderTypeGroupAgg;
+﻿using AM.Domain.PowderTypeGroupAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class PowderTypeGroupRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, PowderTypeGroup>(aliajCommandContext), IPowderTypeGroupRepository

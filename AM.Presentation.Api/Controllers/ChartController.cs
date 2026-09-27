@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Lab.Infrastructure.Report.Contract.Chart;
+﻿using AM.Infrastructure.Report.Contract.Chart;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

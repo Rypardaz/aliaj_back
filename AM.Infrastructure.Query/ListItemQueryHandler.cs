@@ -1,8 +1,8 @@
-﻿using PhoenixFramework.Dapper;
+﻿using AM.Infrastructure.Query.Contract.ListItem;
 using PhoenixFramework.Application.Query;
-using Lab.Infrastructure.Query.Contracts.ListItem;
+using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class ListItemQueryHandler(BaseDapperRepository dapper) : IQueryHandler<List<ListItemComboModel>, int>
 {

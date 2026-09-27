@@ -1,7 +1,7 @@
-﻿using PhoenixFramework.Application.Command;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.Part;
+namespace AM.Application.Contracts.Part;
 
 public class CreatePart : ICommand
 {

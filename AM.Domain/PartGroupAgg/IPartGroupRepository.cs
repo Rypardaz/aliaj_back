@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.PartGroupAgg;
+namespace AM.Domain.PartGroupAgg;
 
 public interface IPartGroupRepository : IRepository<long, PartGroup>
 {

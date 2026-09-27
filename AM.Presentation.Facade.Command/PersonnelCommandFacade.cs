@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.Personnel;
-using Lab.Presentation.Facade.Contract.Personnel;
+﻿using AM.Application.Contracts.Personnel;
+using AM.Presentation.Facade.Contract.Personnel;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class PersonnelCommandFacade(
     ICommandBus commandBus,

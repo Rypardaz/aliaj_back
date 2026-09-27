@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using AM.Domain.GasTypeAgg;
 using Microsoft.EntityFrameworkCore;
-using Ex.Domain.GasTypeAgg;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 public class GasTypeMapping : IEntityTypeConfiguration<GasType>
 {

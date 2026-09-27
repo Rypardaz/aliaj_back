@@ -1,8 +1,8 @@
-﻿using Ex.Domain.WorkCalendarAgg;
+﻿using AM.Domain.WorkCalendarAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 public class WorkCalendarMapping : IEntityTypeConfiguration<WorkCalendar>
 {

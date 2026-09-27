@@ -1,8 +1,8 @@
 ﻿using System.Data;
-using Ex.Domain.RoleAgg.Services;
+using AM.Domain.RoleAgg.Services;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.RoleAgg;
+namespace AM.Domain.RoleAgg;
 
 public class Role : AuditableAggregateRootBase<int>
 {

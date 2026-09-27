@@ -1,4 +1,4 @@
-namespace Lab.Infrastructure.Query.Contracts.Ticket;
+namespace AM.Infrastructure.Query.Contract.Ticket;
 
 public class TicketSearchModel
 {

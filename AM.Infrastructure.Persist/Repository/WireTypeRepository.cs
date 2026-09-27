@@ -1,7 +1,7 @@
-﻿using Ex.Domain.WireTypeAgg;
+﻿using AM.Domain.WireTypeAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class WireTypeRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, WireType>(aliajCommandContext), IWireTypeRepository

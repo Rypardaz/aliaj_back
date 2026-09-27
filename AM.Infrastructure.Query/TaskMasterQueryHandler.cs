@@ -1,10 +1,10 @@
-﻿using Ex.Application.Contracts.TaskMaster;
-using Lab.Infrastructure.Query.Contracts.Shared;
-using Lab.Infrastructure.Query.Contracts.TaskMaster;
+﻿using AM.Application.Contracts.TaskMaster;
+using AM.Infrastructure.Query.Contract.Shared;
+using AM.Infrastructure.Query.Contract.TaskMaster;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class TaskMasterQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<TaskMasterViewModel>>,

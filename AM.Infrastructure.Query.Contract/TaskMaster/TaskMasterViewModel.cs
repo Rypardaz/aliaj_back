@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.TaskMaster;
+namespace AM.Infrastructure.Query.Contract.TaskMaster;
 
 public class TaskMasterViewModel : ViewModelAbilities
 {

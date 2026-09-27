@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Report.Contract.ProjectReport;
+﻿namespace AM.Infrastructure.Report.Contract.ProjectReport;
 
 public class ProjectReportSearchModel
 {

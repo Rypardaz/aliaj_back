@@ -1,7 +1,7 @@
-﻿using Ex.Domain.WireTypeAgg.Service;
+﻿using AM.Domain.WireTypeAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.WireTypeAgg;
+namespace AM.Domain.WireTypeAgg;
 
 public class WireType : AuditableAggregateRootBase<long>
 {

@@ -1,10 +1,10 @@
-﻿using Ex.Application.Contracts.WireTypeGroup;
-using Ex.Domain.WireTypeGroupAgg.Service;
-using Ex.Domain.WireTypeGroupAgg;
+﻿using AM.Application.Contracts.WireTypeGroup;
+using AM.Domain.WireTypeGroupAgg;
+using AM.Domain.WireTypeGroupAgg.Service;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class WireTypeGroupCommandHandler(
     IClaimHelper claimHelper,

@@ -1,8 +1,8 @@
-﻿using Lab.Infrastructure.Report.Contract;
-using Lab.Infrastructure.Report.Contract.Activity;
+﻿using AM.Infrastructure.Report.Contract;
+using AM.Infrastructure.Report.Contract.Activity;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class ActivityReportService(BaseDapperRepository repository) : IActivityReportService
 {

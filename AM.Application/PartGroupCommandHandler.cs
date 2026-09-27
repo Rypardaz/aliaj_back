@@ -1,11 +1,11 @@
-﻿using Ex.Application.Contracts.PartGroup;
-using Ex.Domain.PartGroupAgg.Service;
-using Ex.Domain.PartGroupAgg;
-using Ex.Domain.SalonAgg;
+﻿using AM.Application.Contracts.PartGroup;
+using AM.Domain.PartGroupAgg;
+using AM.Domain.PartGroupAgg.Service;
+using AM.Domain.SalonAgg;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class PartGroupCommandHandler(
     IClaimHelper claimHelper,

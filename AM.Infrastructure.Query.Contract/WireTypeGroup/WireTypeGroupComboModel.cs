@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.WireTypeGroup;
+namespace AM.Infrastructure.Query.Contract.WireTypeGroup;
 
 public class WireTypeGroupComboModel : ComboBase
 {

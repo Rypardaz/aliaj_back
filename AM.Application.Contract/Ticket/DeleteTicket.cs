@@ -1,6 +1,6 @@
 using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.Ticket;
+namespace AM.Application.Contracts.Ticket;
 
 public class DeleteTicket(Guid guid) : ICommand
 {

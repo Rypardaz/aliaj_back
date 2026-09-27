@@ -1,10 +1,10 @@
-﻿using Ex.Application.Contracts.PowderTypeGroup;
-using Lab.Infrastructure.Query.Contracts.PowderTypeGroup;
-using Lab.Infrastructure.Query.Contracts.Shared;
+﻿using AM.Application.Contracts.PowderTypeGroup;
+using AM.Infrastructure.Query.Contract.PowderTypeGroup;
+using AM.Infrastructure.Query.Contract.Shared;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class PowderTypeGroupQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<PowderTypeGroupViewModel>>,

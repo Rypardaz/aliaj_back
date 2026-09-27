@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.Activity;
+namespace AM.Infrastructure.Query.Contract.Activity;
 
 public class ActivityComboModel : ComboBase
 {

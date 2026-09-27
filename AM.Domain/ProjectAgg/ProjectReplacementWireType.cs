@@ -1,7 +1,7 @@
-using Ex.Domain.WireTypeAgg;
+using AM.Domain.WireTypeAgg;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.ProjectAgg;
+namespace AM.Domain.ProjectAgg;
 
 public class ProjectReplacementWireType : EntityBase<long>
 {

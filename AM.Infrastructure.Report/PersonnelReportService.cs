@@ -1,7 +1,7 @@
-﻿using Lab.Infrastructure.Report.Contract.PersonnelReport;
+﻿using AM.Infrastructure.Report.Contract.PersonnelReport;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class PersonnelReportService(BaseDapperRepository repository) : IPersonnelReportService
 {

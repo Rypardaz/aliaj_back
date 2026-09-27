@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.PowderType;
+namespace AM.Application.Contracts.PowderType;
 
 public class ActivatePowderType(Guid guid) : ICommand
 {

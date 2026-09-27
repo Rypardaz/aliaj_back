@@ -4,8 +4,7 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Ex.Application.Contracts</RootNamespace>
-        <AssemblyName>Ex.Application.Contract</AssemblyName>
+        <RootNamespace>AM.Application.Contracts</RootNamespace>
         <PackageId>Ex.Application.Contract</PackageId>
         <Authors>Ex.Application.Contract</Authors>
         <Company>Ex.Application.Contract</Company>

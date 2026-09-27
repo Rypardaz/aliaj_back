@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.GasType;
+namespace AM.Infrastructure.Query.Contract.GasType;
 
 public class GasTypeComboModel : ComboBase
 {

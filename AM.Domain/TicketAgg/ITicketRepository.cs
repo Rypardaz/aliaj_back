@@ -1,6 +1,6 @@
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.TicketAgg;
+namespace AM.Domain.TicketAgg;
 
 public interface ITicketRepository : IRepository<long, Ticket>
 {

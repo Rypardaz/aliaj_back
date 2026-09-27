@@ -1,16 +1,14 @@
-﻿using Ex.Domain.DailyRecordAgg;
-using PhoenixFramework.Identity;
-using Ex.Application.Contracts.DailyRecord;
+﻿using AM.Application.Contracts.DailyRecord;
+using AM.Domain.DailyRecordAgg;
+using AM.Domain.DailyRecordAgg.Service;
+using AM.Domain.ListItemAgg;
+using AM.Domain.MachineAgg;
+using AM.Domain.SalonAgg;
 using PhoenixFramework.Application.Command;
-using Ex.Domain.DailyRecordAgg.Service;
-using Ex.Domain.SalonAgg;
-using Ex.Domain.MachineAgg;
-using Ex.Domain.ListItemAgg;
-using Ex.Domain.TaskMasterAgg;
 using PhoenixFramework.Core.Exceptions;
-using System.ComponentModel;
+using PhoenixFramework.Identity;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class DailyRecordCommandHandler(
     IClaimHelper claimHelper,

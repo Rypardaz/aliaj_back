@@ -1,10 +1,10 @@
-﻿using Ex.Application.Contracts.WireType;
-using Lab.Infrastructure.Query.Contracts.Shared;
-using Lab.Infrastructure.Query.Contracts.WireType;
+﻿using AM.Application.Contracts.WireType;
+using AM.Infrastructure.Query.Contract.Shared;
+using AM.Infrastructure.Query.Contract.WireType;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class WireTypeQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<WireTypeViewModel>>,

@@ -1,9 +1,9 @@
-using Ex.Application.Contracts.User;
-using Lab.Infrastructure.Query.Contracts.User;
+using AM.Application.Contracts.User;
+using AM.Infrastructure.Query.Contract.User;
+using AM.Presentation.Facade.Contract.User;
 using PhoenixFramework.Application.Query;
-using Lab.Presentation.Facade.Contract.User;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class UserQueryFacade(IQueryBus queryBus, IQueryBusAsync queryBusAsync) : IUserQueryFacade
 {

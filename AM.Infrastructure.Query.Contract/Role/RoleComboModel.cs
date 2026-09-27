@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.Role;
+namespace AM.Infrastructure.Query.Contract.Role;
 
 public class RoleComboModel : ComboBase
 {

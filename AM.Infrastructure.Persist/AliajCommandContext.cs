@@ -1,17 +1,17 @@
-using Ex.Domain.PartAgg;
-using Ex.Domain.ProjectAgg;
-using Ex.Domain.PartGroupAgg;
+using AM.Domain.DailyRecordAgg;
+using AM.Domain.MachineAgg;
+using AM.Domain.MachineLogAgg;
+using AM.Domain.PartAgg;
+using AM.Domain.PartGroupAgg;
+using AM.Domain.ProjectAgg;
+using AM.Domain.RoleAgg;
+using AM.Domain.TicketAgg;
+using AM.Domain.UserAgg;
+using AM.Domain.WorkCalendarAgg;
+using AM.Infrastructure.Persist.Mapping;
 using Microsoft.EntityFrameworkCore;
-using Lab.Infrastructure.Persist.Mapping;
-using Ex.Domain.DailyRecordAgg;
-using Ex.Domain.MachineLogAgg;
-using Ex.Domain.MachineAgg;
-using Ex.Domain.RoleAgg;
-using Ex.Domain.TicketAgg;
-using Ex.Domain.UserAgg;
-using Ex.Domain.WorkCalendarAgg;
 
-namespace Lab.Infrastructure.Persist;
+namespace AM.Infrastructure.Persist;
 
 public class AliajCommandContext(DbContextOptions<AliajCommandContext> options) : DbContext(options) /*, IDbContext*/
 {

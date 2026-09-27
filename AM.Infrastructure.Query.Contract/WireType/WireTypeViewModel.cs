@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.WireType;
+namespace AM.Infrastructure.Query.Contract.WireType;
 
 public class WireTypeViewModel : ViewModelAbilities
 {

@@ -1,8 +1,8 @@
-﻿using PhoenixFramework.Core;
-using Ex.Application.Contracts.Project;
-using Lab.Infrastructure.Query.Contracts.Project;
+﻿using AM.Application.Contracts.Project;
+using AM.Infrastructure.Query.Contract.Project;
+using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.Project;
+namespace AM.Presentation.Facade.Contract.Project;
 
 public interface IProjectQueryFacade : IFacadeService
 {

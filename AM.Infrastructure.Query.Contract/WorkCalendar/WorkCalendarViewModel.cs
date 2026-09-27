@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Query.Contracts.WorkCalendar;
+﻿namespace AM.Infrastructure.Query.Contract.WorkCalendar;
 
 public class WorkCalendarViewModel
 {

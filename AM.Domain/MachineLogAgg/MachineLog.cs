@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.MachineLogAgg;
+namespace AM.Domain.MachineLogAgg;
 
 public class MachineLog(
     long machineId,

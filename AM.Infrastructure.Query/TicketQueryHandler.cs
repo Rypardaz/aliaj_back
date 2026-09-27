@@ -1,12 +1,12 @@
+using AM.Application.Contracts.Ticket;
+using AM.Infrastructure.Persist;
+using AM.Infrastructure.Query.Contract.Shared;
+using AM.Infrastructure.Query.Contract.Ticket;
+using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 using PhoenixFramework.Identity;
-using Lab.Infrastructure.Persist;
-using Ex.Application.Contracts.Ticket;
-using PhoenixFramework.Application.Query;
-using Lab.Infrastructure.Query.Contracts.Shared;
-using Lab.Infrastructure.Query.Contracts.Ticket;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class TicketQueryHandler(AliajQueryContext context, IClaimHelper claimHelper, BaseDapperRepository dapper)
     :

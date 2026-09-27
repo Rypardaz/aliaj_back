@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.PowderTypeGroup;
+namespace AM.Application.Contracts.PowderTypeGroup;
 
 public class RemovePowderTypeGroup(Guid guid) : ICommand
 {

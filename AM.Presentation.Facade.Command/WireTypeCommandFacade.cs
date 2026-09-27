@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.WireType;
-using Lab.Presentation.Facade.Contract.WireType;
+﻿using AM.Application.Contracts.WireType;
+using AM.Presentation.Facade.Contract.WireType;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class WireTypeCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : IWireTypeCommandFacade

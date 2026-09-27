@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.WorkCalendarAgg;
+namespace AM.Domain.WorkCalendarAgg;
 
 public interface IWorkCalendarRepository : IRepository<int, WorkCalendar>
 {

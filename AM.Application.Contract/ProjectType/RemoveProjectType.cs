@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.ProjectType;
+namespace AM.Application.Contracts.ProjectType;
 
 public class RemoveProjectType(Guid guid) : ICommand
 {

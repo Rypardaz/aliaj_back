@@ -1,12 +1,12 @@
-﻿using Ex.Application.Contracts.WireType;
-using Ex.Domain.WireTypeAgg.Service;
-using Ex.Domain.WireTypeAgg;
+﻿using AM.Application.Contracts.WireType;
+using AM.Domain.ListItemAgg;
+using AM.Domain.WireTypeAgg;
+using AM.Domain.WireTypeAgg.Service;
+using AM.Domain.WireTypeGroupAgg;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
-using Ex.Domain.WireTypeGroupAgg;
-using Ex.Domain.ListItemAgg;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class WireTypeCommandHandler(
     IClaimHelper claimHelper,

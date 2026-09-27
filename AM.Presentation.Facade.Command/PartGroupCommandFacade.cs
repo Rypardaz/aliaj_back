@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.PartGroup;
-using Lab.Presentation.Facade.Contract.PartGroup;
+﻿using AM.Application.Contracts.PartGroup;
+using AM.Presentation.Facade.Contract.PartGroup;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class PartGroupCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : IPartGroupCommandFacade

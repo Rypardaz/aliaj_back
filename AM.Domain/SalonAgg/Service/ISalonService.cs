@@ -1,7 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-
-namespace Ex.Domain.SalonAgg.Service;
+namespace AM.Domain.SalonAgg.Service;
 
 public interface ISalonService : IDomainService
 {

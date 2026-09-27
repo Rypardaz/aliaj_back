@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.TaskMaster;
-using Lab.Infrastructure.Query.Contracts.TaskMaster;
-using Lab.Presentation.Facade.Contract.TaskMaster;
+﻿using AM.Application.Contracts.TaskMaster;
+using AM.Infrastructure.Query.Contract.TaskMaster;
+using AM.Presentation.Facade.Contract.TaskMaster;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class TaskMasterQueryFacade(IQueryBus queryBus) : ITaskMasterQueryFacade
 {

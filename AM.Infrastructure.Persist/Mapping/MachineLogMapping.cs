@@ -1,8 +1,8 @@
-﻿using Ex.Domain.MachineLogAgg;
+﻿using AM.Domain.MachineLogAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 public class MachineLogMapping : IEntityTypeConfiguration<MachineLog>
 {

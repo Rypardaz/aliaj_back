@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.ProjectType;
+namespace AM.Infrastructure.Query.Contract.ProjectType;
 
 public class ProjectTypeComboModel : ComboBase
 {

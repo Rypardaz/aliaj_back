@@ -1,8 +1,7 @@
-﻿using Ex.Application.Contracts.WireType;
+﻿using AM.Application.Contracts.WireType;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.WireType;
+namespace AM.Presentation.Facade.Contract.WireType;
 
 public interface IWireTypeCommandFacade : IFacadeService
 {

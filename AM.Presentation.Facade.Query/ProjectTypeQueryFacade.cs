@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.ProjectType;
-using Lab.Infrastructure.Query.Contracts.ProjectType;
-using Lab.Presentation.Facade.Contract.ProjectType;
+﻿using AM.Application.Contracts.ProjectType;
+using AM.Infrastructure.Query.Contract.ProjectType;
+using AM.Presentation.Facade.Contract.ProjectType;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class ProjectTypeQueryFacade(IQueryBus queryBus) : IProjectTypeQueryFacade
 {

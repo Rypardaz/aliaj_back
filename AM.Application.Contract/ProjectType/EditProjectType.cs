@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.ProjectType;
+﻿namespace AM.Application.Contracts.ProjectType;
 
 public class EditProjectType : CreateProjectType
 {

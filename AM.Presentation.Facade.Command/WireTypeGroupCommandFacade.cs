@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.WireTypeGroup;
-using Lab.Presentation.Facade.Contract.WireTypeGroup;
+﻿using AM.Application.Contracts.WireTypeGroup;
+using AM.Presentation.Facade.Contract.WireTypeGroup;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class WireTypeGroupCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : IWireTypeGroupCommandFacade

@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.GasTypeGroup;
-using Lab.Infrastructure.Query.Contracts.GasTypeGroup;
-using Lab.Presentation.Facade.Contract.GasTypeGroup;
+﻿using AM.Application.Contracts.GasTypeGroup;
+using AM.Infrastructure.Query.Contract.GasTypeGroup;
+using AM.Presentation.Facade.Contract.GasTypeGroup;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class GasTypeGroupQueryFacade(IQueryBus queryBus) : IGasTypeGroupQueryFacade
 {

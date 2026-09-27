@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.DailyRecord;
-using Lab.Infrastructure.Query.Contracts.DailyRecord;
-using Lab.Presentation.Facade.Contract.DailyRecord;
+﻿using AM.Application.Contracts.DailyRecord;
+using AM.Infrastructure.Query.Contract.DailyRecord;
+using AM.Presentation.Facade.Contract.DailyRecord;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class DailyRecordQueryFacade(IQueryBus queryBus) : IDailyRecordQueryFacade
 {

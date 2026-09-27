@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.WireScrew;
-using Lab.Presentation.Facade.Contract.WireScrew;
+﻿using AM.Application.Contracts.WireScrew;
+using AM.Presentation.Facade.Contract.WireScrew;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class WireScrewCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : IWireScrewCommandFacade

@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.MachineLog;
-using Lab.Presentation.Facade.Contract.MachineLog;
+﻿using AM.Application.Contracts.MachineLog;
+using AM.Presentation.Facade.Contract.MachineLog;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class MachineLogCommandFacade(ICommandBus commandBus) : IMachineLogCommandFacade
 {

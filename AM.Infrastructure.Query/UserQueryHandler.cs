@@ -1,6 +1,6 @@
-﻿using Ex.Application.Contracts.User;
-using Lab.Infrastructure.Persist;
-using Lab.Infrastructure.Query.Contracts.User;
+﻿using AM.Application.Contracts.User;
+using AM.Infrastructure.Persist;
+using AM.Infrastructure.Query.Contract.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using PhoenixFramework.Application;
@@ -9,7 +9,7 @@ using PhoenixFramework.Dapper;
 using PhoenixFramework.Domain;
 using PhoenixFramework.Identity;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class UserQueryHandler(
     BaseDapperRepository repository,

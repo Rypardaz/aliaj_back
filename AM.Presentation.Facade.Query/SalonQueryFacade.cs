@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.Salon;
-using Lab.Infrastructure.Query.Contracts.Salon;
-using Lab.Presentation.Facade.Contract.Salon;
+﻿using AM.Application.Contracts.Salon;
+using AM.Infrastructure.Query.Contract.Salon;
+using AM.Presentation.Facade.Contract.Salon;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class SalonQueryFacade(IQueryBus queryBus) : ISalonQueryFacade
 {

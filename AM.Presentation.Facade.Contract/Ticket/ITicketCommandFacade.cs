@@ -1,7 +1,7 @@
-using Ex.Application.Contracts.Ticket;
+using AM.Application.Contracts.Ticket;
 using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.Ticket;
+namespace AM.Presentation.Facade.Contract.Ticket;
 
 public interface ITicketCommandFacade : IFacadeService
 {

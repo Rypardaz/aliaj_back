@@ -1,9 +1,8 @@
-﻿using Ex.Application.Contracts.GasTypeGroup;
-using Lab.Infrastructure.Query.Contracts.GasTypeGroup;
+﻿using AM.Application.Contracts.GasTypeGroup;
+using AM.Infrastructure.Query.Contract.GasTypeGroup;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.GasTypeGroup;
+namespace AM.Presentation.Facade.Contract.GasTypeGroup;
 
 public interface IGasTypeGroupQueryFacade : IFacadeService
 {

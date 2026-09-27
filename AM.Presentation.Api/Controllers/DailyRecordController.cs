@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Ex.Application.Contracts.DailyRecord;
-using Lab.Infrastructure.Query.Contracts.Project;
-using Lab.Infrastructure.Query.Contracts.DailyRecord;
-using Lab.Presentation.Facade.Contract.DailyRecord;
+﻿using AM.Application.Contracts.DailyRecord;
+using AM.Infrastructure.Query.Contract.DailyRecord;
+using AM.Presentation.Facade.Contract.DailyRecord;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

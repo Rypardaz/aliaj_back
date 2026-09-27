@@ -1,4 +1,4 @@
-namespace Lab.Infrastructure.Report.Contract.Dashboard;
+namespace AM.Infrastructure.Report.Contract.Dashboard;
 
 public class DashboardViewModel
 {

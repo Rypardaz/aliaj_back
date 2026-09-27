@@ -1,4 +1,4 @@
-namespace Ex.Application.Contracts;
+namespace AM.Application.Contracts;
 
 public class FilePaths
 {

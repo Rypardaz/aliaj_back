@@ -1,7 +1,7 @@
-using Ex.Domain.RoleAgg;
+using AM.Domain.RoleAgg;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.UserAgg;
+namespace AM.Domain.UserAgg;
 
 public class UserRole(int userId, int roleId) : EntityBase<long>
 {

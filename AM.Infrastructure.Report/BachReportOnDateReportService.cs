@@ -1,7 +1,7 @@
-﻿using Lab.Infrastructure.Report.Contract.BachReportOnDate;
+﻿using AM.Infrastructure.Report.Contract.BachReportOnDate;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class BachReportOnDateReportService(BaseDapperRepository dapper) : IBachReportOnDateReportService
 {

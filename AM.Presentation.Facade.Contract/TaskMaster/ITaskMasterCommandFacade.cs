@@ -1,8 +1,7 @@
-﻿using Ex.Application.Contracts.TaskMaster;
+﻿using AM.Application.Contracts.TaskMaster;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.TaskMaster;
+namespace AM.Presentation.Facade.Contract.TaskMaster;
 
 public interface ITaskMasterCommandFacade : IFacadeService
 {

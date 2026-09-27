@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.WireScrewAgg;
+namespace AM.Domain.WireScrewAgg;
 
 public interface IWireScrewRepository : IRepository<long, WireScrew>
 {

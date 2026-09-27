@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.DailyRecord;
+﻿namespace AM.Application.Contracts.DailyRecord;
 
 public class DailyRecordDetailOperations
 {

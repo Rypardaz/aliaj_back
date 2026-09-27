@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Lab.Infrastructure.Report.Contract.WireTypeConsumption;
+namespace AM.Infrastructure.Report.Contract.WireTypeConsumption;
 
 public interface IWireTypeConsumptionReportService : IReportService
 {

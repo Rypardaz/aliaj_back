@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.PartGroup;
+﻿namespace AM.Application.Contracts.PartGroup;
 
 public class EditPartGroup : CreatePartGroup
 {

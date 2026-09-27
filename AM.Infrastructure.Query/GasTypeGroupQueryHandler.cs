@@ -1,10 +1,10 @@
-﻿using Ex.Application.Contracts.GasTypeGroup;
-using Lab.Infrastructure.Query.Contracts.GasTypeGroup;
-using Lab.Infrastructure.Query.Contracts.Shared;
+﻿using AM.Application.Contracts.GasTypeGroup;
+using AM.Infrastructure.Query.Contract.GasTypeGroup;
+using AM.Infrastructure.Query.Contract.Shared;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class GasTypeGroupQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<GasTypeGroupViewModel>>,

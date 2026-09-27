@@ -1,4 +1,4 @@
-namespace Lab.Infrastructure.Query.Contracts.Personnel;
+namespace AM.Infrastructure.Query.Contract.Personnel;
 
 public class PersonnelSearchModel
 {

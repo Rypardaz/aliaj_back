@@ -1,8 +1,8 @@
-﻿using PhoenixFramework.Application.Query;
-using Lab.Presentation.Facade.Contract.WorkCalendar;
-using Lab.Infrastructure.Query.Contracts.WorkCalendar;
+﻿using AM.Infrastructure.Query.Contract.WorkCalendar;
+using AM.Presentation.Facade.Contract.WorkCalendar;
+using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class WorkCalendarQueryFacade(IQueryBus queryBus) : IWorkCalendarQueryFacade
 {

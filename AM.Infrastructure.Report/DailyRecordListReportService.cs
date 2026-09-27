@@ -1,7 +1,7 @@
-﻿using Lab.Infrastructure.Report.Contract.DailyRecordListReport;
+﻿using AM.Infrastructure.Report.Contract.DailyRecordListReport;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class DailyRecordListReportService(BaseDapperRepository dapper) : IDailyRecordListReportService
 {

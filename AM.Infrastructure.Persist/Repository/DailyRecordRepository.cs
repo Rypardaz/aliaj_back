@@ -1,7 +1,7 @@
-﻿using Ex.Domain.DailyRecordAgg;
+﻿using AM.Domain.DailyRecordAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class DailyRecordRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, DailyRecord>(aliajCommandContext), IDailyRecordRepository;

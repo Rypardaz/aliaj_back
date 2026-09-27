@@ -1,11 +1,10 @@
-﻿using Ex.Application.Contracts.ProjectType;
-using Lab.Infrastructure.Query.Contracts.ProjectType;
-using Lab.Infrastructure.Query.Contracts.Shared;
+﻿using AM.Application.Contracts.ProjectType;
+using AM.Infrastructure.Query.Contract.ProjectType;
+using AM.Infrastructure.Query.Contract.Shared;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
-using System;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class ProjectTypeQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<ProjectTypeViewModel>>,

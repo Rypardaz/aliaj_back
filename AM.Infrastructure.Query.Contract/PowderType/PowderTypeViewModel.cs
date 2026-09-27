@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.PowderType;
+namespace AM.Infrastructure.Query.Contract.PowderType;
 
 public class PowderTypeViewModel : ViewModelAbilities
 {

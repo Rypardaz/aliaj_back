@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.Part;
-using Lab.Infrastructure.Query.Contracts.Part;
-using Lab.Presentation.Facade.Contract.Part;
+﻿using AM.Application.Contracts.Part;
+using AM.Infrastructure.Query.Contract.Part;
+using AM.Presentation.Facade.Contract.Part;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class PartQueryFacade(IQueryBus queryBus) : IPartQueryFacade
 {

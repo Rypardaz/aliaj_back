@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.WireTypeGroup;
-using Lab.Presentation.Facade.Contract.WireTypeGroup;
+﻿using AM.Application.Contracts.WireTypeGroup;
+using AM.Presentation.Facade.Contract.WireTypeGroup;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

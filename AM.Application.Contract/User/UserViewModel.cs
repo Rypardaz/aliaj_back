@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Ex.Application.Contracts.User;
+namespace AM.Application.Contracts.User;
 
 public class UserViewModel : ViewModelAbilities
 {

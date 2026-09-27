@@ -1,4 +1,4 @@
-﻿namespace Ex.Domain.RoleAgg.Services;
+﻿namespace AM.Domain.RoleAgg.Services;
 
 public class RoleValidatorService(IRoleRepository roleRepository) : IRoleValidatorService
 {

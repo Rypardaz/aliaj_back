@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.TaskMaster;
-using Lab.Presentation.Facade.Contract.TaskMaster;
+﻿using AM.Application.Contracts.TaskMaster;
+using AM.Presentation.Facade.Contract.TaskMaster;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class TaskMasterCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : ITaskMasterCommandFacade

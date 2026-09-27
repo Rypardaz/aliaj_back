@@ -1,8 +1,6 @@
-using System;
-using System.Collections.Generic;
 using PhoenixFramework.Core;
 
-namespace Lab.Infrastructure.Report.Contract.MachineReport;
+namespace AM.Infrastructure.Report.Contract.MachineReport;
 
 public interface IMachineReportService : IReportService
 {

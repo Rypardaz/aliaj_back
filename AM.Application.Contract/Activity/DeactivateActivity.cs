@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.Activity;
+namespace AM.Application.Contracts.Activity;
 
 public class DeactivateActivity(Guid guid) : ICommand
 {

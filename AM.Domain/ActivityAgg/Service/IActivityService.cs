@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.ActivityAgg.Service;
+namespace AM.Domain.ActivityAgg.Service;
 
 public interface IActivityService : IDomainService
 {

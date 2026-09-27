@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.Part;
+﻿namespace AM.Application.Contracts.Part;
 
 public class EditPart : CreatePart
 {

@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.WorkCalendar;
+﻿namespace AM.Application.Contracts.WorkCalendar;
 
 public class WorkCalendarItem
 {

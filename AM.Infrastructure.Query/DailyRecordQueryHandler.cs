@@ -1,13 +1,10 @@
-﻿using Ex.Application.Contracts.DailyRecord;
-using Ex.Application.Contracts.Project;
-using Ex.Domain.ProjectAgg;
-using Lab.Infrastructure.Query.Contracts.DailyRecord;
-using Lab.Infrastructure.Query.Contracts.Project;
-using Lab.Infrastructure.Query.Contracts.Shared;
+﻿using AM.Application.Contracts.DailyRecord;
+using AM.Infrastructure.Query.Contract.DailyRecord;
+using AM.Infrastructure.Query.Contract.Shared;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class DailyRecordQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<DailyRecordViewModel>, DailyRecordSearchModel>,

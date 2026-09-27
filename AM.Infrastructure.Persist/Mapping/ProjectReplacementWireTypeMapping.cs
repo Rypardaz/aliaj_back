@@ -1,8 +1,8 @@
-using Ex.Domain.ProjectAgg;
+using AM.Domain.ProjectAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 public class ProjectReplacementWireTypeMapping : IEntityTypeConfiguration<ProjectReplacementWireType>
 {

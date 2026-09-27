@@ -1,8 +1,8 @@
-using Ex.Application.Contracts.User;
-using Lab.Presentation.Facade.Contract.User;
+using AM.Application.Contracts.User;
+using AM.Presentation.Facade.Contract.User;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class UserCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus) : IUserCommandFacade
 {

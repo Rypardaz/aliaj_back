@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.Activity;
+﻿namespace AM.Application.Contracts.Activity;
 
 public class EditActivity : CreateActivity
 {

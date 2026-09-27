@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.Salon;
-using Lab.Presentation.Facade.Contract.Salon;
+﻿using AM.Application.Contracts.Salon;
+using AM.Presentation.Facade.Contract.Salon;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class SalonCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : ISalonCommandFacade

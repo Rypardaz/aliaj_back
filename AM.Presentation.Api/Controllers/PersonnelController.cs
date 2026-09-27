@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.Personnel;
-using Lab.Infrastructure.Query.Contracts.Personnel;
-using Lab.Presentation.Facade.Contract.Personnel;
+﻿using AM.Application.Contracts.Personnel;
+using AM.Infrastructure.Query.Contract.Personnel;
+using AM.Presentation.Facade.Contract.Personnel;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

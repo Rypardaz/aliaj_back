@@ -1,12 +1,12 @@
-﻿using Ex.Domain.RoleAgg;
-using Ex.Domain.UserAgg;
-using PhoenixFramework.Identity;
-using Ex.Application.Contracts.User;
-using PhoenixFramework.Core.Exceptions;
+﻿using AM.Application.Contracts.User;
+using AM.Domain.RoleAgg;
+using AM.Domain.UserAgg;
 using Microsoft.Extensions.Configuration;
 using PhoenixFramework.Application.Command;
+using PhoenixFramework.Core.Exceptions;
+using PhoenixFramework.Identity;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class UserCommandHandler(
     IUserRepository userRepository,

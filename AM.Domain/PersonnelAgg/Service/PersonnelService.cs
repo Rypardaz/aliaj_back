@@ -1,9 +1,9 @@
-﻿using Ex.Domain.Share.Exception;
+﻿using System.Linq.Expressions;
+using AM.Domain.Share.Exception;
 using PhoenixFramework.Core.Exceptions;
-using System.Linq.Expressions;
 using PhoenixFramework.Domain.Specification;
 
-namespace Ex.Domain.PersonnelAgg.Service;
+namespace AM.Domain.PersonnelAgg.Service;
 
 public class PersonnelService(IPersonnelRepository personnelRepository) : IPersonnelService
 {

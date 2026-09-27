@@ -1,5 +1,5 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.ListItemAgg;
+namespace AM.Domain.ListItemAgg;
 
 public interface IListItemRepository : IRepository<int, ListItem> { }

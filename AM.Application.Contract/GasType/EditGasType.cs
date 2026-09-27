@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.GasType;
+﻿namespace AM.Application.Contracts.GasType;
 
 public class EditGasType : CreateGasType
 {

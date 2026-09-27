@@ -1,7 +1,7 @@
-﻿using Ex.Domain.TaskMasterAgg.Service;
+﻿using AM.Domain.TaskMasterAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.TaskMasterAgg;
+namespace AM.Domain.TaskMasterAgg;
 
 public class TaskMaster : AuditableAggregateRootBase<long>
 {

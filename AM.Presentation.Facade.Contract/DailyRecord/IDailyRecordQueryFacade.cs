@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.DailyRecord;
-using Lab.Infrastructure.Query.Contracts.DailyRecord;
+﻿using AM.Application.Contracts.DailyRecord;
+using AM.Infrastructure.Query.Contract.DailyRecord;
 using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.DailyRecord;
+namespace AM.Presentation.Facade.Contract.DailyRecord;
 
 public interface IDailyRecordQueryFacade : IFacadeService
 {

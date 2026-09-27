@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.WireType;
+﻿namespace AM.Application.Contracts.WireType;
 
 public class EditWireType : CreateWireType
 {

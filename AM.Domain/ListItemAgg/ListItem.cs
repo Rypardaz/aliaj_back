@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.ListItemAgg;
+namespace AM.Domain.ListItemAgg;
 
 public class ListItem : AggregateRootBase<int>
 {

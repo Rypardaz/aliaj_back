@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-
-namespace Lab.Infrastructure.Report.Contract.MachineReport;
+namespace AM.Infrastructure.Report.Contract.MachineReport;
 
 public class MachineReportSearchModel
 {

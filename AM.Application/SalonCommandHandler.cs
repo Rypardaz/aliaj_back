@@ -1,11 +1,11 @@
-﻿using PhoenixFramework.Application.Command;
+﻿using AM.Application.Contracts.Salon;
+using AM.Domain.ListItemAgg;
+using AM.Domain.SalonAgg;
+using AM.Domain.SalonAgg.Service;
+using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
-using Ex.Application.Contracts.Salon;
-using Ex.Domain.SalonAgg.Service;
-using Ex.Domain.SalonAgg;
-using Ex.Domain.ListItemAgg;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class SalonCommandHandler(
     IClaimHelper claimHelper,

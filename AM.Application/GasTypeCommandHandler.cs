@@ -1,11 +1,11 @@
-﻿using Ex.Application.Contracts.GasType;
-using Ex.Domain.GasTypeAgg.Service;
-using Ex.Domain.GasTypeAgg;
+﻿using AM.Application.Contracts.GasType;
+using AM.Domain.GasTypeAgg;
+using AM.Domain.GasTypeAgg.Service;
+using AM.Domain.GasTypeGroupAgg;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
-using Ex.Domain.GasTypeGroupAgg;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class GasTypeCommandHandler(
     IClaimHelper claimHelper,

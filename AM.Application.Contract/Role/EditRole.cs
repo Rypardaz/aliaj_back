@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.Role;
+﻿namespace AM.Application.Contracts.Role;
 
 public class EditRole : CreateRole
 {

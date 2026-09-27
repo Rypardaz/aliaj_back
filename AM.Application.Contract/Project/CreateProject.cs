@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.Project;
+namespace AM.Application.Contracts.Project;
 
 public class CreateProject : ICommand
 {

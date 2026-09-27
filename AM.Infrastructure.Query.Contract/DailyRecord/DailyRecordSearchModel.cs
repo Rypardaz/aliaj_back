@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Query.Contracts.DailyRecord;
+﻿namespace AM.Infrastructure.Query.Contract.DailyRecord;
 
 public class DailyRecordSearchModel
 {

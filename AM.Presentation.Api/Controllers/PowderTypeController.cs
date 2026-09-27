@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.PowderType;
-using Lab.Presentation.Facade.Contract.PowderType;
+﻿using AM.Application.Contracts.PowderType;
+using AM.Presentation.Facade.Contract.PowderType;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

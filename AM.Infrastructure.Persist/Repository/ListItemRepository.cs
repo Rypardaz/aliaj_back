@@ -1,8 +1,7 @@
-﻿using Ex.Domain.ListItemAgg;
-using Microsoft.EntityFrameworkCore;
+﻿using AM.Domain.ListItemAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class ListItemRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<int, ListItem>(aliajCommandContext), IListItemRepository;

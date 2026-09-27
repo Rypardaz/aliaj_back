@@ -1,7 +1,7 @@
-﻿using Ex.Domain.ProjectTypeAgg;
+﻿using AM.Domain.ProjectTypeAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class ProjectTypeRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, ProjectType>(aliajCommandContext), IProjectTypeRepository

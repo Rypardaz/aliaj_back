@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.PowderTypeAgg;
+namespace AM.Domain.PowderTypeAgg;
 
 public interface IPowderTypeRepository : IRepository<long, PowderType>
 {

@@ -1,20 +1,20 @@
-﻿using Autofac;
-using Lab.Infrastructure.Persist;
-using Lab.Infrastructure.Persist.Repository;
-using Lab.Infrastructure.Query;
-using Lab.Presentation.Facade.Command;
-using Lab.Presentation.Facade.Query;
+﻿using AM.Application;
+using AM.Domain.PartGroupAgg.Service;
+using AM.Infrastructure.Persist;
+using AM.Infrastructure.Persist.Repository;
+using AM.Infrastructure.Query;
+using AM.Infrastructure.Report;
+using AM.Presentation.Facade.Command;
+using AM.Presentation.Facade.Query;
+using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Microsoft.EntityFrameworkCore;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Application.Query;
-using PhoenixFramework.Domain;
 using PhoenixFramework.Autofac;
-using Autofac.Extras.DynamicProxy;
-using Ex.Application;
-using Ex.Domain.PartGroupAgg.Service;
-using Lab.Infrastructure.Report;
+using PhoenixFramework.Domain;
 
-namespace Lab.Infrastructure.Config;
+namespace AM.Infrastructure.Config;
 
 public class AliajMonitoringModule(string connectionString) : Module
 {
@@ -56,14 +56,6 @@ public class AliajMonitoringModule(string connectionString) : Module
             .AsClosedTypesOf(typeof(IQueryHandlerAsync<,>))
             .InstancePerDependency();
 
-        // var mappingAssembly = typeof(DecisionRuleMapping).Assembly;
-        // var userManagementAssembly = typeof(UserMapping).Assembly;
-        //
-        // var types = mappingAssembly.GetExportedTypes().ToList();
-        // var userManagementMappings = userManagementAssembly.GetExportedTypes().ToList();
-        //
-        // types.AddRange(userManagementMappings);
-
         builder.Register(_ =>
             {
                 var optionsBuilder = new DbContextOptionsBuilder<AliajCommandContext>();
@@ -94,13 +86,6 @@ public class AliajMonitoringModule(string connectionString) : Module
             .AsImplementedInterfaces()
             .InstancePerLifetimeScope();
 
-        // var infraServiceAssembly = typeof(DocumentAccountingService).Assembly;
-        //
-        // builder.RegisterAssemblyTypes(infraServiceAssembly)
-        //     .Where(t => t.Name.EndsWith("Service"))
-        //     .AsImplementedInterfaces()
-        //     .InstancePerLifetimeScope();
-
         var facadeAssembly = typeof(PartGroupCommandFacade).Assembly;
         builder.RegisterAssemblyTypes(facadeAssembly)
             .Where(t => t.Name.EndsWith("CommandFacade"))
@@ -123,18 +108,6 @@ public class AliajMonitoringModule(string connectionString) : Module
             .InstancePerLifetimeScope()
             .EnableInterfaceInterceptors()
             .AsImplementedInterfaces();
-
-        // var reportServiceAssembly = typeof(JournalReportService).Assembly;
-        // builder.RegisterAssemblyTypes(reportServiceAssembly)
-        //     .Where(t => t.Name.EndsWith("ReportService"))
-        //     .InstancePerLifetimeScope()
-        //     .EnableInterfaceInterceptors()
-        //     .InterceptedBy(typeof(SecurityInterceptor))
-        //     .AsImplementedInterfaces();
-        //
-        // builder.RegisterType<FloatingAccountAcl>()
-        //     .As<IFloatingAccountAcl>()
-        //     .InstancePerLifetimeScope();
 
         base.Load(builder);
     }

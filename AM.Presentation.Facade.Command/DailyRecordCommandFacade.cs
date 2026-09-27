@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.DailyRecord;
-using Lab.Presentation.Facade.Contract.DailyRecord;
+﻿using AM.Application.Contracts.DailyRecord;
+using AM.Presentation.Facade.Contract.DailyRecord;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class DailyRecordCommandFacade(
     ICommandBus commandBus,

@@ -1,8 +1,8 @@
-using Ex.Domain.ActivityAgg;
+using AM.Domain.ActivityAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 public class ActivitySalonMapping : IEntityTypeConfiguration<ActivitySalon>
 {

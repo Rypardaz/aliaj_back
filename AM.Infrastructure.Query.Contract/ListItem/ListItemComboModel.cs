@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.ListItem;
+namespace AM.Infrastructure.Query.Contract.ListItem;
 
 public class ListItemComboModel : ComboBase
 {

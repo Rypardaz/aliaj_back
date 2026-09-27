@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Query.Contracts.Role;
+﻿namespace AM.Infrastructure.Query.Contract.Role;
 
 public class RolePermissionViewModel
 {

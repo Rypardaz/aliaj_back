@@ -1,16 +1,16 @@
-﻿using Ex.Domain.ProjectAgg;
-using PhoenixFramework.Identity;
-using Ex.Application.Contracts.Project;
+﻿using AM.Application.Contracts.Project;
+using AM.Domain.ListItemAgg;
+using AM.Domain.ProjectAgg;
+using AM.Domain.ProjectAgg.Service;
+using AM.Domain.ProjectTypeAgg;
+using AM.Domain.SalonAgg;
+using AM.Domain.TaskMasterAgg;
+using AM.Domain.WireTypeAgg;
 using PhoenixFramework.Application.Command;
-using Ex.Domain.ProjectAgg.Service;
-using Ex.Domain.TaskMasterAgg;
-using Ex.Domain.SalonAgg;
-using Ex.Domain.ProjectTypeAgg;
-using Ex.Domain.ListItemAgg;
-using Ex.Domain.WireTypeAgg;
 using PhoenixFramework.Core.Exceptions;
+using PhoenixFramework.Identity;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class ProjectCommandHandler(
     IClaimHelper claimHelper,

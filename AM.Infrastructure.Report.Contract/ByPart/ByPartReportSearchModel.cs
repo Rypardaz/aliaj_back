@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Report.Contract.ByPart;
+﻿namespace AM.Infrastructure.Report.Contract.ByPart;
 
 public class ByPartReportSearchModel
 {

@@ -1,7 +1,7 @@
-﻿using Lab.Infrastructure.Report.Contract.ByPart;
+﻿using AM.Infrastructure.Report.Contract.ByPart;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class ByPartReportService(BaseDapperRepository repository) : IByPartReportService
 {

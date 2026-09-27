@@ -1,7 +1,7 @@
-﻿using Ex.Domain.PowderTypeGroupAgg.Service;
+﻿using AM.Domain.PowderTypeGroupAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.PowderTypeGroupAgg;
+namespace AM.Domain.PowderTypeGroupAgg;
 
 public class PowderTypeGroup : AuditableAggregateRootBase<long>
 {

@@ -1,9 +1,8 @@
-﻿using Ex.Application.Contracts.Activity;
-using Lab.Infrastructure.Query.Contracts.Activity;
+﻿using AM.Application.Contracts.Activity;
+using AM.Infrastructure.Query.Contract.Activity;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.Activity;
+namespace AM.Presentation.Facade.Contract.Activity;
 
 public interface IActivityQueryFacade : IFacadeService
 {

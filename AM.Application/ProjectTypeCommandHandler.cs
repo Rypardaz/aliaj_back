@@ -1,11 +1,11 @@
-﻿using Ex.Application.Contracts.ProjectType;
-using Ex.Domain.ProjectTypeAgg.Service;
-using Ex.Domain.ProjectTypeAgg;
-using Ex.Domain.SalonAgg;
+﻿using AM.Application.Contracts.ProjectType;
+using AM.Domain.ProjectTypeAgg;
+using AM.Domain.ProjectTypeAgg.Service;
+using AM.Domain.SalonAgg;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class ProjectTypeCommandHandler(
     IClaimHelper claimHelper,

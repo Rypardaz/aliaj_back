@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.GasTypeGroup;
+namespace AM.Application.Contracts.GasTypeGroup;
 
 public class ActivateGasTypeGroup(Guid guid) : ICommand
 {

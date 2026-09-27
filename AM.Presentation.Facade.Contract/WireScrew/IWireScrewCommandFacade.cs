@@ -1,8 +1,7 @@
-﻿using Ex.Application.Contracts.WireScrew;
+﻿using AM.Application.Contracts.WireScrew;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.WireScrew;
+namespace AM.Presentation.Facade.Contract.WireScrew;
 
 public interface IWireScrewCommandFacade : IFacadeService
 {

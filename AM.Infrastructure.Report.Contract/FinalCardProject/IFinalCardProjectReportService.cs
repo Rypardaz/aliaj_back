@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Lab.Infrastructure.Report.Contract.FinalCardProject;
+namespace AM.Infrastructure.Report.Contract.FinalCardProject;
 
 public interface  IFinalCardProjectReportService : IReportService
 {

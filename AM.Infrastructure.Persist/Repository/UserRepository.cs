@@ -1,7 +1,7 @@
-﻿using Ex.Domain.UserAgg;
+﻿using AM.Domain.UserAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class UserRepository(AliajCommandContext aliajCommandContext) : BaseRepository<int, User>(aliajCommandContext), IUserRepository
 {

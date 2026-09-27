@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.RoleAgg;
+namespace AM.Domain.RoleAgg;
 
 public class RolePermission : EntityBase<int>
 {

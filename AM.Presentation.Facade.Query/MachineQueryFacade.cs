@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.Machine;
-using Lab.Infrastructure.Query.Contracts.Machine;
-using Lab.Presentation.Facade.Contract.Machine;
+﻿using AM.Application.Contracts.Machine;
+using AM.Infrastructure.Query.Contract.Machine;
+using AM.Presentation.Facade.Contract.Machine;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class MachineQueryFacade(IQueryBus queryBus) : IMachineQueryFacade
 {

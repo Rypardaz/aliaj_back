@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Ex.Application.Contracts.WireScrew;
-using Lab.Infrastructure.Query.Contracts.WireScrew;
-using Lab.Presentation.Facade.Contract.WireScrew;
+﻿using AM.Application.Contracts.WireScrew;
+using AM.Infrastructure.Query.Contract.WireScrew;
+using AM.Presentation.Facade.Contract.WireScrew;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

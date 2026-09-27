@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.RoleAgg.Services;
+namespace AM.Domain.RoleAgg.Services;
 
 public interface IRoleValidatorService : IDomainService
 {

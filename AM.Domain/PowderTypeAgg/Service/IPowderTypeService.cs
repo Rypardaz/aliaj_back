@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.PowderTypeAgg.Service;
+namespace AM.Domain.PowderTypeAgg.Service;
 
 public interface IPowderTypeService : IDomainService
 {

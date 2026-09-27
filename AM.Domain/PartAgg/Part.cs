@@ -1,7 +1,7 @@
-﻿using Ex.Domain.PartAgg.Service;
+﻿using AM.Domain.PartAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.PartAgg;
+namespace AM.Domain.PartAgg;
 
 public class Part : AuditableAggregateRootBase<long>
 {

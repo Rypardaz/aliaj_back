@@ -1,7 +1,7 @@
-﻿using Ex.Domain.WireScrewAgg.Service;
+﻿using AM.Domain.WireScrewAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.WireScrewAgg;
+namespace AM.Domain.WireScrewAgg;
 
 public class WireScrew : AuditableAggregateRootBase<long>
 {

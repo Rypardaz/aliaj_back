@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.PartGroup;
-using Lab.Presentation.Facade.Contract.PartGroup;
+﻿using AM.Application.Contracts.PartGroup;
+using AM.Presentation.Facade.Contract.PartGroup;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

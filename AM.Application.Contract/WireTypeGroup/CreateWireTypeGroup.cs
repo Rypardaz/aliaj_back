@@ -1,7 +1,7 @@
-﻿using PhoenixFramework.Application.Command;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.WireTypeGroup;
+namespace AM.Application.Contracts.WireTypeGroup;
 
 public class CreateWireTypeGroup : ICommand
 {

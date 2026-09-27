@@ -1,7 +1,7 @@
-﻿using Ex.Domain.ActivityAgg;
+﻿using AM.Domain.ActivityAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class ActivityRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, Activity>(aliajCommandContext), IActivityRepository

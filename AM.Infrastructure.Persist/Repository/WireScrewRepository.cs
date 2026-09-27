@@ -1,7 +1,7 @@
-﻿using Ex.Domain.WireScrewAgg;
+﻿using AM.Domain.WireScrewAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class WireScrewRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, WireScrew>(aliajCommandContext), IWireScrewRepository

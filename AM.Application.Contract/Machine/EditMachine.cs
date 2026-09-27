@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.Machine;
+﻿namespace AM.Application.Contracts.Machine;
 
 public class EditMachine : CreateMachine
 {

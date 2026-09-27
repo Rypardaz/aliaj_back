@@ -1,8 +1,8 @@
-using Ex.Application.Contracts.Role;
+using AM.Application.Contracts.Role;
+using AM.Presentation.Facade.Contract.Role;
 using PhoenixFramework.Application.Command;
-using Lab.Presentation.Facade.Contract.Role;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class RoleCommandFacade(ICommandBus commandBus) : IRoleCommandFacade
 {

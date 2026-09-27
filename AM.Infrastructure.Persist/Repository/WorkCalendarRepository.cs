@@ -1,8 +1,7 @@
-﻿using Ex.Domain.WorkCalendarAgg;
-using Microsoft.EntityFrameworkCore;
+﻿using AM.Domain.WorkCalendarAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class WorkCalendarRepository(AliajCommandContext context)
     : BaseRepository<int, WorkCalendar>(context), IWorkCalendarRepository

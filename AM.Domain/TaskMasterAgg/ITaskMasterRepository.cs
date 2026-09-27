@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.TaskMasterAgg;
+namespace AM.Domain.TaskMasterAgg;
 
 public interface ITaskMasterRepository : IRepository<long, TaskMaster>
 {

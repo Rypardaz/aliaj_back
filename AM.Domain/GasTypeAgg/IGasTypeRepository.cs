@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.GasTypeAgg;
+namespace AM.Domain.GasTypeAgg;
 
 public interface IGasTypeRepository : IRepository<long, GasType>
 {

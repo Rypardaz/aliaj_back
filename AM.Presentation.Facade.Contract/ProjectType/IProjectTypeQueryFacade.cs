@@ -1,9 +1,8 @@
-﻿using Ex.Application.Contracts.ProjectType;
-using Lab.Infrastructure.Query.Contracts.ProjectType;
+﻿using AM.Application.Contracts.ProjectType;
+using AM.Infrastructure.Query.Contract.ProjectType;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.ProjectType;
+namespace AM.Presentation.Facade.Contract.ProjectType;
 
 public interface IProjectTypeQueryFacade : IFacadeService
 {

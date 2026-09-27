@@ -1,6 +1,6 @@
 using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.User;
+namespace AM.Application.Contracts.User;
 
 public class CloseSession(Guid guid) : ICommand
 {

@@ -1,7 +1,7 @@
-﻿using PhoenixFramework.Dapper;
-using Lab.Infrastructure.Report.Contract.ProjectReport;
+﻿using AM.Infrastructure.Report.Contract.ProjectReport;
+using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class ProjectReportService(BaseDapperRepository repository) : IProjectReportService
 {

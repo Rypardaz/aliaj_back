@@ -1,7 +1,7 @@
-using Ex.Application.Contracts.User;
+using AM.Application.Contracts.User;
 using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.User;
+namespace AM.Presentation.Facade.Contract.User;
 
 public interface IUserCommandFacade : IFacadeService
 {

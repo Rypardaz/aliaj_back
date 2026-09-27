@@ -1,8 +1,8 @@
-﻿using PhoenixFramework.Dapper;
+﻿using AM.Infrastructure.Query.Contract.WorkCalendar;
 using PhoenixFramework.Application.Query;
-using Lab.Infrastructure.Query.Contracts.WorkCalendar;
+using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class WorkCalendarQueryHandler(BaseDapperRepository repository)
     : IQueryHandler<List<WorkCalendarViewModel>, WorkCalendarSearchModel>

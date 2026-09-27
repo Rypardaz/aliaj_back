@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.SalonAgg;
+namespace AM.Domain.SalonAgg;
 
 public interface ISalonRepository : IRepository<long, Salon>
 {

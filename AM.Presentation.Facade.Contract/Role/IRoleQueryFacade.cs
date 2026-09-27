@@ -1,8 +1,8 @@
-using Ex.Application.Contracts.Role;
-using Lab.Infrastructure.Query.Contracts.Role;
+using AM.Application.Contracts.Role;
+using AM.Infrastructure.Query.Contract.Role;
 using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.Role;
+namespace AM.Presentation.Facade.Contract.Role;
 
 public interface IRoleQueryFacade : IFacadeService
 {

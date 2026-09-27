@@ -1,6 +1,6 @@
-using Ex.Domain.SalonAgg;
+using AM.Domain.SalonAgg;
 
-namespace Ex.Domain.ActivityAgg;
+namespace AM.Domain.ActivityAgg;
 
 public class ActivitySalon
 {

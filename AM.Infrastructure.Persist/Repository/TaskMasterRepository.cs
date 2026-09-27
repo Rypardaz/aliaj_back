@@ -1,7 +1,7 @@
-﻿using Ex.Domain.TaskMasterAgg;
+﻿using AM.Domain.TaskMasterAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class TaskMasterRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, TaskMaster>(aliajCommandContext), ITaskMasterRepository

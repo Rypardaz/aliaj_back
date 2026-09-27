@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.WireScrew;
-using Lab.Infrastructure.Query.Contracts.WireScrew;
-using Lab.Presentation.Facade.Contract.WireScrew;
+﻿using AM.Application.Contracts.WireScrew;
+using AM.Infrastructure.Query.Contract.WireScrew;
+using AM.Presentation.Facade.Contract.WireScrew;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class WireScrewQueryFacade(IQueryBus queryBus) : IWireScrewQueryFacade
 {

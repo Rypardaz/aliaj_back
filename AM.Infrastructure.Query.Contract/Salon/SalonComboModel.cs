@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.Salon;
+namespace AM.Infrastructure.Query.Contract.Salon;
 
 public class SalonComboModel : ComboBase
 {

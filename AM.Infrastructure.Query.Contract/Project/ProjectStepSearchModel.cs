@@ -1,4 +1,4 @@
-namespace Lab.Infrastructure.Query.Contracts.Project;
+namespace AM.Infrastructure.Query.Contract.Project;
 
 public class ProjectStepSearchModel
 {

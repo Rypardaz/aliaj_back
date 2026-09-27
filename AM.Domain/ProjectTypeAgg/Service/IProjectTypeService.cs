@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.ProjectTypeAgg.Service;
+namespace AM.Domain.ProjectTypeAgg.Service;
 
 public interface IProjectTypeService : IDomainService
 {

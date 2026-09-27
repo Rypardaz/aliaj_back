@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.MachineAgg.Service;
+namespace AM.Domain.MachineAgg.Service;
 
 public interface IMachineService : IDomainService
 {

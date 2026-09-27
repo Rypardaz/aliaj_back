@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.WireScrew;
+namespace AM.Application.Contracts.WireScrew;
 
 public class DeactivateWireScrew(Guid guid) : ICommand
 {

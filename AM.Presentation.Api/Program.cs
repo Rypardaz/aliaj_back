@@ -1,11 +1,9 @@
-using System.IdentityModel.Tokens.Jwt;
 using AM.Presentation.Api;
 using System.IO.Compression;
-using System.Security.Claims;
+using AM.Infrastructure.Config;
+using AM.Presentation.Api.Controllers;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using Lab.Infrastructure.Config;
-using Lab.Presentation.Api;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.IdentityModel.Logging;
 using PhoenixFramework.Autofac;

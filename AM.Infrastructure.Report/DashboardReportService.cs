@@ -1,7 +1,7 @@
+using AM.Infrastructure.Report.Contract.Dashboard;
 using PhoenixFramework.Dapper;
-using Lab.Infrastructure.Report.Contract.Dashboard;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class DashboardReportService(BaseDapperRepository dapper) : IDashboardReportService
 {

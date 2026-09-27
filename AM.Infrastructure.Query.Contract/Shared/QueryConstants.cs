@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Query.Contracts.Shared;
+﻿namespace AM.Infrastructure.Query.Contract.Shared;
 
 public static class QueryConstants
 {

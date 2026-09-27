@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Lab.Infrastructure.Report.Contract.Activity;
+﻿namespace AM.Infrastructure.Report.Contract.Activity;
 
 public class ActivityReportSearchModel
 {

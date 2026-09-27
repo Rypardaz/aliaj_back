@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.PersonnelAgg;
+namespace AM.Domain.PersonnelAgg;
 
 public interface IPersonnelRepository : IRepository<long, Personnel>
 {

@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.Personnel;
-using Lab.Infrastructure.Query.Contracts.Personnel;
-using Lab.Presentation.Facade.Contract.Personnel;
+﻿using AM.Application.Contracts.Personnel;
+using AM.Infrastructure.Query.Contract.Personnel;
+using AM.Presentation.Facade.Contract.Personnel;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class PersonnelQueryFacade(IQueryBus queryBus) : IPersonnelQueryFacade
 {

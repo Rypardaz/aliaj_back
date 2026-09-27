@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.GasTypeGroup;
+﻿namespace AM.Application.Contracts.GasTypeGroup;
 
 public class EditGasTypeGroup : CreateGasTypeGroup
 {

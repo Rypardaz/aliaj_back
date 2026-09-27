@@ -1,7 +1,7 @@
-﻿using Ex.Domain.PersonnelAgg;
+﻿using AM.Domain.PersonnelAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class PersonnelRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, Personnel>(aliajCommandContext), IPersonnelRepository

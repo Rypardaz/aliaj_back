@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.PowderType;
-using Lab.Infrastructure.Query.Contracts.PowderType;
-using Lab.Presentation.Facade.Contract.PowderType;
+﻿using AM.Application.Contracts.PowderType;
+using AM.Infrastructure.Query.Contract.PowderType;
+using AM.Presentation.Facade.Contract.PowderType;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class PowderTypeQueryFacade(IQueryBus queryBus) : IPowderTypeQueryFacade
 {

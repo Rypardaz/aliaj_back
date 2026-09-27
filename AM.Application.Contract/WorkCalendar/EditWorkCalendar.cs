@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.WorkCalendar;
+namespace AM.Application.Contracts.WorkCalendar;
 
 public class EditWorkCalendar : ICommand
 {

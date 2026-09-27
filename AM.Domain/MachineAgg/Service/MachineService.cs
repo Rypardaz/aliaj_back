@@ -1,9 +1,9 @@
-﻿using Ex.Domain.Share.Exception;
+﻿using System.Linq.Expressions;
+using AM.Domain.Share.Exception;
 using PhoenixFramework.Core.Exceptions;
-using System.Linq.Expressions;
 using PhoenixFramework.Domain.Specification;
 
-namespace Ex.Domain.MachineAgg.Service;
+namespace AM.Domain.MachineAgg.Service;
 
 public class MachineService(IMachineRepository machineRepository) : IMachineService
 {

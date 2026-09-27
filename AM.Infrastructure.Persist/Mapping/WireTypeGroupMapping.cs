@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using AM.Domain.WireTypeGroupAgg;
 using Microsoft.EntityFrameworkCore;
-using Ex.Domain.WireTypeGroupAgg;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 public class WireTypeGroupMapping : IEntityTypeConfiguration<WireTypeGroup>
 {

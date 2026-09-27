@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.ProjectAgg;
+namespace AM.Domain.ProjectAgg;
 
 public record ProjectDetail(
     long? PartId,

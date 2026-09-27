@@ -1,10 +1,10 @@
-﻿using PhoenixFramework.Application.Command;
+﻿using AM.Application.Contracts.TaskMaster;
+using AM.Domain.TaskMasterAgg;
+using AM.Domain.TaskMasterAgg.Service;
+using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
-using Ex.Application.Contracts.TaskMaster;
-using Ex.Domain.TaskMasterAgg.Service;
-using Ex.Domain.TaskMasterAgg;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class TaskMasterCommandHandler(
     IClaimHelper claimHelper,

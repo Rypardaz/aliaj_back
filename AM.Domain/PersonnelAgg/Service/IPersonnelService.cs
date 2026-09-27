@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.PersonnelAgg.Service;
+namespace AM.Domain.PersonnelAgg.Service;
 
 public interface IPersonnelService : IDomainService
 {

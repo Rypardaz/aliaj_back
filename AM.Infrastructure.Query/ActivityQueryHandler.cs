@@ -1,11 +1,11 @@
-﻿using PhoenixFramework.Dapper;
-using Ex.Application.Contracts.Activity;
-using Lab.Infrastructure.Persist;
+﻿using AM.Application.Contracts.Activity;
+using AM.Infrastructure.Persist;
+using AM.Infrastructure.Query.Contract.Activity;
+using AM.Infrastructure.Query.Contract.Shared;
 using PhoenixFramework.Application.Query;
-using Lab.Infrastructure.Query.Contracts.Activity;
-using Lab.Infrastructure.Query.Contracts.Shared;
+using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class ActivityQueryHandler(
     BaseDapperRepository dapperRepository,

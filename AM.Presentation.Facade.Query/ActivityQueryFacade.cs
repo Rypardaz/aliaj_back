@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.Activity;
-using Lab.Infrastructure.Query.Contracts.Activity;
-using Lab.Presentation.Facade.Contract.Activity;
+﻿using AM.Application.Contracts.Activity;
+using AM.Infrastructure.Query.Contract.Activity;
+using AM.Presentation.Facade.Contract.Activity;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class ActivityQueryFacade(IQueryBus queryBus) : IActivityQueryFacade
 {

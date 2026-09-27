@@ -1,9 +1,8 @@
-﻿using Ex.Application.Contracts.PartGroup;
-using Lab.Infrastructure.Query.Contracts.PartGroup;
+﻿using AM.Application.Contracts.PartGroup;
+using AM.Infrastructure.Query.Contract.PartGroup;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.PartGroup;
+namespace AM.Presentation.Facade.Contract.PartGroup;
 
 public interface IPartGroupQueryFacade : IFacadeService
 {

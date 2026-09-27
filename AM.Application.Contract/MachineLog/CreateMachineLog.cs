@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.MachineLog;
+namespace AM.Application.Contracts.MachineLog;
 
 public class CreateMachineLog : ICommand
 {

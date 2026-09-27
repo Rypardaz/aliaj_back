@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Report.Contract.BachReportOnDate;
+﻿namespace AM.Infrastructure.Report.Contract.BachReportOnDate;
 
 public class BachReportOnDateReportModel
 {

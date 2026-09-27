@@ -1,6 +1,6 @@
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.TicketAgg;
+namespace AM.Domain.TicketAgg;
 
 public class Ticket : AggregateRootBase<long>
 {

@@ -1,11 +1,11 @@
-﻿using Ex.Application.Contracts.User;
-using Lab.Infrastructure.Query.Contracts.User;
-using Lab.Presentation.Facade.Contract.User;
+﻿using AM.Application.Contracts.User;
+using AM.Infrastructure.Query.Contract.User;
+using AM.Presentation.Facade.Contract.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

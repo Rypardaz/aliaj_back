@@ -1,8 +1,8 @@
-﻿using PhoenixFramework.Application.Query;
-using Lab.Presentation.Facade.Contract.ListItem;
-using Lab.Infrastructure.Query.Contracts.ListItem;
+﻿using AM.Infrastructure.Query.Contract.ListItem;
+using AM.Presentation.Facade.Contract.ListItem;
+using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class ListItemQueryFacade(IQueryBus queryBus) : IListItemQueryFacade
 {

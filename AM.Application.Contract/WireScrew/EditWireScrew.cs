@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.WireScrew;
+﻿namespace AM.Application.Contracts.WireScrew;
 
 public class EditWireScrew : CreateWireScrew
 {

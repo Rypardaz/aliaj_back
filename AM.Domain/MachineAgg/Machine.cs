@@ -1,7 +1,7 @@
-﻿using Ex.Domain.MachineAgg.Service;
+﻿using AM.Domain.MachineAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.MachineAgg;
+namespace AM.Domain.MachineAgg;
 
 public class Machine : AuditableAggregateRootBase<long>
 {

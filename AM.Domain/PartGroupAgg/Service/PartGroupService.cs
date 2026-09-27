@@ -1,9 +1,9 @@
-﻿using Ex.Domain.Share.Exception;
+﻿using System.Linq.Expressions;
+using AM.Domain.Share.Exception;
 using PhoenixFramework.Core.Exceptions;
 using PhoenixFramework.Domain.Specification;
-using System.Linq.Expressions;
 
-namespace Ex.Domain.PartGroupAgg.Service;
+namespace AM.Domain.PartGroupAgg.Service;
 
 public class PartGroupService(IPartGroupRepository partGroupRepository) : IPartGroupService
 {

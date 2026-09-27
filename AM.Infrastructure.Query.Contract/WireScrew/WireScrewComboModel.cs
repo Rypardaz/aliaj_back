@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.WireScrew;
+namespace AM.Infrastructure.Query.Contract.WireScrew;
 
 public class WireScrewComboModel : ComboBase
 {

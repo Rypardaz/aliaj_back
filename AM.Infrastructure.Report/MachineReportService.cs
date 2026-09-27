@@ -1,8 +1,8 @@
+using AM.Infrastructure.Report.Contract;
+using AM.Infrastructure.Report.Contract.MachineReport;
 using PhoenixFramework.Dapper;
-using Lab.Infrastructure.Report.Contract;
-using Lab.Infrastructure.Report.Contract.MachineReport;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class MachineReportService(BaseDapperRepository dapper) : IMachineReportService
 {

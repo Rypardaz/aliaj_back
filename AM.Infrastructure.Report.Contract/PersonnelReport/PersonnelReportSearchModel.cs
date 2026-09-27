@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Report.Contract.PersonnelReport;
+﻿namespace AM.Infrastructure.Report.Contract.PersonnelReport;
 
 public class PersonnelReportSearchModel
 {

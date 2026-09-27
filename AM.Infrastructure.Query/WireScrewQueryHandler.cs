@@ -1,10 +1,10 @@
-﻿using PhoenixFramework.Dapper;
-using Ex.Application.Contracts.WireScrew;
+﻿using AM.Application.Contracts.WireScrew;
+using AM.Infrastructure.Query.Contract.Shared;
+using AM.Infrastructure.Query.Contract.WireScrew;
 using PhoenixFramework.Application.Query;
-using Lab.Infrastructure.Query.Contracts.Shared;
-using Lab.Infrastructure.Query.Contracts.WireScrew;
+using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class WireScrewQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<WireScrewViewModel>>,

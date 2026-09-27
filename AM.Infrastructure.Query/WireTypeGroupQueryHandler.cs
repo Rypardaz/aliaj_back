@@ -1,10 +1,10 @@
-﻿using Ex.Application.Contracts.WireTypeGroup;
-using Lab.Infrastructure.Query.Contracts.Shared;
-using Lab.Infrastructure.Query.Contracts.WireTypeGroup;
+﻿using AM.Application.Contracts.WireTypeGroup;
+using AM.Infrastructure.Query.Contract.Shared;
+using AM.Infrastructure.Query.Contract.WireTypeGroup;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class WireTypeGroupQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<WireTypeGroupViewModel>>,

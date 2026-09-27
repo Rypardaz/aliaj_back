@@ -1,9 +1,9 @@
-﻿using Ex.Domain.MachineAgg;
-using Ex.Domain.MachineLogAgg;
-using Ex.Application.Contracts.MachineLog;
+﻿using AM.Application.Contracts.MachineLog;
+using AM.Domain.MachineAgg;
+using AM.Domain.MachineLogAgg;
 using PhoenixFramework.Application.Command;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class MachineLogCommandHandler(
     IMachineLogRepository machineLogRepository,

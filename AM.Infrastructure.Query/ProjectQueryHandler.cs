@@ -1,11 +1,10 @@
-﻿using PhoenixFramework.Dapper;
-using Ex.Application.Contracts.Project;
-using Ex.Domain.ProjectAgg;
+﻿using AM.Application.Contracts.Project;
+using AM.Infrastructure.Query.Contract.Project;
+using AM.Infrastructure.Query.Contract.Shared;
 using PhoenixFramework.Application.Query;
-using Lab.Infrastructure.Query.Contracts.Shared;
-using Lab.Infrastructure.Query.Contracts.Project;
+using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class ProjectQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<ProjectViewModel>, ProjectSearchModel>,

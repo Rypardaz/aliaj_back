@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.PowderType;
+﻿namespace AM.Application.Contracts.PowderType;
 
 public class EditPowderType : CreatePowderType
 {

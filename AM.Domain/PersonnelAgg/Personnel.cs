@@ -1,7 +1,7 @@
-﻿using Ex.Domain.PersonnelAgg.Service;
+﻿using AM.Domain.PersonnelAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.PersonnelAgg;
+namespace AM.Domain.PersonnelAgg;
 
 public class Personnel : AuditableAggregateRootBase<long>
 {

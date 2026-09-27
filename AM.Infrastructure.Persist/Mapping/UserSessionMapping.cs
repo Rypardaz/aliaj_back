@@ -1,8 +1,8 @@
-using Ex.Domain.UserAgg;
+using AM.Domain.UserAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 public class UserSessionMapping : IEntityTypeConfiguration<UserSession>
 {

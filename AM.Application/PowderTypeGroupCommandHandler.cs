@@ -1,10 +1,10 @@
-﻿using Ex.Application.Contracts.PowderTypeGroup;
-using Ex.Domain.PowderTypeGroupAgg.Service;
-using Ex.Domain.PowderTypeGroupAgg;
+﻿using AM.Application.Contracts.PowderTypeGroup;
+using AM.Domain.PowderTypeGroupAgg;
+using AM.Domain.PowderTypeGroupAgg.Service;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class PowderTypeGroupCommandHandler(
     IClaimHelper claimHelper,

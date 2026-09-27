@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.PartAgg.Service;
+namespace AM.Domain.PartAgg.Service;
 
 public interface IPartService : IDomainService
 {

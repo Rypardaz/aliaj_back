@@ -1,7 +1,7 @@
-﻿using Ex.Application.Contracts.DailyRecord;
+﻿using AM.Application.Contracts.DailyRecord;
 using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.DailyRecord;
+namespace AM.Presentation.Facade.Contract.DailyRecord;
 
 public interface IDailyRecordCommandFacade : IFacadeService
 {

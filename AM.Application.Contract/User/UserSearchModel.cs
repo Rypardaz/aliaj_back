@@ -1,4 +1,4 @@
-﻿namespace Ex.Application.Contracts.User;
+﻿namespace AM.Application.Contracts.User;
 
 public class UserSearchModel
 {

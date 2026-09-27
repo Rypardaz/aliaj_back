@@ -1,11 +1,11 @@
-﻿using PhoenixFramework.Application.Command;
+﻿using AM.Application.Contracts.Machine;
+using AM.Domain.MachineAgg;
+using AM.Domain.MachineAgg.Service;
+using AM.Domain.SalonAgg;
+using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
-using Ex.Application.Contracts.Machine;
-using Ex.Domain.MachineAgg.Service;
-using Ex.Domain.MachineAgg;
-using Ex.Domain.SalonAgg;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class MachineCommandHandler(
     IClaimHelper claimHelper,

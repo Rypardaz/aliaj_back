@@ -1,7 +1,7 @@
-using Ex.Application.Contracts.Role;
+using AM.Application.Contracts.Role;
 using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.Role;
+namespace AM.Presentation.Facade.Contract.Role;
 
 public interface IRoleCommandFacade : IFacadeService
 {

@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Report.Contract.DailyRecordListReport;
+﻿namespace AM.Infrastructure.Report.Contract.DailyRecordListReport;
 
 public class DailyRecordListReportModel
 {

@@ -3,7 +3,7 @@ using PhoenixFramework.Core.Exceptions;
 using PhoenixFramework.Domain;
 using PhoenixFramework.Identity;
 
-namespace Ex.Domain.UserAgg;
+namespace AM.Domain.UserAgg;
 
 public class User : AuditableAggregateRootBase<int>
 {

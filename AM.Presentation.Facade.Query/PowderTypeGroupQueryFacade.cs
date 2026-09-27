@@ -1,9 +1,9 @@
-﻿using Ex.Application.Contracts.PowderTypeGroup;
-using Lab.Infrastructure.Query.Contracts.PowderTypeGroup;
-using Lab.Presentation.Facade.Contract.PowderTypeGroup;
+﻿using AM.Application.Contracts.PowderTypeGroup;
+using AM.Infrastructure.Query.Contract.PowderTypeGroup;
+using AM.Presentation.Facade.Contract.PowderTypeGroup;
 using PhoenixFramework.Application.Query;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class PowderTypeGroupQueryFacade(IQueryBus queryBus) : IPowderTypeGroupQueryFacade
 {

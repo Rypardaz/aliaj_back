@@ -1,17 +1,15 @@
-﻿using Ex.Domain.GasTypeAgg;
-using Ex.Domain.ProjectAgg;
-using Ex.Domain.ActivityAgg;
-using Ex.Domain.PersonnelAgg;
-using Ex.Domain.PowderTypeAgg;
-using Ex.Application.Contracts.DailyRecord;
-using Ex.Domain.WireTypeAgg;
-using Ex.Domain.WireScrewAgg;
-using PhoenixFramework.Core;
+﻿using AM.Application.Contracts.DailyRecord;
+using AM.Domain.ActivityAgg;
+using AM.Domain.GasTypeAgg;
+using AM.Domain.PersonnelAgg;
+using AM.Domain.PowderTypeAgg;
+using AM.Domain.ProjectAgg;
+using AM.Domain.WireScrewAgg;
+using AM.Domain.WireTypeAgg;
+using AM.Domain.WorkCalendarAgg;
 using PhoenixFramework.Core.Exceptions;
-using Ex.Domain.WorkCalendarAgg;
-using System.Numerics;
 
-namespace Ex.Domain.DailyRecordAgg.Service;
+namespace AM.Domain.DailyRecordAgg.Service;
 
 public class DailyRecordService(
     IPersonnelRepository personnelRepository,

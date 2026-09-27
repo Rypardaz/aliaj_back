@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.TaskMaster;
+namespace AM.Application.Contracts.TaskMaster;
 
 public class DeactivateTaskMaster(Guid guid) : ICommand
 {

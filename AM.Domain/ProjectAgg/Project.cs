@@ -1,7 +1,7 @@
-﻿using Ex.Domain.ProjectAgg.Service;
+﻿using AM.Domain.ProjectAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.ProjectAgg;
+namespace AM.Domain.ProjectAgg;
 
 public class Project : AuditableAggregateRootBase<long>
 {

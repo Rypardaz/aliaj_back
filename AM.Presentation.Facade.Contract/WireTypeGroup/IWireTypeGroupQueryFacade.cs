@@ -1,9 +1,8 @@
-﻿using Ex.Application.Contracts.WireTypeGroup;
-using Lab.Infrastructure.Query.Contracts.WireTypeGroup;
+﻿using AM.Application.Contracts.WireTypeGroup;
+using AM.Infrastructure.Query.Contract.WireTypeGroup;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.WireTypeGroup;
+namespace AM.Presentation.Facade.Contract.WireTypeGroup;
 
 public interface IWireTypeGroupQueryFacade : IFacadeService
 {

@@ -1,10 +1,10 @@
-﻿using Ex.Application.Contracts.PartGroup;
-using Lab.Infrastructure.Query.Contracts.PartGroup;
-using Lab.Infrastructure.Query.Contracts.Shared;
+﻿using AM.Application.Contracts.PartGroup;
+using AM.Infrastructure.Query.Contract.PartGroup;
+using AM.Infrastructure.Query.Contract.Shared;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class PartGroupQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<PartGroupViewModel>>,

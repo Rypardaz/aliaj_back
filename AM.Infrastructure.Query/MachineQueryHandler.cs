@@ -1,10 +1,10 @@
-﻿using Ex.Application.Contracts.Machine;
-using Lab.Infrastructure.Query.Contracts.Machine;
-using Lab.Infrastructure.Query.Contracts.Shared;
+﻿using AM.Application.Contracts.Machine;
+using AM.Infrastructure.Query.Contract.Machine;
+using AM.Infrastructure.Query.Contract.Shared;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class MachineQueryHandler(BaseDapperRepository dapperRepository) :
     IQueryHandler<List<MachineViewModel>>,

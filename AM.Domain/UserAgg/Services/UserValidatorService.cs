@@ -1,4 +1,4 @@
-﻿namespace Ex.Domain.UserAgg.Services;
+﻿namespace AM.Domain.UserAgg.Services;
 
 public class UserValidatorService : IUserValidatorService
 {

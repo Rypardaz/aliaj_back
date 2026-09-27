@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.Machine;
+namespace AM.Infrastructure.Query.Contract.Machine;
 
 public class MachineComboModel : ComboBase
 {

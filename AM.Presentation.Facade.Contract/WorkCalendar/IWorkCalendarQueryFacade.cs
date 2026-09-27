@@ -1,7 +1,7 @@
-﻿using PhoenixFramework.Core;
-using Lab.Infrastructure.Query.Contracts.WorkCalendar;
+﻿using AM.Infrastructure.Query.Contract.WorkCalendar;
+using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.WorkCalendar;
+namespace AM.Presentation.Facade.Contract.WorkCalendar;
 
 public interface IWorkCalendarQueryFacade : IFacadeService
 {

@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Lab.Presentation.Facade.Contract.MachineLog;
-using Ex.Application.Contracts.MachineLog;
+﻿using AM.Application.Contracts.MachineLog;
+using AM.Presentation.Facade.Contract.MachineLog;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

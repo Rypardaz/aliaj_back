@@ -1,8 +1,7 @@
-﻿using Ex.Application.Contracts.Part;
+﻿using AM.Application.Contracts.Part;
 using PhoenixFramework.Core;
-using PhoenixFramework.Identity;
 
-namespace Lab.Presentation.Facade.Contract.Part;
+namespace AM.Presentation.Facade.Contract.Part;
 
 public interface IPartCommandFacade : IFacadeService
 {

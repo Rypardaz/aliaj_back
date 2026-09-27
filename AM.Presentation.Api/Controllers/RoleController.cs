@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Ex.Application.Contracts.Role;
-using Lab.Presentation.Facade.Contract.Role;
+﻿using AM.Application.Contracts.Role;
+using AM.Presentation.Facade.Contract.Role;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

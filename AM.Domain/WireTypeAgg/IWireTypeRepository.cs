@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.WireTypeAgg;
+namespace AM.Domain.WireTypeAgg;
 
 public interface IWireTypeRepository : IRepository<long, WireType>
 {

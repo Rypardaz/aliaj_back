@@ -1,7 +1,7 @@
-﻿using Ex.Application.Contracts.DailyRecord;
+﻿using AM.Application.Contracts.DailyRecord;
 using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.DailyRecord;
+namespace AM.Infrastructure.Query.Contract.DailyRecord;
 
 public class DailyRecordViewModel : ViewModelAbilities
 {

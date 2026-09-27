@@ -1,7 +1,7 @@
-﻿using Ex.Domain.SalonAgg.Service;
+﻿using AM.Domain.SalonAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.SalonAgg;
+namespace AM.Domain.SalonAgg;
 
 public class Salon : AuditableAggregateRootBase<long>
 {

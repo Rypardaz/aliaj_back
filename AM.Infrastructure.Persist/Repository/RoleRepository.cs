@@ -1,7 +1,7 @@
-﻿using Ex.Domain.RoleAgg;
+﻿using AM.Domain.RoleAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class RoleRepository(AliajCommandContext aliajCommandContext) : BaseRepository<int, Role>(aliajCommandContext), IRoleRepository
 {

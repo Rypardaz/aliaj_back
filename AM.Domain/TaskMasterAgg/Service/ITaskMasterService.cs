@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Ex.Domain.TaskMasterAgg.Service;
+namespace AM.Domain.TaskMasterAgg.Service;
 
 public interface ITaskMasterService : IDomainService
 {

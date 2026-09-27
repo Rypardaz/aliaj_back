@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Report.Contract.Chart;
+﻿namespace AM.Infrastructure.Report.Contract.Chart;
 
 public class ChartSearchModel
 {

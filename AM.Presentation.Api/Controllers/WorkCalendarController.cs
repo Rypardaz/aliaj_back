@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Lab.Presentation.Facade.Contract.WorkCalendar;
-using Lab.Infrastructure.Query.Contracts.WorkCalendar;
-using Ex.Application.Contracts.WorkCalendar;
+﻿using AM.Application.Contracts.WorkCalendar;
+using AM.Infrastructure.Query.Contract.WorkCalendar;
+using AM.Presentation.Facade.Contract.WorkCalendar;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

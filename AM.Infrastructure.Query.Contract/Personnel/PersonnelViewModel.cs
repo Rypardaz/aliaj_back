@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.Personnel;
+namespace AM.Infrastructure.Query.Contract.Personnel;
 
 public class PersonnelViewModel : ViewModelAbilities
 {

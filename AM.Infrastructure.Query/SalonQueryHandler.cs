@@ -1,11 +1,11 @@
-﻿using Ex.Application.Contracts.Salon;
-using Lab.Infrastructure.Query.Contracts.Salon;
-using Lab.Infrastructure.Query.Contracts.Shared;
+﻿using AM.Application.Contracts.Salon;
+using AM.Infrastructure.Query.Contract.Salon;
+using AM.Infrastructure.Query.Contract.Shared;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 using PhoenixFramework.Identity;
 
-namespace Lab.Infrastructure.Query;
+namespace AM.Infrastructure.Query;
 
 public class SalonQueryHandler(BaseDapperRepository dapperRepository, IClaimHelper claimHelper)
     :

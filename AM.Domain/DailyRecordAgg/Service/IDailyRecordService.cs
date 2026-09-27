@@ -1,7 +1,7 @@
-﻿using Ex.Application.Contracts.DailyRecord;
+﻿using AM.Application.Contracts.DailyRecord;
 using PhoenixFramework.Core;
 
-namespace Ex.Domain.DailyRecordAgg.Service;
+namespace AM.Domain.DailyRecordAgg.Service;
 
 public interface IDailyRecordService : IDomainService
 {

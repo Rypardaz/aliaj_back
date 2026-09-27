@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.WorkCalendar;
-using Lab.Presentation.Facade.Contract.WorkCalendar;
+﻿using AM.Application.Contracts.WorkCalendar;
+using AM.Presentation.Facade.Contract.WorkCalendar;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class WorkCalendarCommandFacade(BaseDapperRepository repository) : IWorkCalendarCommandFacade
 {

@@ -1,7 +1,7 @@
-﻿using Ex.Domain.DailyRecordAgg.Service;
+﻿using AM.Domain.DailyRecordAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace Ex.Domain.DailyRecordAgg;
+namespace AM.Domain.DailyRecordAgg;
 
 public class DailyRecord : AuditableAggregateRootBase<long>
 {

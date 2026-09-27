@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Ex.Application.Contracts.Project;
-using Lab.Presentation.Facade.Contract.Project;
-using Lab.Infrastructure.Query.Contracts.Project;
+﻿using AM.Application.Contracts.Project;
+using AM.Infrastructure.Query.Contract.Project;
+using AM.Presentation.Facade.Contract.Project;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Lab.Presentation.Api;
+namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

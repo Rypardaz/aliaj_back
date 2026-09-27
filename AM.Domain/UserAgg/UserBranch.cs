@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.UserAgg;
+namespace AM.Domain.UserAgg;
 
 public record UserBranch : ValueObjectBase
 {

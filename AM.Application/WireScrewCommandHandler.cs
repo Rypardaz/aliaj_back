@@ -1,11 +1,11 @@
-﻿using PhoenixFramework.Application.Command;
+﻿using AM.Application.Contracts.WireScrew;
+using AM.Domain.WireScrewAgg;
+using AM.Domain.WireScrewAgg.Service;
+using AM.Domain.WireTypeAgg;
+using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
-using Ex.Application.Contracts.WireScrew;
-using Ex.Domain.WireScrewAgg.Service;
-using Ex.Domain.WireScrewAgg;
-using Ex.Domain.WireTypeAgg;
 
-namespace Ex.Application;
+namespace AM.Application;
 
 public class WireScrewCommandHandler(
     IClaimHelper claimHelper,

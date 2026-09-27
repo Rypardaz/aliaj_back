@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace Ex.Domain.DailyRecordAgg;
+namespace AM.Domain.DailyRecordAgg;
 
 public interface IDailyRecordRepository : IRepository<long, DailyRecord>
 {

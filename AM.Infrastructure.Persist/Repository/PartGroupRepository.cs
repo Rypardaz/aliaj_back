@@ -1,7 +1,7 @@
-﻿using Ex.Domain.PartGroupAgg;
+﻿using AM.Domain.PartGroupAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class PartGroupRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, PartGroup>(aliajCommandContext), IPartGroupRepository

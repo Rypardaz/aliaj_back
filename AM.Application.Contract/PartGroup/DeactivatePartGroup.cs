@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Application.Command;
 
-namespace Ex.Application.Contracts.PartGroup;
+namespace AM.Application.Contracts.PartGroup;
 
 public class DeactivatePartGroup(Guid guid) : ICommand
 {

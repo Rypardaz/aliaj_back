@@ -1,8 +1,8 @@
-using Ex.Domain.TicketAgg;
+using AM.Domain.TicketAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 public class TicketMapping : IEntityTypeConfiguration<Ticket>
 {

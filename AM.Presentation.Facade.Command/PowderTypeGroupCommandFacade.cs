@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.PowderTypeGroup;
-using Lab.Presentation.Facade.Contract.PowderTypeGroup;
+﻿using AM.Application.Contracts.PowderTypeGroup;
+using AM.Presentation.Facade.Contract.PowderTypeGroup;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class PowderTypeGroupCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : IPowderTypeGroupCommandFacade

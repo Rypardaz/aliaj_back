@@ -1,8 +1,7 @@
-﻿using Ex.Application.Contracts.Machine;
-using Ex.Application.Contracts.MachineLog;
+﻿using AM.Application.Contracts.MachineLog;
 using PhoenixFramework.Core;
 
-namespace Lab.Presentation.Facade.Contract.MachineLog;
+namespace AM.Presentation.Facade.Contract.MachineLog;
 
 public interface IMachineLogCommandFacade : IFacadeService
 {

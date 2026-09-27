@@ -1,9 +1,9 @@
-﻿using Ex.Domain.Share.Exception;
+﻿using System.Linq.Expressions;
+using AM.Domain.Share.Exception;
 using PhoenixFramework.Core.Exceptions;
-using System.Linq.Expressions;
 using PhoenixFramework.Domain.Specification;
 
-namespace Ex.Domain.WireTypeGroupAgg.Service;
+namespace AM.Domain.WireTypeGroupAgg.Service;
 
 public class WireTypeGroupService(IWireTypeGroupRepository wireTypeGroupRepository) : IWireTypeGroupService
 {

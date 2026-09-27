@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using PhoenixFramework.Core;
+﻿using PhoenixFramework.Core;
 
-namespace Lab.Infrastructure.Report.Contract.Management;
+namespace AM.Infrastructure.Report.Contract.Management;
 
 public interface IManagementReportService : IReportService
 {

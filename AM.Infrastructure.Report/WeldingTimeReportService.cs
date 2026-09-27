@@ -1,7 +1,7 @@
+using AM.Infrastructure.Report.Contract.WeldingTime;
 using PhoenixFramework.Dapper;
-using Lab.Infrastructure.Report.Contract.WeldingTime;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class WeldingTimeReportService(BaseDapperRepository dapper) : IWeldingTimeReportService
 {

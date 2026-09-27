@@ -1,6 +1,6 @@
 using PhoenixFramework.Company.Query;
 
-namespace Lab.Infrastructure.Query.Contracts.Ticket;
+namespace AM.Infrastructure.Query.Contract.Ticket;
 
 public class TicketViewModel : ViewModelAbilities
 {

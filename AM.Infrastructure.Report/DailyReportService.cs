@@ -1,8 +1,8 @@
-﻿using PhoenixFramework.Dapper;
-using Lab.Infrastructure.Report.Contract;
-using Lab.Infrastructure.Report.Contract.Management;
+﻿using AM.Infrastructure.Report.Contract;
+using AM.Infrastructure.Report.Contract.Management;
+using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class DailyReportService(BaseDapperRepository repository) : IManagementReportService
 {

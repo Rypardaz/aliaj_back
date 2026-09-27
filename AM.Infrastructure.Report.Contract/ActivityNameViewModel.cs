@@ -1,4 +1,4 @@
-﻿namespace Lab.Infrastructure.Report.Contract;
+﻿namespace AM.Infrastructure.Report.Contract;
 
 public class ActivityNameViewModel
 {

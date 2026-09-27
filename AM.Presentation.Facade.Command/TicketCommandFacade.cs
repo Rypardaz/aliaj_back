@@ -1,8 +1,8 @@
-using Ex.Application.Contracts.Ticket;
+using AM.Application.Contracts.Ticket;
+using AM.Presentation.Facade.Contract.Ticket;
 using PhoenixFramework.Application.Command;
-using Lab.Presentation.Facade.Contract.Ticket;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class TicketCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : ITicketCommandFacade

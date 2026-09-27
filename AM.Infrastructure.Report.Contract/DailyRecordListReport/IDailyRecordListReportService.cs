@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace Lab.Infrastructure.Report.Contract.DailyRecordListReport;
+namespace AM.Infrastructure.Report.Contract.DailyRecordListReport;
 
 public interface IDailyRecordListReportService : IReportService
 {

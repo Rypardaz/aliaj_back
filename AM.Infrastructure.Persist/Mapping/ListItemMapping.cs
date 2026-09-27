@@ -1,8 +1,8 @@
-﻿using Ex.Domain.ListItemAgg;
+﻿using AM.Domain.ListItemAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 internal class ListItemMapping : IEntityTypeConfiguration<ListItem>
 {

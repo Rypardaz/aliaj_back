@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using PhoenixFramework.Core;
 
-namespace Lab.Infrastructure.Report.Contract.DataLogger;
+namespace AM.Infrastructure.Report.Contract.DataLogger;
 
 public interface IDataLoggerReportService : IReportService
 {

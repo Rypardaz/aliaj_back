@@ -1,8 +1,8 @@
-﻿using Ex.Application.Contracts.Machine;
-using Lab.Presentation.Facade.Contract.Machine;
+﻿using AM.Application.Contracts.Machine;
+using AM.Presentation.Facade.Contract.Machine;
 using PhoenixFramework.Application.Command;
 
-namespace Lab.Presentation.Facade.Command;
+namespace AM.Presentation.Facade.Command;
 
 public class MachineCommandFacade(ICommandBus commandBus, IResponsiveCommandBus responsiveCommandBus)
     : IMachineCommandFacade

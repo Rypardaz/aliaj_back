@@ -1,9 +1,9 @@
-using Ex.Application.Contracts.Role;
+using AM.Application.Contracts.Role;
+using AM.Infrastructure.Query.Contract.Role;
+using AM.Presentation.Facade.Contract.Role;
 using PhoenixFramework.Application.Query;
-using Lab.Presentation.Facade.Contract.Role;
-using Lab.Infrastructure.Query.Contracts.Role;
 
-namespace Lab.Presentation.Facade.Query;
+namespace AM.Presentation.Facade.Query;
 
 public class RoleQueryFacade(IQueryBus queryBus) : IRoleQueryFacade
 {

@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using AM.Domain.MachineAgg;
 using Microsoft.EntityFrameworkCore;
-using Ex.Domain.MachineAgg;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lab.Infrastructure.Persist.Mapping;
+namespace AM.Infrastructure.Persist.Mapping;
 
 public class MachineMapping : IEntityTypeConfiguration<Machine>
 {

@@ -1,7 +1,7 @@
-﻿using Ex.Domain.SalonAgg;
+﻿using AM.Domain.SalonAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class SalonRepository(AliajCommandContext aliajCommandContext)
     : BaseRepository<long, Salon>(aliajCommandContext), ISalonRepository

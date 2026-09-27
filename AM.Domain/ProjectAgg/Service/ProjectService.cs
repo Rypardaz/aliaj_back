@@ -1,12 +1,10 @@
-﻿using Ex.Domain.PartAgg;
-using Ex.Domain.GasTypeAgg;
-using Ex.Domain.WireTypeAgg;
-using Ex.Domain.PowderTypeAgg;
-using Ex.Application.Contracts.Project;
-using Ex.Domain.WireScrewAgg;
-using PhoenixFramework.Core.Exceptions;
+﻿using AM.Application.Contracts.Project;
+using AM.Domain.GasTypeAgg;
+using AM.Domain.PartAgg;
+using AM.Domain.PowderTypeAgg;
+using AM.Domain.WireTypeAgg;
 
-namespace Ex.Domain.ProjectAgg.Service;
+namespace AM.Domain.ProjectAgg.Service;
 
 public class ProjectService(
     IPartRepository partRepository,

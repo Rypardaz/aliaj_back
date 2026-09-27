@@ -1,7 +1,7 @@
-﻿using Lab.Infrastructure.Report.Contract.WireTypeConsumption;
+﻿using AM.Infrastructure.Report.Contract.WireTypeConsumption;
 using PhoenixFramework.Dapper;
 
-namespace Lab.Infrastructure.Report;
+namespace AM.Infrastructure.Report;
 
 public class WireTypeConsumptionReportService(BaseDapperRepository repository) : IWireTypeConsumptionReportService
 {

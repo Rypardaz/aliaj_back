@@ -1,8 +1,7 @@
-﻿using Ex.Domain.MachineLogAgg;
-using Microsoft.EntityFrameworkCore;
+﻿using AM.Domain.MachineLogAgg;
 using PhoenixFramework.EntityFramework;
 
-namespace Lab.Infrastructure.Persist.Repository;
+namespace AM.Infrastructure.Persist.Repository;
 
 public class MachineLogRepository(AliajCommandContext context)
     : BaseRepository<long, MachineLog>(context), IMachineLogRepository;
