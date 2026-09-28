@@ -15,8 +15,9 @@ public class UserController(
     IQueryBus queryBus) :
     ControllerBase
 {
+    [AllowAnonymous]
     [HttpPost("Login")]
-    public void Post([FromBody] Login command) => commandFacade.Login(command);
+    public UserViewModel Post([FromBody] Login command) => commandFacade.Login(command);
 
     [HttpPost("Create")]
     public void Post([FromBody] CreateUser command) => commandFacade.Create(command);

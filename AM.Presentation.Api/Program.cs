@@ -1,9 +1,12 @@
 using AM.Presentation.Api;
 using System.IO.Compression;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 using AM.Infrastructure.Config;
 using AM.Presentation.Api.Controllers;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.IdentityModel.Logging;
 using PhoenixFramework.Autofac;
@@ -13,8 +16,6 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
-
-// Add services to the container.
 builder.Services.AddRazorPages();
 
 builder.Services.AddLogging();
@@ -48,15 +49,32 @@ builder.Services.AddControllers()
     .AddApplicationPart(typeof(PartGroupController).Assembly)
     .AddNewtonsoftJson();
 
-var authorities = builder.Configuration.GetSection("IdentityAuthorities");
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
+var jwtIssuer = builder.Configuration["Jwt:Issuer"]
+                ?? throw new InvalidOperationException("Jwt:Issuer is not configured.");
+var jwtAudience = builder.Configuration["Jwt:Audience"]
+                  ?? throw new InvalidOperationException("Jwt:Audience is not configured.");
+var jwtKey = builder.Configuration["Jwt:Key"]
+             ?? throw new InvalidOperationException(
+                 "Jwt:Key is not configured. Set it through user secrets or the Jwt__Key environment variable.");
+
+if (Encoding.UTF8.GetByteCount(jwtKey) < 32)
+    throw new InvalidOperationException("Jwt:Key must be at least 32 bytes long.");
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
     {
-        options.Authority = authorities["0"];
-        options.RequireHttpsMetadata = false;
+        options.MapInboundClaims = false;
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateAudience = false,
+            ValidateIssuer = true,
+            ValidIssuer = jwtIssuer,
+            ValidateAudience = true,
+            ValidAudience = jwtAudience,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.FromSeconds(30),
+            NameClaimType = JwtRegisteredClaimNames.UniqueName,
         };
     });
 
@@ -69,7 +87,7 @@ builder.Services.AddAuthorization(options =>
     });
 });
 
-var connectionString = builder.Configuration.GetConnectionString("Application");
+var connectionString = builder.Configuration["ApplicationConnectionString"];
 
 if (string.IsNullOrWhiteSpace(connectionString))
     throw new Exception("Please Set Connection String");

@@ -13,6 +13,7 @@ using PhoenixFramework.Application.Command;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Autofac;
 using PhoenixFramework.Domain;
+using PhoenixFramework.Identity;
 
 namespace AM.Infrastructure.Config;
 
@@ -90,16 +91,16 @@ public class AliajMonitoringModule(string connectionString) : Module
         builder.RegisterAssemblyTypes(facadeAssembly)
             .Where(t => t.Name.EndsWith("CommandFacade"))
             .InstancePerLifetimeScope()
-             .EnableInterfaceInterceptors()
-             .InterceptedBy(typeof(SecurityInterceptor))
+            .EnableInterfaceInterceptors()
+            .InterceptedBy(typeof(SecurityInterceptor))
             .AsImplementedInterfaces();
 
         var facadeQueryAssembly = typeof(PartGroupQueryFacade).Assembly;
         builder.RegisterAssemblyTypes(facadeQueryAssembly)
             .Where(t => t.Name.EndsWith("QueryFacade"))
             .InstancePerLifetimeScope()
-             .EnableInterfaceInterceptors()
-             .InterceptedBy(typeof(SecurityInterceptor))
+            .EnableInterfaceInterceptors()
+            .InterceptedBy(typeof(SecurityInterceptor))
             .AsImplementedInterfaces();
 
         var reportAssembly = typeof(DailyReportService).Assembly;
@@ -108,6 +109,8 @@ public class AliajMonitoringModule(string connectionString) : Module
             .InstancePerLifetimeScope()
             .EnableInterfaceInterceptors()
             .AsImplementedInterfaces();
+
+        builder.RegisterType<PasswordHasher>().As<IPasswordHasher>();
 
         base.Load(builder);
     }

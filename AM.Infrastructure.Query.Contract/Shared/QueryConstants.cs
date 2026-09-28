@@ -24,4 +24,5 @@ public static class QueryConstants
     public const string GetProjectTypeFor = "dbo.spGetProjectTypeFor";
     public const string GetTicketFor = "dbo.spGetTicketFor";
     public const string GetProjectStep = "dbo.GetProjectStep";
+    public const string GetPermissions = "dbo.spGetPermission";
 }

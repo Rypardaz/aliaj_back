@@ -4,6 +4,8 @@ namespace AM.Application.Contracts.User;
 
 public class UserViewModel : ViewModelAbilities
 {
+    public string Token { get; set; }
+    public DateTime TokenExpirationUtc { get; set; }
     public long UserGroupId { get; set; }
     public string UserGroupName { get; set; }
     public string Username { get; set; }

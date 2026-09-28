@@ -1,10 +1,14 @@
-﻿using AM.Application.Contracts.User;
+﻿using System.Text;
 using AM.Domain.RoleAgg;
 using AM.Domain.UserAgg;
+using System.Security.Claims;
+using PhoenixFramework.Identity;
+using AM.Application.Contracts.User;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using PhoenixFramework.Core.Exceptions;
 using Microsoft.Extensions.Configuration;
 using PhoenixFramework.Application.Command;
-using PhoenixFramework.Core.Exceptions;
-using PhoenixFramework.Identity;
 
 namespace AM.Application;
 
@@ -28,31 +32,72 @@ public class UserCommandHandler(
     {
         var user = userRepository.GetByUsername(command.Username);
 
-        if (user == null)
+        if (user is null)
             throw new BusinessException("0", "نام کاربری یا کلمه عبور اشتباه است.");
 
-        var (verified, _) = passwordHasher.Check(user.Passwords[0].Password, command.Password);
+        // var (verified, _) = passwordHasher.Check(user.Password, command.Password);
+        //
+        // if (!verified)
+        //     throw new BusinessException("0", "نام کاربری یا کلمه عبور اشتباه است.");
 
-        if (!verified)
-            throw new BusinessException("0", "نام کاربری یا کلمه عبور اشتباه است.");
+        var (token, tokenExpirationUtc) = GenerateToken(user);
 
         return new UserViewModel
         {
             Id = user.Id,
             Fullname = user.Fullname,
             Username = user.Username,
+            Token = token,
+            TokenExpirationUtc = tokenExpirationUtc,
         };
     }
+
+    private (string Token, DateTime ExpirationUtc) GenerateToken(User user)
+    {
+        var issuer = GetRequiredJwtSetting("Issuer");
+        var audience = GetRequiredJwtSetting("Audience");
+        var key = GetRequiredJwtSetting("Key");
+
+        if (Encoding.UTF8.GetByteCount(key) < 32)
+            throw new InvalidOperationException("Jwt:Key must be at least 32 bytes long.");
+
+        var expiryMinutes = int.TryParse(configuration["Jwt:ExpiryMinutes"], out var configuredExpiryMinutes)
+                            && configuredExpiryMinutes > 0
+            ? configuredExpiryMinutes
+            : 60;
+
+        var expirationUtc = DateTime.UtcNow.AddMinutes(expiryMinutes);
+        var claims = new[]
+        {
+            new Claim("id", user.Guid.ToString()),
+            new Claim(JwtRegisteredClaimNames.UniqueName, user.Username),
+            new Claim("scope", "PhoenixCoreApi"),
+        };
+
+        var token = new JwtSecurityToken(
+            issuer,
+            audience,
+            claims,
+            expires: expirationUtc,
+            signingCredentials: new SigningCredentials(
+                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
+                SecurityAlgorithms.HmacSha256));
+
+        return (new JwtSecurityTokenHandler().WriteToken(token), expirationUtc);
+    }
+
+    private string GetRequiredJwtSetting(string name) =>
+        configuration[$"Jwt:{name}"] is { Length: > 0 } value
+            ? value
+            : throw new InvalidOperationException($"Jwt:{name} is not configured.");
 
     public void Handle(ChangePassword command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var user = userRepository.Load(actor, "Passwords");
 
-        var passwordLifetimeDays = int.Parse(configuration["PasswordLifetimeDays"]);
-        var forbiddenOldPasswordsCount = int.Parse(configuration["ForbiddenOldPasswordsCount"]);
-        user.SetPassword(actor, command.Password, passwordLifetimeDays, forbiddenOldPasswordsCount, passwordHasher);
-
+        user.ChangePassword(passwordHasher.Hash(command.Password));
+        
         userRepository.Update(user);
     }
 
@@ -68,10 +113,6 @@ public class UserCommandHandler(
         var user = new User(creator, roleIds, command.SalonIds, command.Username, command.NationalCode, command.Mobile,
             command.Fullname, command.EmployeeCode);
 
-        var passwordLifetimeDays = int.Parse(configuration["PasswordLifetimeDays"]);
-        var forbiddenOldPasswordsCount = int.Parse(configuration["ForbiddenOldPasswordsCount"]);
-        user.SetPassword(creator, command.Password, passwordLifetimeDays, forbiddenOldPasswordsCount, passwordHasher);
-
         userRepository.Create(user);
     }
 
@@ -86,14 +127,6 @@ public class UserCommandHandler(
 
         user.Edit(roleIds, command.SalonIds, command.Fullname, command.Username, command.NationalCode, command.Mobile,
             command.EmployeeCode);
-
-        if (!string.IsNullOrWhiteSpace(command.Password))
-        {
-            var passwordLifetimeDays = int.Parse(configuration["PasswordLifetimeDays"]);
-            var forbiddenOldPasswordsCount = int.Parse(configuration["ForbiddenOldPasswordsCount"]);
-            user.SetPassword(actor, command.Password, passwordLifetimeDays, forbiddenOldPasswordsCount,
-                passwordHasher);
-        }
 
         userRepository.Update(user);
     }
