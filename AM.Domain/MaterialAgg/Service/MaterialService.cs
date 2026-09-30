@@ -4,7 +4,7 @@ using PhoenixFramework.Core.Exceptions;
 using PhoenixFramework.Domain.Specification;
 
 
-namespace AM.Domain.Material.Service;
+namespace AM.Domain.MaterialAgg.Service;
 
 public class MaterialService(IMaterialRepository MaterialRepository) : IMaterialService
 {

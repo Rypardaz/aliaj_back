@@ -1,7 +1,7 @@
-﻿using AM.Domain.Material.Service;
+﻿using AM.Domain.MaterialAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace AM.Domain.Material;
+namespace AM.Domain.MaterialAgg;
 
 public class Material : AuditableAggregateRootBase<long>
 {

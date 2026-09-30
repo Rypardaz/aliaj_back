@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Domain;
 
-namespace AM.Domain.Material;
+namespace AM.Domain.MaterialAgg;
 
 public interface IMaterialRepository : IRepository<long, Material>
 {

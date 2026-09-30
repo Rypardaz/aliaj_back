@@ -1,6 +1,6 @@
 ﻿using PhoenixFramework.Core;
 
-namespace AM.Domain.Material.Service;
+namespace AM.Domain.MaterialAgg.Service;
 
 public interface IMaterialService : IDomainService
 {
