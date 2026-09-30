@@ -1,20 +1,20 @@
-﻿using AM.Application.Contracts.Activity;
-using AM.Presentation.Facade.Contract.Activity;
+﻿using AM.Application.Contracts.Unit;
+using AM.Presentation.Facade.Contract.Unit;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ActivityController(IActivityCommandFacade commandFacade, IActivityQueryFacade queryFacade)
+public class UnitController(IUnitCommandFacade commandFacade, IUnitQueryFacade queryFacade)
     : ControllerBase
 {
     [HttpPost("Create")]
-    public IActionResult Create([FromBody] CreateActivity command) =>
+    public IActionResult Create([FromBody] CreateUnit command) =>
         new JsonResult(commandFacade.Create(command));
 
     [HttpPost("Edit")]
-    public void Edit([FromBody] EditActivity command) =>
+    public void Edit([FromBody] EditUnit command) =>
         commandFacade.Edit(command);
 
     [HttpPost("Delete/{guid:guid}")]
