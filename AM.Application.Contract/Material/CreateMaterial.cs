@@ -10,5 +10,5 @@ public class CreateMaterial : ICommand
     [Required]
     public required string Name { get; set; }
     [Required]
-    public required long MaterialId { get; set; }
+    public required Guid UnitGuid { get; set; }
 }
