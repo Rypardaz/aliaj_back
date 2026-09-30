@@ -1,6 +1,5 @@
 ﻿using AM.Application.Contracts.TenderInquiry;
 using AM.Domain.ListItemAgg;
-using AM.Domain.SalonAgg;
 using AM.Domain.TenderInquiryAgg;
 using AM.Domain.TenderInquiryAgg.Service;
 using PhoenixFramework.Application.Command;
@@ -12,8 +11,7 @@ public class TenderInquiryCommandHandler(
     IClaimHelper claimHelper,
     ITenderInquiryRepository tenderInquiryRepository,
     ITenderInquiryService tenderInquiryService,
-    IListItemRepository listItemRepository,
-    ISalonRepository salonRepository)
+    IListItemRepository listItemRepository)
     :
         ICommandHandler<CreateTenderInquiry, Guid>,
         ICommandHandler<EditTenderInquiry>,
@@ -58,7 +56,7 @@ public class TenderInquiryCommandHandler(
     public void Handle(EditTenderInquiry command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
-        var tenderInquiry = tenderInquiryRepository.Load(command.Guid, "Salons");
+        var tenderInquiry = tenderInquiryRepository.Load(command.Guid);
 
         int saleDepartmentId;
         saleDepartmentId = listItemRepository.GetIdBy(command.SaleDepartmentGuid);
