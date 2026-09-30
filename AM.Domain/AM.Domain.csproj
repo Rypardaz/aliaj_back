@@ -11,10 +11,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="PhoenixFramework.Application" Version="2.0.8" />
-      <PackageReference Include="PhoenixFramework.Core" Version="2.0.8" />
-      <PackageReference Include="PhoenixFramework.Domain" Version="2.0.8" />
-      <PackageReference Include="PhoenixFramework.EntityFramework" Version="2.0.8" />
+      <PackageReference Include="PhoenixFramework.Application" Version="3.0.0" />
+      <PackageReference Include="PhoenixFramework.Core" Version="3.0.0" />
+      <PackageReference Include="PhoenixFramework.Domain" Version="3.0.0" />
+      <PackageReference Include="PhoenixFramework.EntityFramework" Version="3.0.0" />
     </ItemGroup>
 
     <ItemGroup>

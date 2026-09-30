@@ -12,14 +12,13 @@
 
     <ItemGroup>
       <FrameworkReference Include="Microsoft.AspNetCore.App" />
-      <PackageReference Include="PhoenixFramework.Core" Version="2.0.8" />
-      <PackageReference Include="PhoenixFramework.Identity" Version="2.0.8" />
+      <PackageReference Include="PhoenixFramework.Core" Version="3.0.0" />
+      <PackageReference Include="PhoenixFramework.Identity" Version="3.0.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\AM.Application.Contract\AM.Application.Contract.csproj" />
       <ProjectReference Include="..\AM.Domain\AM.Domain.csproj" />
-      <ProjectReference Include="..\Lab.Infrastructure.Persist\Lab.Infrastructure.Persist.csproj" />
       <ProjectReference Include="..\AM.Infrastructure.Query.Contract\AM.Infrastructure.Query.Contract.csproj" />
     </ItemGroup>
 

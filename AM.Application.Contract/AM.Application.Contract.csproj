@@ -12,9 +12,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="PhoenixFramework.Application" Version="2.0.8" />
-      <PackageReference Include="PhoenixFramework.Identity" Version="2.0.8" />
-      <PackageReference Include="PhoenixFramework.Logging" Version="2.0.8" />
+      <PackageReference Include="PhoenixFramework.Application" Version="3.0.0" />
+      <PackageReference Include="PhoenixFramework.Identity" Version="3.0.0" />
+      <PackageReference Include="PhoenixFramework.Logging" Version="3.0.0" />
     </ItemGroup>
 
     <ItemGroup>

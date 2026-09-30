@@ -9,9 +9,9 @@
 
 
     <ItemGroup>
-      <PackageReference Include="PhoenixFramework.Application" Version="2.0.8" />
-      <PackageReference Include="PhoenixFramework.Company" Version="2.0.8" />
-      <PackageReference Include="PhoenixFramework.Domain" Version="2.0.8" />
+      <PackageReference Include="PhoenixFramework.Application" Version="3.0.0" />
+      <PackageReference Include="PhoenixFramework.Company" Version="3.0.0" />
+      <PackageReference Include="PhoenixFramework.Domain" Version="3.0.0" />
     </ItemGroup>
 
 

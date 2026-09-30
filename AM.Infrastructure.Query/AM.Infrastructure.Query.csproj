@@ -9,13 +9,12 @@
     <ItemGroup>
       <ProjectReference Include="..\AM.Application.Contract\AM.Application.Contract.csproj" />
       <ProjectReference Include="..\AM.Infrastructure.Persist\AM.Infrastructure.Persist.csproj" />
-      <ProjectReference Include="..\Lab.Infrastructure.Persist\Lab.Infrastructure.Persist.csproj" />
       <ProjectReference Include="..\AM.Infrastructure.Query.Contract\AM.Infrastructure.Query.Contract.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="PhoenixFramework.Application" Version="2.0.8" />
-      <PackageReference Include="PhoenixFramework.Dapper" Version="2.0.8" />
+      <PackageReference Include="PhoenixFramework.Application" Version="3.0.0" />
+      <PackageReference Include="PhoenixFramework.Dapper" Version="3.0.0" />
     </ItemGroup>
 
 </Project>
