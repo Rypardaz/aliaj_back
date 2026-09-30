@@ -11,16 +11,27 @@ public class TaskMasterMapping : IEntityTypeConfiguration<TaskMaster>
     {
         builder.ToTable("tbTaskMaster");
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
-        builder.Property(x => x.IsActive);
-        builder.Property(x => x.Guid);
-        builder.Property(x => x.IsRemoved);
-        builder.Property(x => x.Created);
-        builder.Property(x => x.CreatedBy);
-        builder.Property(x => x.LastModified);
-        builder.Property(x => x.LastModifiedBy);
-        builder.Ignore(x => x.EventAggregator);
 
+        builder.Ignore(x => x.EventAggregator);
         builder.Ignore(x => x.IsLocked);
+
+        builder.OwnsMany(x => x.Contacts, contact =>
+        {
+            contact.ToTable("tbTaskMasterContact");
+            contact.HasKey(x => x.Id);
+            contact.Property(x => x.Id).ValueGeneratedOnAdd();
+            contact.WithOwner().HasForeignKey(nameof(TaskMasterContact.TaskMasterId));
+
+            contact.Property(x => x.Guid);
+            contact.Property<long>(nameof(TaskMasterContact.TaskMasterId));
+            contact.Property<string>(nameof(TaskMasterContact.Name)).IsRequired();
+            contact.Property<string>(nameof(TaskMasterContact.Post)).IsRequired();
+            contact.Property<string>(nameof(TaskMasterContact.Phone)).IsRequired();
+            contact.Property<string?>(nameof(TaskMasterContact.CellPhone)).IsRequired(false);
+        });
+
+        builder.Navigation(x => x.Contacts)
+            .HasField("_contacts")
+            .UsePropertyAccessMode(PropertyAccessMode.Field);
     }
 }
