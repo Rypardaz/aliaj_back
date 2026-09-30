@@ -34,6 +34,6 @@ public class WireScrewQueryHandler(BaseDapperRepository dapperRepository) :
         });
 
     public List<ProductionWireScrewViewModel> Handle(ProductionWireScrewSearchModel searchModel) =>
-        dapperRepository.SelectFromSp<ProductionWireScrewViewModel>(QueryConstants.spGetProductionWireScrew,
+        dapperRepository.SelectFromSp<ProductionWireScrewViewModel>(QueryConstants.SpGetProductionWireScrew,
             new { searchModel.Guid });
 }
