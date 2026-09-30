@@ -11,13 +11,13 @@ public class CreateTaskMaster : ICommand
     public string? RegistNo { get; set; }
     public string? NationalCode { get; set; }
     public string? EconomicCode { get; set; }
-    public int? OfficeProvinceId { get; set; }
-    public int? OfficeCityId { get; set; }
+    public Guid? OfficeProvinceGuid { get; set; }
+    public Guid? OfficeCityGuid { get; set; }
     public string? OfficeZipCode { get; set; }
     public string? OfficeAddress { get; set; }
     public string? OfficePhone { get; set; }
-    public int? FactoryProvinceId { get; set; }
-    public int? FactoryCityId { get; set; }
+    public Guid? FactoryProvinceGuid { get; set; }
+    public Guid? FactoryCityGuid { get; set; }
     public string? FactoryZipCode { get; set; }
     public string? FactoryAddress { get; set; }
     public string? FactoryPhone { get; set; }
