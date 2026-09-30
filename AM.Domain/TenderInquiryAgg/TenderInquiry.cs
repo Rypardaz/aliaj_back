@@ -16,18 +16,21 @@ public class TenderInquiry : AuditableAggregateRootBase<long>
     public string SubmissionDeadline { get; private set; }
     public string GuaranteeReceivedDate { get; private set; }
     public string InquirySentDate { get; private set; }
-    public long QuotedAmount { get; private set; }
-    public int InquiryResultId { get; private set; }
-    public int LossReasonId { get; private set; }
+    public long? QuotedAmount { get; private set; }
+    public int? InquiryResultId { get; private set; }
+    public int? LossReasonId { get; private set; }
     public string Winner { get; private set; }
-    public long WinningAmount { get; private set; }
+    public long? WinningAmount { get; private set; }
 
 
     protected TenderInquiry()
     {
     }
 
-    public TenderInquiry(Guid creator, string projectCode, int saleDepartmentId, long taskMasterId, int applicationTypeId, long projectTypeId, string description, string no, string documentReceivedDate, string submissionDeadline, string guaranteeReceivedDate, string inquirySentDate, long quotedAmount, int inquiryResultId, int lossReasonId, string winner, long winningAmount, ITenderInquiryService service) : base(creator)
+    public TenderInquiry(Guid creator, string projectCode, int saleDepartmentId, long taskMasterId, int applicationTypeId, 
+        long projectTypeId, string description, string no, string documentReceivedDate, string submissionDeadline, 
+        string guaranteeReceivedDate, string inquirySentDate, long? quotedAmount, int? inquiryResultId, 
+        int? lossReasonId, string winner, long? winningAmount, ITenderInquiryService service) : base(creator)
     {
         service.ThrowWhenDuplicatedProjectCode(projectCode);
         service.ThrowWhenDuplicatedNo(no);
@@ -50,7 +53,10 @@ public class TenderInquiry : AuditableAggregateRootBase<long>
         WinningAmount = winningAmount;
     }
 
-    public void Edit(Guid actor, string projectCode, int saleDepartmentId, long taskMasterId, int applicationTypeId, long projectTypeId, string description, string no, string documentReceivedDate, string submissionDeadline, string guaranteeReceivedDate, string inquirySentDate, long quotedAmount, int inquiryResultId, int lossReasonId, string winner, long winningAmount, ITenderInquiryService service)
+    public void Edit(Guid actor, string projectCode, int saleDepartmentId, long taskMasterId, int applicationTypeId, 
+        long projectTypeId, string description, string no, string documentReceivedDate, string submissionDeadline, 
+        string guaranteeReceivedDate, string inquirySentDate, long? quotedAmount, int? inquiryResultId, 
+        int? lossReasonId, string winner, long? winningAmount, ITenderInquiryService service)
     {
         service.ThrowWhenDuplicatedProjectCode(projectCode, Id);
         service.ThrowWhenDuplicatedNo(no, Id);
