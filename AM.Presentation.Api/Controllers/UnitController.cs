@@ -1,6 +1,6 @@
-﻿using AM.Application.Contracts.Unit;
+﻿using Microsoft.AspNetCore.Mvc;
+using AM.Application.Contracts.Unit;
 using AM.Presentation.Facade.Contract.Unit;
-using Microsoft.AspNetCore.Mvc;
 
 namespace AM.Presentation.Api.Controllers;
 
@@ -37,7 +37,6 @@ public class UnitController(IUnitCommandFacade commandFacade, IUnitQueryFacade q
     public IActionResult GetDetails(Guid guid)
         => new JsonResult(queryFacade.GetDetails(guid));
 
-    [HttpGet("GetForCombo/{salonGuid?}")]
-    public IActionResult GetForCombo(Guid? salonGuid)
-        => new JsonResult(queryFacade.Combo(salonGuid));
+    [HttpGet("GetForCombo")]
+    public IActionResult GetForCombo() => new JsonResult(queryFacade.Combo());
 }

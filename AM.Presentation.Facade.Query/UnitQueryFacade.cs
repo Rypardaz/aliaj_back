@@ -11,6 +11,5 @@ public class UnitQueryFacade(IQueryBus queryBus) : IUnitQueryFacade
 
     public List<UnitViewModel> List() => queryBus.Dispatch<List<UnitViewModel>>();
 
-    public List<UnitComboModel> Combo(Guid? salonGuid) =>
-        queryBus.Dispatch<List<UnitComboModel>, Guid?>(salonGuid);
+    public List<UnitComboModel> Combo() => queryBus.Dispatch<List<UnitComboModel>>();
 }

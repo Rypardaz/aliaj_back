@@ -22,7 +22,6 @@ public class TenderInquiry : AuditableAggregateRootBase<long>
     public string Winner { get; private set; }
     public long? WinningAmount { get; private set; }
 
-
     protected TenderInquiry()
     {
     }

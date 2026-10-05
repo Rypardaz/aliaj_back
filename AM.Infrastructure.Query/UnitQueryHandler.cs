@@ -12,7 +12,7 @@ public class UnitQueryHandler(
     AliajQueryContext context) :
     IQueryHandler<List<UnitViewModel>>,
     IQueryHandler<EditUnit, Guid>,
-    IQueryHandler<List<UnitComboModel>, Guid?>
+    IQueryHandler<List<UnitComboModel>>
 {
     List<UnitViewModel> IQueryHandler<List<UnitViewModel>>.Handle() =>
         dapperRepository.SelectFromSp<UnitViewModel>(QueryConstants.GetUnitFor, new
@@ -20,14 +20,12 @@ public class UnitQueryHandler(
             Type = QueryTypes.List
         });
 
-    public List<UnitComboModel> Handle(Guid? salonGuid)
-    {
-        return dapperRepository.SelectFromSp<UnitComboModel>(QueryConstants.GetUnitFor, new
+    public List<UnitComboModel> Handle() =>
+        dapperRepository.SelectFromSp<UnitComboModel>(QueryConstants.GetUnitFor, new
         {
-            Type = QueryTypes.Combo,
-            SalonGuid = salonGuid
+            Type = QueryTypes.Combo
         });
-    }
+
     public EditUnit Handle(Guid guid) =>
         dapperRepository.SelectFromSpFirstOrDefault<EditUnit>(QueryConstants.GetUnitFor, new
         {
