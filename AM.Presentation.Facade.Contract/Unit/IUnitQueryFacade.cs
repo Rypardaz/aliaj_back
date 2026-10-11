@@ -9,5 +9,5 @@ public interface IUnitQueryFacade : IFacadeService
     List<UnitViewModel> List();
 
     EditUnit GetDetails(Guid guid);
-    List<UnitComboModel> Combo(Guid? salonGuid);
+    List<UnitComboModel> Combo();
 }

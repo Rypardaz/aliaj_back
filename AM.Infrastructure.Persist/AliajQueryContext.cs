@@ -2,6 +2,7 @@ using AM.Domain.ActivityAgg;
 using AM.Domain.PartAgg;
 using AM.Domain.PartGroupAgg;
 using AM.Domain.ProjectAgg;
+using AM.Domain.RegionAgg;
 using AM.Domain.RoleAgg;
 using AM.Domain.TicketAgg;
 using AM.Domain.UserAgg;
@@ -11,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 namespace AM.Infrastructure.Persist;
 
 public class AliajQueryContext(DbContextOptions<AliajQueryContext> options)
-    : DbContext(options) /*, IDbContext*/
+    : DbContext(options)
 {
     public DbSet<PartGroup> PartGroup { get; set; }
     public DbSet<Part> Part { get; set; }
@@ -25,6 +26,7 @@ public class AliajQueryContext(DbContextOptions<AliajQueryContext> options)
     public DbSet<RolePermission> RolePermissions { get; set; }
     public DbSet<UserRole> UserRoles { get; set; }
     public DbSet<UserSession> UserSessions { get; set; }
+    public DbSet<Region> Regions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

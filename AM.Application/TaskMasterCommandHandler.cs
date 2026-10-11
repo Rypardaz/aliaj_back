@@ -1,4 +1,5 @@
-﻿using AM.Domain.TaskMasterAgg;
+﻿using AM.Domain.RegionAgg;
+using AM.Domain.TaskMasterAgg;
 using PhoenixFramework.Identity;
 using AM.Domain.TaskMasterAgg.Service;
 using AM.Application.Contracts.TaskMaster;
@@ -8,6 +9,7 @@ namespace AM.Application;
 
 public class TaskMasterCommandHandler(
     IClaimHelper claimHelper,
+    IRegionRepository regionRepository,
     ITaskMasterRepository taskMasterRepository,
     ITaskMasterService taskMasterService) :
     ICommandHandler<CreateTaskMaster, Guid>,
@@ -24,11 +26,26 @@ public class TaskMasterCommandHandler(
             .Select(x => new TaskMasterContact(x.TaskMasterId, x.Name, x.Post, x.Phone, x.CellPhone))
             .ToList();
 
+        int? officeProvinceId = null;
+        if (command.OfficeProvinceGuid is not null)
+            officeProvinceId = regionRepository.GetIdBy(command.OfficeProvinceGuid.Value);
+
+        int? officeCityId = null;
+        if (command.OfficeCityGuid is not null)
+            officeCityId = regionRepository.GetIdBy(command.OfficeCityGuid.Value);
+
+        int? factoryProvinceId = null;
+        if (command.FactoryProvinceGuid is not null)
+            factoryProvinceId = regionRepository.GetIdBy(command.FactoryProvinceGuid.Value);
+
+        int? factoryCityId = null;
+        if (command.FactoryCityGuid is not null)
+            factoryCityId = regionRepository.GetIdBy(command.FactoryCityGuid.Value);
+
         var taskMaster = new TaskMaster(creator, command.Name, command.IndustryTypeId, command.RegistNo,
-            command.NationalCode, command.EconomicCode, command.OfficeProvinceId, command.OfficeCityId,
-            command.OfficeZipCode, command.OfficeAddress, command.OfficePhone, command.FactoryProvinceId,
-            command.FactoryCityId, command.FactoryZipCode, command.FactoryAddress, command.FactoryPhone, contacts,
-            taskMasterService);
+            command.NationalCode, command.EconomicCode, officeProvinceId, officeCityId, command.OfficeZipCode,
+            command.OfficeAddress, command.OfficePhone, factoryProvinceId, factoryCityId, command.FactoryZipCode,
+            command.FactoryAddress, command.FactoryPhone, contacts, taskMasterService);
 
         taskMasterRepository.Create(taskMaster);
         return taskMaster.Guid;
@@ -43,11 +60,26 @@ public class TaskMasterCommandHandler(
             .Select(x => new TaskMasterContact(x.TaskMasterId, x.Name, x.Post, x.Phone, x.CellPhone))
             .ToList();
 
-        taskMaster.Edit(actor, command.Name, command.IndustryTypeId, command.RegistNo,
-            command.NationalCode, command.EconomicCode, command.OfficeProvinceId, command.OfficeCityId,
-            command.OfficeZipCode, command.OfficeAddress, command.OfficePhone, command.FactoryProvinceId,
-            command.FactoryCityId, command.FactoryZipCode, command.FactoryAddress, command.FactoryPhone, contacts,
-            taskMasterService);
+        int? officeProvinceId = null;
+        if (command.OfficeProvinceGuid is not null)
+            officeProvinceId = regionRepository.GetIdBy(command.OfficeProvinceGuid.Value);
+
+        int? officeCityId = null;
+        if (command.OfficeCityGuid is not null)
+            officeCityId = regionRepository.GetIdBy(command.OfficeCityGuid.Value);
+
+        int? factoryProvinceId = null;
+        if (command.FactoryProvinceGuid is not null)
+            factoryProvinceId = regionRepository.GetIdBy(command.FactoryProvinceGuid.Value);
+
+        int? factoryCityId = null;
+        if (command.FactoryCityGuid is not null)
+            factoryCityId = regionRepository.GetIdBy(command.FactoryCityGuid.Value);
+
+        taskMaster.Edit(actor, command.Name, command.IndustryTypeId, command.RegistNo, command.NationalCode,
+            command.EconomicCode, officeProvinceId, officeCityId, command.OfficeZipCode, command.OfficeAddress,
+            command.OfficePhone, factoryProvinceId, factoryCityId, command.FactoryZipCode, command.FactoryAddress,
+            command.FactoryPhone, contacts, taskMasterService);
     }
 
     public void Handle(RemoveTaskMaster command)
