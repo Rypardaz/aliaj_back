@@ -1,4 +1,4 @@
-﻿using AM.Application.Contracts.ProjectDossier;
+﻿using AM.Application.Contracts.ProjectDossierCost;
 using AM.Infrastructure.Persist;
 using AM.Infrastructure.Query.Contract.ProjectDossierCost;
 using AM.Infrastructure.Query.Contract.Shared;

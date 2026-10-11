@@ -2,7 +2,7 @@
 
 namespace AM.Application.Contracts.ProjectDossier;
 
-public class EditProjectDossierActualCost : ICommand
+public class EditActualCost : ICommand
 {
     public Guid Guid { get; set; }
     public long? WeldingWireActualCost { get; set; }

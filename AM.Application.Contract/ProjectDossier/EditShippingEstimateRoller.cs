@@ -2,7 +2,7 @@
 
 namespace AM.Application.Contracts.ProjectDossier;
 
-public class EditProjectDossierShippingEstimateRoller : ICommand
+public class EditShippingEstimateRoller : ICommand
 {
     public Guid Guid { get; set; }
     public int? TypeOfCargo { get; set; }

@@ -19,35 +19,35 @@ public class ProjectDossierController(IProjectDossierCommandFacade commandFacade
         commandFacade.Edit(command);
 
     [HttpPost("EditInquiryInformation")]
-    public void EditInquiryInformation([FromBody] EditProjectDossierInquiryInformation command) =>
+    public void EditInquiryInformation([FromBody] EditInquiryInformation command) =>
         commandFacade.EditInquiryInformation(command);
 
     [HttpPost("EditContractInformation")]
-    public void EditContractInformation([FromBody] EditProjectDossierContractInformation command) =>
+    public void EditContractInformation([FromBody] EditContractInformation command) =>
         commandFacade.EditContractInformation(command);
 
     [HttpPost("EditCost")]
-    public void EditCost([FromBody] EditProjectDossierCost command) =>
+    public void EditCost([FromBody] EditCost command) =>
         commandFacade.EditCost(command);
 
     [HttpPost("EditInvoice")]
-    public void EditInvoice([FromBody] EditProjectDossierInvoice command) =>
+    public void EditInvoice([FromBody] EditInvoice command) =>
         commandFacade.EditInvoice(command);
 
     [HttpPost("EditShippingEstimateHardface")]
-    public void EditShippingEstimateHardface([FromBody] EditProjectDossierShippingEstimateHardface command) =>
+    public void EditShippingEstimateHardface([FromBody] EditShippingEstimateHardface command) =>
         commandFacade.EditShippingEstimateHardface(command);
 
     [HttpPost("EditShippingEstimateRoller")]
-    public void EditShippingEstimateRoller([FromBody] EditProjectDossierShippingEstimateRoller command) =>
+    public void EditShippingEstimateRoller([FromBody] EditShippingEstimateRoller command) =>
         commandFacade.EditShippingEstimateRoller(command);
 
     [HttpPost("EditCostBeforImplementation")]
-    public void EditCostBeforImplementation([FromBody] EditProjectDossierCostBeforImplementation command) =>
+    public void EditCostBeforImplementation([FromBody] EditCostBeforImplementation command) =>
         commandFacade.EditCostBeforImplementation(command);
 
     [HttpPost("EditActualCost")]
-    public void EditActualCost([FromBody] EditProjectDossierActualCost command) =>
+    public void EditActualCost([FromBody] EditActualCost command) =>
         commandFacade.EditActualCost(command);
 
 

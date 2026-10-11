@@ -2,7 +2,7 @@
 
 namespace AM.Application.Contracts.ProjectDossier;
 
-public class EditProjectDossierShippingEstimateHardface : ICommand
+public class EditShippingEstimateHardface : ICommand
 {
     public Guid Guid { get; set; }
     public string NotificationFactoryDate { get; set; }

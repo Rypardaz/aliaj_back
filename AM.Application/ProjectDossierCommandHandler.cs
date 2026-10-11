@@ -15,7 +15,14 @@ public class ProjectDossierCommandHandler(
     :
         ICommandHandler<CreateProjectDossier, Guid>,
         ICommandHandler<EditProjectDossier>,
-        ICommandHandler<EditProjectDossierInquiryInformation>,
+        ICommandHandler<EditInquiryInformation>,
+        ICommandHandler<EditContractInformation>,
+        ICommandHandler<EditCost>,
+        ICommandHandler<EditInvoice>,
+        ICommandHandler<EditShippingEstimateHardface>,
+        ICommandHandler<EditShippingEstimateRoller>,
+        ICommandHandler<EditCostBeforImplementation>,
+        ICommandHandler<EditActualCost>,
         ICommandHandler<RemoveProjectDossier>,
         ICommandHandler<ActivateProjectDossier>,
         ICommandHandler<DeactivateProjectDossier>
@@ -65,7 +72,7 @@ public class ProjectDossierCommandHandler(
             applicationTypeId, projectTypeId, command.Description, projectDossierService);
     }
 
-    public void Handle(EditProjectDossierInquiryInformation command)
+    public void Handle(EditInquiryInformation command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
@@ -82,7 +89,7 @@ public class ProjectDossierCommandHandler(
             projectDossierService);
     }
 
-    public void Handle(EditProjectDossierContractInformation command)
+    public void Handle(EditContractInformation command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
@@ -91,7 +98,7 @@ public class ProjectDossierCommandHandler(
             command.ContractDeliveryDate, command.EmployerNotificationDate);
     }
 
-    public void Handle(EditProjectDossierCost command)
+    public void Handle(EditCost command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
@@ -101,7 +108,7 @@ public class ProjectDossierCommandHandler(
             command.SheetCostToSalesRatio, command.PipeCostToSalesRatio);
     }
 
-    public void Handle(EditProjectDossierInvoice command)
+    public void Handle(EditInvoice command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
@@ -109,7 +116,7 @@ public class ProjectDossierCommandHandler(
         projectDossier.EditInvoice(actor, command.InsuranceDeposit, command.PerformanceDeposit);
     }
 
-    public void Handle(EditProjectDossierShippingEstimateHardface command)
+    public void Handle(EditShippingEstimateHardface command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
@@ -118,7 +125,7 @@ public class ProjectDossierCommandHandler(
             command.BuyRequestDate, command.MaterialPurchaseState, command.ProjectCompletionForecast);
     }
 
-    public void Handle(EditProjectDossierShippingEstimateRoller command)
+    public void Handle(EditShippingEstimateRoller command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
@@ -127,7 +134,7 @@ public class ProjectDossierCommandHandler(
             command.EstimatedShippingDateFromEshtehard, command.EstimatedDeliveryDateToClient, command.ActualShippingDateFromEshtehard, command.ActualDeliveryDateToClient);
     }
 
-    public void Handle(EditProjectDossierCostBeforImplementation command)
+    public void Handle(EditCostBeforImplementation command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
@@ -137,7 +144,7 @@ public class ProjectDossierCommandHandler(
             command.SheetCostToSalesRatioBeforImplementation, command.PipeCostToSalesRatioBeforImplementation);
     }
 
-    public void Handle(EditProjectDossierActualCost command)
+    public void Handle(EditActualCost command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);

@@ -2,7 +2,7 @@
 
 namespace AM.Application.Contracts.ProjectDossier;
 
-public class EditProjectDossierContractInformation : ICommand
+public class EditContractInformation : ICommand
 {
     public Guid Guid { get; set; }
     public string ContractDate { get; set; }
