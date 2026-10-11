@@ -8,7 +8,7 @@ public class CreateProjectDossierCost : ICommand
     public long ProjectDossierId { get; set; }
     public int ItemType { get; set; }
     public int ItemNo { get; set; }
-    public int MaterialId { get; set; }
+    public long MaterialId { get; set; }
     public decimal? Thickness { get; set; }
     public decimal? Length { get; set; }
     public decimal? Width { get; set; }

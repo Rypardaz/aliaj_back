@@ -8,7 +8,7 @@ public class ProjectDossierCost : AuditableAggregateRootBase<long>
     public long ProjectDossierId { get; private set; }
     public int ItemType { get; private set; }
     public int ItemNo { get; private set; }
-    public int MaterialId { get; private set; }
+    public long MaterialId { get; private set; }
     public decimal? Thickness { get; private set; }
     public decimal? Length { get; private set; }
     public decimal? Width { get; private set; }
@@ -20,14 +20,14 @@ public class ProjectDossierCost : AuditableAggregateRootBase<long>
 
     protected ProjectDossierCost () { }
 
-    public ProjectDossierCost(Guid creator, long projectDossierId, int itemType, int itemNo, int materialId,
+    public ProjectDossierCost(Guid creator, long projectDossierId, int itemType, int itemNo, long materialId,
         decimal? thickness, decimal? length, decimal? width, decimal? density, decimal? size, decimal qty, long fee,
         long amount) : base(creator)
     {
         SetProperties(projectDossierId, itemType, itemNo, materialId, thickness, length, width, density, size, qty, fee, amount);
     }
 
-    public void Edit(Guid actor, long projectDossierId, int itemType, int itemNo, int materialId,
+    public void Edit(Guid actor, long projectDossierId, int itemType, int itemNo, long materialId,
         decimal? thickness, decimal? length, decimal? width, decimal? density, decimal? size, decimal qty, long fee,
         long amount)
     {
@@ -35,7 +35,7 @@ public class ProjectDossierCost : AuditableAggregateRootBase<long>
         Modified(actor);
     }
 
-    private void SetProperties(long projectDossierId, int itemType, int itemNo, int materialId, decimal? thickness, decimal? length, decimal? width, decimal? density, decimal? size, decimal qty, long fee, long amount)
+    private void SetProperties(long projectDossierId, int itemType, int itemNo, long materialId, decimal? thickness, decimal? length, decimal? width, decimal? density, decimal? size, decimal qty, long fee, long amount)
     {
         ProjectDossierId = projectDossierId;
         ItemType = itemType;
