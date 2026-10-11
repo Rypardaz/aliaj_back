@@ -9,7 +9,7 @@ public class ProjectDossierMapping : IEntityTypeConfiguration<ProjectDossier>
 
     public void Configure(EntityTypeBuilder<ProjectDossier> builder)
     {
-        builder.ToTable("tbTenderInquiry");
+        builder.ToTable("tbProjectDossier");
         builder.HasKey(x => x.Id);
 
         builder.Ignore(x => x.EventAggregator);
