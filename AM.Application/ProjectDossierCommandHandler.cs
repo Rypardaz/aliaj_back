@@ -9,12 +9,13 @@ namespace AM.Application;
 
 public class ProjectDossierCommandHandler(
     IClaimHelper claimHelper,
-    IProjectDossierRepository tenderInquiryRepository,
-    IProjectDossierService tenderInquiryService,
+    IProjectDossierRepository projectDossierRepository,
+    IProjectDossierService projectDossierService,
     IListItemRepository listItemRepository)
     :
         ICommandHandler<CreateProjectDossier, Guid>,
         ICommandHandler<EditProjectDossier>,
+        ICommandHandler<EditProjectDossierInquiryInformation>,
         ICommandHandler<RemoveProjectDossier>,
         ICommandHandler<ActivateProjectDossier>,
         ICommandHandler<DeactivateProjectDossier>
@@ -35,28 +36,18 @@ public class ProjectDossierCommandHandler(
         long projectTypeId;
         projectTypeId = listItemRepository.GetIdBy(command.ProjectTypeGuid);
 
+        var projectDossier = new ProjectDossier(creator, command.ProjectCode, saleDepartmentId, taskMasterId, 
+            applicationTypeId, projectTypeId, command.Description, projectDossierService);
 
-        int? inquiryResultId = null;
-        inquiryResultId = listItemRepository.GetIdBy(command.InquiryResultGuid.Value);
+        projectDossierRepository.Create(projectDossier);
 
-        int? lossReasonId = null;
-        lossReasonId = listItemRepository.GetIdBy(command.LossReasonGuid.Value);
-
-        var tenderInquiry = new ProjectDossier(creator, command.ProjectCode, saleDepartmentId, taskMasterId, 
-            applicationTypeId, projectTypeId, command.Description, command.No, command.DocumentReceivedDate, 
-            command.SubmissionDeadline, command.GuaranteeReceivedDate, command.InquirySentDate, 
-            command.QuotedAmount, inquiryResultId, lossReasonId, command.Winner, command.WinningAmount, 
-            tenderInquiryService);
-
-        tenderInquiryRepository.Create(tenderInquiry);
-
-        return tenderInquiry.Guid;
+        return projectDossier.Guid;
     }
 
     public void Handle(EditProjectDossier command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
-        var tenderInquiry = tenderInquiryRepository.Load(command.Guid);
+        var projectDossier = projectDossierRepository.Load(command.Guid);
 
         int saleDepartmentId;
         saleDepartmentId = listItemRepository.GetIdBy(command.SaleDepartmentGuid);
@@ -70,6 +61,14 @@ public class ProjectDossierCommandHandler(
         long projectTypeId;
         projectTypeId = listItemRepository.GetIdBy(command.ProjectTypeGuid);
 
+        projectDossier.Edit(actor, command.ProjectCode, saleDepartmentId, taskMasterId,
+            applicationTypeId, projectTypeId, command.Description, projectDossierService);
+    }
+
+    public void Handle(EditProjectDossierInquiryInformation command)
+    {
+        var actor = claimHelper.GetCurrentUserGuid();
+        var projectDossier = projectDossierRepository.Load(command.Guid);
 
         int? inquiryResultId = null;
         inquiryResultId = listItemRepository.GetIdBy(command.InquiryResultGuid.Value);
@@ -77,30 +76,96 @@ public class ProjectDossierCommandHandler(
         int? lossReasonId = null;
         lossReasonId = listItemRepository.GetIdBy(command.LossReasonGuid.Value);
 
-        tenderInquiry.Edit(actor, command.ProjectCode, saleDepartmentId, taskMasterId,
-            applicationTypeId, projectTypeId, command.Description, command.No, command.DocumentReceivedDate,
+        projectDossier.EditInquiryInformation(actor, command.No, command.DocumentReceivedDate,
             command.SubmissionDeadline, command.GuaranteeReceivedDate, command.InquirySentDate,
-            command.QuotedAmount, inquiryResultId, lossReasonId, command.Winner, command.WinningAmount, 
-            tenderInquiryService);
+            command.QuotedAmount, inquiryResultId, lossReasonId, command.Winner, command.WinningAmount,
+            projectDossierService);
     }
+
+    public void Handle(EditProjectDossierContractInformation command)
+    {
+        var actor = claimHelper.GetCurrentUserGuid();
+        var projectDossier = projectDossierRepository.Load(command.Guid);
+
+        projectDossier.EditContractInformation(actor, command.ContractDate, command.ContractAmount, command.DownPaymentPercentage, 
+            command.ContractDeliveryDate, command.EmployerNotificationDate);
+    }
+
+    public void Handle(EditProjectDossierCost command)
+    {
+        var actor = claimHelper.GetCurrentUserGuid();
+        var projectDossier = projectDossierRepository.Load(command.Guid);
+
+        projectDossier.EditCost(actor, command.WeldingWireCost, command.SheetCost, command.PipeCost, command.OtherMaterialCost, 
+            command.ContractingCost, command.TotalProjectCost, command.CostToSalesRatio, command.WeldingWireCostToSalesRatio,
+            command.SheetCostToSalesRatio, command.PipeCostToSalesRatio);
+    }
+
+    public void Handle(EditProjectDossierInvoice command)
+    {
+        var actor = claimHelper.GetCurrentUserGuid();
+        var projectDossier = projectDossierRepository.Load(command.Guid);
+
+        projectDossier.EditInvoice(actor, command.InsuranceDeposit, command.PerformanceDeposit);
+    }
+
+    public void Handle(EditProjectDossierShippingEstimateHardface command)
+    {
+        var actor = claimHelper.GetCurrentUserGuid();
+        var projectDossier = projectDossierRepository.Load(command.Guid);
+
+        projectDossier.EditShippingEstimateHardFace(actor, command.NotificationFactoryDate, command.EngineeringCompletionDate, 
+            command.BuyRequestDate, command.MaterialPurchaseState, command.ProjectCompletionForecast);
+    }
+
+    public void Handle(EditProjectDossierShippingEstimateRoller command)
+    {
+        var actor = claimHelper.GetCurrentUserGuid();
+        var projectDossier = projectDossierRepository.Load(command.Guid);
+
+        projectDossier.EditShippingEstimateRoller(actor, command.TypeOfCargo, command.JoiningToFactoryDate, command.SendingDeadlineToTaskMaster, 
+            command.EstimatedShippingDateFromEshtehard, command.EstimatedDeliveryDateToClient, command.ActualShippingDateFromEshtehard, command.ActualDeliveryDateToClient);
+    }
+
+    public void Handle(EditProjectDossierCostBeforImplementation command)
+    {
+        var actor = claimHelper.GetCurrentUserGuid();
+        var projectDossier = projectDossierRepository.Load(command.Guid);
+
+        projectDossier.EditCostBeforImplementation(actor, command.WeldingWireCostBeforImplementation, command.SheetCostBeforImplementation, command.PipeCostBeforImplementation, command.OtherMaterialCostBeforImplementation,
+            command.ContractingCostBeforImplementation, command.TotalProjectCostBeforImplementation, command.CostToSalesRatioBeforImplementation, command.WeldingWireCostToSalesRatioBeforImplementation,
+            command.SheetCostToSalesRatioBeforImplementation, command.PipeCostToSalesRatioBeforImplementation);
+    }
+
+    public void Handle(EditProjectDossierActualCost command)
+    {
+        var actor = claimHelper.GetCurrentUserGuid();
+        var projectDossier = projectDossierRepository.Load(command.Guid);
+
+        projectDossier.EditActualCost(actor, command.WeldingWireActualCost, command.SheetActualCost, command.PipeActualCost, command.OtherMaterialActualCost,
+            command.ContractingActualCost, command.TotalProjectActualCost, command.ActualCostToSalesRatio, command.ActualWeldingWireCostToSalesRatio,
+            command.ActualSheetCostToSalesRatio, command.ActualPipeCostToSalesRatio);
+    }
+
 
     public void Handle(RemoveProjectDossier command)
     {
-        var tenderInquiry = tenderInquiryRepository.Load(command.Guid);
-        tenderInquiryRepository.Delete(tenderInquiry);
+        var projectDossier = projectDossierRepository.Load(command.Guid);
+        projectDossierRepository.Delete(projectDossier);
     }
 
     public void Handle(ActivateProjectDossier command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
-        var tenderInquiry = tenderInquiryRepository.Load(command.Guid);
-        tenderInquiry.Activate();
+        var projectDossier = projectDossierRepository.Load(command.Guid);
+        projectDossier.Activate();
     }
 
     public void Handle(DeactivateProjectDossier command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
-        var tenderInquiry = tenderInquiryRepository.Load(command.Guid);
-        tenderInquiry.Deactivate();
+        var projectDossier = projectDossierRepository.Load(command.Guid);
+        projectDossier.Deactivate();
     }
+
 }

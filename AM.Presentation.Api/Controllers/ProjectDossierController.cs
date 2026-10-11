@@ -13,9 +13,43 @@ public class ProjectDossierController(IProjectDossierCommandFacade commandFacade
     public IActionResult Create([FromBody] CreateProjectDossier command) =>
         new JsonResult(commandFacade.Create(command));
 
+
     [HttpPost("Edit")]
     public void Edit([FromBody] EditProjectDossier command) =>
         commandFacade.Edit(command);
+
+    [HttpPost("EditInquiryInformation")]
+    public void EditInquiryInformation([FromBody] EditProjectDossierInquiryInformation command) =>
+        commandFacade.EditInquiryInformation(command);
+
+    [HttpPost("EditContractInformation")]
+    public void EditContractInformation([FromBody] EditProjectDossierContractInformation command) =>
+        commandFacade.EditContractInformation(command);
+
+    [HttpPost("EditCost")]
+    public void EditCost([FromBody] EditProjectDossierCost command) =>
+        commandFacade.EditCost(command);
+
+    [HttpPost("EditInvoice")]
+    public void EditInvoice([FromBody] EditProjectDossierInvoice command) =>
+        commandFacade.EditInvoice(command);
+
+    [HttpPost("EditShippingEstimateHardface")]
+    public void EditShippingEstimateHardface([FromBody] EditProjectDossierShippingEstimateHardface command) =>
+        commandFacade.EditShippingEstimateHardface(command);
+
+    [HttpPost("EditShippingEstimateRoller")]
+    public void EditShippingEstimateRoller([FromBody] EditProjectDossierShippingEstimateRoller command) =>
+        commandFacade.EditShippingEstimateRoller(command);
+
+    [HttpPost("EditCostBeforImplementation")]
+    public void EditCostBeforImplementation([FromBody] EditProjectDossierCostBeforImplementation command) =>
+        commandFacade.EditCostBeforImplementation(command);
+
+    [HttpPost("EditActualCost")]
+    public void EditActualCost([FromBody] EditProjectDossierActualCost command) =>
+        commandFacade.EditActualCost(command);
+
 
     [HttpPost("Delete/{guid:guid}")]
     public void Delete(Guid guid) =>

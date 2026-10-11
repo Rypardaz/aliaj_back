@@ -16,6 +16,38 @@ public class ProjectDossierCommandFacade(ICommandBus commandBus, IResponsiveComm
     {
         commandBus.Dispatch(command);
     }
+    public void EditInquiryInformation(EditProjectDossierInquiryInformation command)
+    {
+        commandBus.Dispatch(command);
+    }
+    public void EditContractInformation(EditProjectDossierContractInformation command)
+    {
+        commandBus.Dispatch(command);
+    }
+    public void EditCost(EditProjectDossierCost command)
+    {
+        commandBus.Dispatch(command);
+    }
+    public void EditInvoice(EditProjectDossierInvoice command)
+    {
+        commandBus.Dispatch(command);
+    }
+    public void EditShippingEstimateHardface(EditProjectDossierShippingEstimateHardface command)
+    {
+        commandBus.Dispatch(command);
+    }
+    public void EditShippingEstimateRoller(EditProjectDossierShippingEstimateRoller command)
+    {
+        commandBus.Dispatch(command);
+    }
+    public void EditCostBeforImplementation(EditProjectDossierCostBeforImplementation command)
+    {
+        commandBus.Dispatch(command);
+    }
+    public void EditActualCost(EditProjectDossierActualCost command)
+    {
+        commandBus.Dispatch(command);
+    }
 
     public void Deactivate(Guid guid)
     {
