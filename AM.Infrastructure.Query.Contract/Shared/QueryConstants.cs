@@ -28,5 +28,5 @@ public static class QueryConstants
 
     public const string GetUnitFor = "dbo.spGetUnitFor";
     public const string GetMaterialFor = "dbo.spGetMaterialFor";
-    public const string GetTenderInquiryFor = "dbo.spGetTenderInquiryFor";
+    public const string GetProjectDossierFor = "dbo.spGetProjectDossierFor";
 }

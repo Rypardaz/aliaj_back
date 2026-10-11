@@ -1,25 +1,25 @@
-﻿using AM.Application.Contracts.TenderInquiry;
+﻿using AM.Application.Contracts.ProjectDossier;
 using AM.Domain.ListItemAgg;
-using AM.Domain.TenderInquiryAgg;
-using AM.Domain.TenderInquiryAgg.Service;
+using AM.Domain.ProjectDossierAgg;
+using AM.Domain.ProjectDossierAgg.Service;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
 
 namespace AM.Application;
 
-public class TenderInquiryCommandHandler(
+public class ProjectDossierCommandHandler(
     IClaimHelper claimHelper,
-    ITenderInquiryRepository tenderInquiryRepository,
-    ITenderInquiryService tenderInquiryService,
+    IProjectDossierRepository tenderInquiryRepository,
+    IProjectDossierService tenderInquiryService,
     IListItemRepository listItemRepository)
     :
-        ICommandHandler<CreateTenderInquiry, Guid>,
-        ICommandHandler<EditTenderInquiry>,
-        ICommandHandler<RemoveTenderInquiry>,
-        ICommandHandler<ActivateTenderInquiry>,
-        ICommandHandler<DeactivateTenderInquiry>
+        ICommandHandler<CreateProjectDossier, Guid>,
+        ICommandHandler<EditProjectDossier>,
+        ICommandHandler<RemoveProjectDossier>,
+        ICommandHandler<ActivateProjectDossier>,
+        ICommandHandler<DeactivateProjectDossier>
 {
-    public Guid Handle(CreateTenderInquiry command)
+    public Guid Handle(CreateProjectDossier command)
     {
         var creator = claimHelper.GetCurrentUserGuid();
 
@@ -42,7 +42,7 @@ public class TenderInquiryCommandHandler(
         int? lossReasonId = null;
         lossReasonId = listItemRepository.GetIdBy(command.LossReasonGuid.Value);
 
-        var tenderInquiry = new TenderInquiry(creator, command.ProjectCode, saleDepartmentId, taskMasterId, 
+        var tenderInquiry = new ProjectDossier(creator, command.ProjectCode, saleDepartmentId, taskMasterId, 
             applicationTypeId, projectTypeId, command.Description, command.No, command.DocumentReceivedDate, 
             command.SubmissionDeadline, command.GuaranteeReceivedDate, command.InquirySentDate, 
             command.QuotedAmount, inquiryResultId, lossReasonId, command.Winner, command.WinningAmount, 
@@ -53,7 +53,7 @@ public class TenderInquiryCommandHandler(
         return tenderInquiry.Guid;
     }
 
-    public void Handle(EditTenderInquiry command)
+    public void Handle(EditProjectDossier command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var tenderInquiry = tenderInquiryRepository.Load(command.Guid);
@@ -84,20 +84,20 @@ public class TenderInquiryCommandHandler(
             tenderInquiryService);
     }
 
-    public void Handle(RemoveTenderInquiry command)
+    public void Handle(RemoveProjectDossier command)
     {
         var tenderInquiry = tenderInquiryRepository.Load(command.Guid);
         tenderInquiryRepository.Delete(tenderInquiry);
     }
 
-    public void Handle(ActivateTenderInquiry command)
+    public void Handle(ActivateProjectDossier command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var tenderInquiry = tenderInquiryRepository.Load(command.Guid);
         tenderInquiry.Activate();
     }
 
-    public void Handle(DeactivateTenderInquiry command)
+    public void Handle(DeactivateProjectDossier command)
     {
         var actor = claimHelper.GetCurrentUserGuid();
         var tenderInquiry = tenderInquiryRepository.Load(command.Guid);

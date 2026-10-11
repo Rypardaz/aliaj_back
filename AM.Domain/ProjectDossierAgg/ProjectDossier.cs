@@ -1,9 +1,9 @@
-﻿using AM.Domain.TenderInquiryAgg.Service;
+﻿using AM.Domain.ProjectDossierAgg.Service;
 using PhoenixFramework.Domain;
 
-namespace AM.Domain.TenderInquiryAgg;
+namespace AM.Domain.ProjectDossierAgg;
 
-public class TenderInquiry : AuditableAggregateRootBase<long>
+public class ProjectDossier : AuditableAggregateRootBase<long>
 {
     public string ProjectCode { get; private set; }
     public int SaleDepartmentId { get; private set; }
@@ -23,14 +23,14 @@ public class TenderInquiry : AuditableAggregateRootBase<long>
     public long? WinningAmount { get; private set; }
 
 
-    protected TenderInquiry()
+    protected ProjectDossier()
     {
     }
 
-    public TenderInquiry(Guid creator, string projectCode, int saleDepartmentId, long taskMasterId, int applicationTypeId, 
+    public ProjectDossier(Guid creator, string projectCode, int saleDepartmentId, long taskMasterId, int applicationTypeId, 
         long projectTypeId, string description, string no, string documentReceivedDate, string submissionDeadline, 
         string guaranteeReceivedDate, string inquirySentDate, long? quotedAmount, int? inquiryResultId, 
-        int? lossReasonId, string winner, long? winningAmount, ITenderInquiryService service) : base(creator)
+        int? lossReasonId, string winner, long? winningAmount, IProjectDossierService service) : base(creator)
     {
         service.ThrowWhenDuplicatedProjectCode(projectCode);
         service.ThrowWhenDuplicatedNo(no);
@@ -56,7 +56,7 @@ public class TenderInquiry : AuditableAggregateRootBase<long>
     public void Edit(Guid actor, string projectCode, int saleDepartmentId, long taskMasterId, int applicationTypeId, 
         long projectTypeId, string description, string no, string documentReceivedDate, string submissionDeadline, 
         string guaranteeReceivedDate, string inquirySentDate, long? quotedAmount, int? inquiryResultId, 
-        int? lossReasonId, string winner, long? winningAmount, ITenderInquiryService service)
+        int? lossReasonId, string winner, long? winningAmount, IProjectDossierService service)
     {
         service.ThrowWhenDuplicatedProjectCode(projectCode, Id);
         service.ThrowWhenDuplicatedNo(no, Id);

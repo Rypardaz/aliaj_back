@@ -1,4 +1,4 @@
-﻿using AM.Application.Contracts.TenderInquiry;
+﻿using AM.Application.Contracts.ProjectDossier;
 using AM.Presentation.Facade.Contract.TenderInquiry;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,15 +6,15 @@ namespace AM.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class TenderInquiryController(ITenderInquiryCommandFacade commandFacade, ITenderInquiryQueryFacade queryFacade)
+public class ProjectDossierController(IProjectDossierCommandFacade commandFacade, IProjectDossierQueryFacade queryFacade)
     : ControllerBase
 {
     [HttpPost("Create")]
-    public IActionResult Create([FromBody] CreateTenderInquiry command) =>
+    public IActionResult Create([FromBody] CreateProjectDossier command) =>
         new JsonResult(commandFacade.Create(command));
 
     [HttpPost("Edit")]
-    public void Edit([FromBody] EditTenderInquiry command) =>
+    public void Edit([FromBody] EditProjectDossier command) =>
         commandFacade.Edit(command);
 
     [HttpPost("Delete/{guid:guid}")]

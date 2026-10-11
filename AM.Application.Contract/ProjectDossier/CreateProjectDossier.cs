@@ -1,9 +1,9 @@
 ﻿using PhoenixFramework.Application.Command;
 using System.ComponentModel.DataAnnotations;
 
-namespace AM.Application.Contracts.TenderInquiry;
+namespace AM.Application.Contracts.ProjectDossier;
 
-public class CreateTenderInquiry : ICommand
+public class CreateProjectDossier : ICommand
 {
     [Required]
     public string ProjectCode { get; set; }

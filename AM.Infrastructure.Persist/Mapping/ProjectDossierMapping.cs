@@ -1,13 +1,13 @@
-﻿using AM.Domain.TenderInquiryAgg;
+﻿using AM.Domain.ProjectDossierAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AM.Infrastructure.Persist.Mapping;
 
-public class TenderInquiryMapping : IEntityTypeConfiguration<TenderInquiry>
+public class ProjectDossierMapping : IEntityTypeConfiguration<ProjectDossier>
 {
 
-    public void Configure(EntityTypeBuilder<TenderInquiry> builder)
+    public void Configure(EntityTypeBuilder<ProjectDossier> builder)
     {
         builder.ToTable("tbTenderInquiry");
         builder.HasKey(x => x.Id);

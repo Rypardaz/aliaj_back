@@ -2,7 +2,7 @@
 
 namespace AM.Infrastructure.Query.Contract.TenderInquiry;
 
-public class TenderInquiryViewModel : ViewModelAbilities
+public class ProjectDossierViewModel : ViewModelAbilities
 {
     public string ProjectCode { get; set; }
     public string SaleDepartmentName { get; set; }

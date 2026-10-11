@@ -2,7 +2,7 @@
 
 namespace AM.Infrastructure.Query.Contract.TenderInquiry;
 
-public class TenderInquiryComboModel : ComboBase
+public class ProjectDossierComboModel : ComboBase
 {
     public string No { get; set; }
 }
