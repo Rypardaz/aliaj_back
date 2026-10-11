@@ -28,5 +28,11 @@ public static class QueryConstants
     public const string GetRegion = "dbo.spGetRegion";
     public const string GetMaterialFor = "dbo.spGetMaterialFor";
     public const string GetProjectDossierFor = "dbo.spGetProjectDossierFor";
+    public const string GetProjectDossierActualCostFor = "dbo.spGetProjectDossierActualCostFor";
+    public const string GetProjectDossierCostFor = "dbo.spGetProjectDossierCostFor";
+    public const string GetProjectDossierCostBeforImplementationFor = "dbo.spGetProjectDossierCostBeforImplementationFor";
+    public const string GetProjectDossierDepositFor = "dbo.spGetProjectDossierDepositFor";
+    public const string GetProjectDossierInvoiceFor = "dbo.spGetProjectDossierInvoiceFor";
+    public const string GetProjectDossierProductFor = "dbo.spGetProjectDossierProductFor";
     public const string GetUnitFor = "dbo.spGetUnitFor";
 }
