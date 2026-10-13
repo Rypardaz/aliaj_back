@@ -6,7 +6,6 @@ namespace AM.Infrastructure.Persist.Mapping;
 
 public class ProjectDossierMapping : IEntityTypeConfiguration<ProjectDossier>
 {
-
     public void Configure(EntityTypeBuilder<ProjectDossier> builder)
     {
         builder.ToTable("tbProjectDossier");

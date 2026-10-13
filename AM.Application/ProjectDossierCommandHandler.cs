@@ -2,6 +2,8 @@
 using AM.Domain.ListItemAgg;
 using AM.Domain.ProjectDossierAgg;
 using AM.Domain.ProjectDossierAgg.Service;
+using AM.Domain.ProjectTypeAgg;
+using AM.Domain.TaskMasterAgg;
 using PhoenixFramework.Application.Command;
 using PhoenixFramework.Identity;
 
@@ -11,39 +13,33 @@ public class ProjectDossierCommandHandler(
     IClaimHelper claimHelper,
     IProjectDossierRepository projectDossierRepository,
     IProjectDossierService projectDossierService,
-    IListItemRepository listItemRepository)
-    :
-        ICommandHandler<CreateProjectDossier, Guid>,
-        ICommandHandler<EditProjectDossier>,
-        ICommandHandler<EditInquiryInformation>,
-        ICommandHandler<EditContractInformation>,
-        ICommandHandler<EditCost>,
-        ICommandHandler<EditInvoice>,
-        ICommandHandler<EditShippingEstimateHardface>,
-        ICommandHandler<EditShippingEstimateRoller>,
-        ICommandHandler<EditCostBeforImplementation>,
-        ICommandHandler<EditActualCost>,
-        ICommandHandler<RemoveProjectDossier>,
-        ICommandHandler<ActivateProjectDossier>,
-        ICommandHandler<DeactivateProjectDossier>
+    IListItemRepository listItemRepository,
+    ITaskMasterRepository taskMasterRepository,
+    IProjectTypeRepository projectTypeRepository) :
+    ICommandHandler<CreateProjectDossier, Guid>,
+    ICommandHandler<EditProjectDossier>,
+    ICommandHandler<EditInquiryInformation>,
+    ICommandHandler<EditContractInformation>,
+    ICommandHandler<EditCost>,
+    ICommandHandler<EditInvoice>,
+    ICommandHandler<EditShippingEstimateHardface>,
+    ICommandHandler<EditShippingEstimateRoller>,
+    ICommandHandler<EditCostBeforImplementation>,
+    ICommandHandler<EditActualCost>,
+    ICommandHandler<RemoveProjectDossier>,
+    ICommandHandler<ActivateProjectDossier>,
+    ICommandHandler<DeactivateProjectDossier>
 {
     public Guid Handle(CreateProjectDossier command)
     {
         var creator = claimHelper.GetCurrentUserGuid();
 
-        int saleDepartmentId;
-        saleDepartmentId = listItemRepository.GetIdBy(command.SaleDepartmentGuid);
+        var saleDepartmentId = listItemRepository.GetIdBy(command.SaleDepartmentGuid);
+        var taskMasterId = taskMasterRepository.GetIdBy(command.TaskMasterGuid);
+        var applicationTypeId = listItemRepository.GetIdBy(command.ApplicationTypeGuid);
+        var projectTypeId = projectTypeRepository.GetIdBy(command.ProjectTypeGuid);
 
-        long taskMasterId;
-        taskMasterId = listItemRepository.GetIdBy(command.TaskMasterGuid);
-
-        int applicationTypeId;
-        applicationTypeId = listItemRepository.GetIdBy(command.ApplicationTypeGuid);
-
-        long projectTypeId;
-        projectTypeId = listItemRepository.GetIdBy(command.ProjectTypeGuid);
-
-        var projectDossier = new ProjectDossier(creator, command.ProjectCode, saleDepartmentId, taskMasterId, 
+        var projectDossier = new ProjectDossier(creator, command.ProjectCode, saleDepartmentId, taskMasterId,
             applicationTypeId, projectTypeId, command.Description, projectDossierService);
 
         projectDossierRepository.Create(projectDossier);
@@ -56,17 +52,10 @@ public class ProjectDossierCommandHandler(
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
 
-        int saleDepartmentId;
-        saleDepartmentId = listItemRepository.GetIdBy(command.SaleDepartmentGuid);
-
-        long taskMasterId;
-        taskMasterId = listItemRepository.GetIdBy(command.TaskMasterGuid);
-
-        int applicationTypeId;
-        applicationTypeId = listItemRepository.GetIdBy(command.ApplicationTypeGuid);
-
-        long projectTypeId;
-        projectTypeId = listItemRepository.GetIdBy(command.ProjectTypeGuid);
+        var saleDepartmentId = listItemRepository.GetIdBy(command.SaleDepartmentGuid);
+        var taskMasterId = taskMasterRepository.GetIdBy(command.TaskMasterGuid);
+        var applicationTypeId = listItemRepository.GetIdBy(command.ApplicationTypeGuid);
+        var projectTypeId = projectTypeRepository.GetIdBy(command.ProjectTypeGuid);
 
         projectDossier.Edit(actor, command.ProjectCode, saleDepartmentId, taskMasterId,
             applicationTypeId, projectTypeId, command.Description, projectDossierService);
@@ -94,7 +83,8 @@ public class ProjectDossierCommandHandler(
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
 
-        projectDossier.EditContractInformation(actor, command.ContractDate, command.ContractAmount, command.DownPaymentPercentage, 
+        projectDossier.EditContractInformation(actor, command.ContractDate, command.ContractAmount,
+            command.DownPaymentPercentage,
             command.ContractDeliveryDate, command.EmployerNotificationDate);
     }
 
@@ -103,8 +93,10 @@ public class ProjectDossierCommandHandler(
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
 
-        projectDossier.EditCost(actor, command.WeldingWireCost, command.SheetCost, command.PipeCost, command.OtherMaterialCost, 
-            command.ContractingCost, command.TotalProjectCost, command.CostToSalesRatio, command.WeldingWireCostToSalesRatio,
+        projectDossier.EditCost(actor, command.WeldingWireCost, command.SheetCost, command.PipeCost,
+            command.OtherMaterialCost,
+            command.ContractingCost, command.TotalProjectCost, command.CostToSalesRatio,
+            command.WeldingWireCostToSalesRatio,
             command.SheetCostToSalesRatio, command.PipeCostToSalesRatio);
     }
 
@@ -121,7 +113,8 @@ public class ProjectDossierCommandHandler(
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
 
-        projectDossier.EditShippingEstimateHardFace(actor, command.NotificationFactoryDate, command.EngineeringCompletionDate, 
+        projectDossier.EditShippingEstimateHardFace(actor, command.NotificationFactoryDate,
+            command.EngineeringCompletionDate,
             command.BuyRequestDate, command.MaterialPurchaseState, command.ProjectCompletionForecast);
     }
 
@@ -130,8 +123,10 @@ public class ProjectDossierCommandHandler(
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
 
-        projectDossier.EditShippingEstimateRoller(actor, command.TypeOfCargo, command.JoiningToFactoryDate, command.SendingDeadlineToTaskMaster, 
-            command.EstimatedShippingDateFromEshtehard, command.EstimatedDeliveryDateToClient, command.ActualShippingDateFromEshtehard, command.ActualDeliveryDateToClient);
+        projectDossier.EditShippingEstimateRoller(actor, command.TypeOfCargo, command.JoiningToFactoryDate,
+            command.SendingDeadlineToTaskMaster,
+            command.EstimatedShippingDateFromEshtehard, command.EstimatedDeliveryDateToClient,
+            command.ActualShippingDateFromEshtehard, command.ActualDeliveryDateToClient);
     }
 
     public void Handle(EditCostBeforImplementation command)
@@ -139,8 +134,11 @@ public class ProjectDossierCommandHandler(
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
 
-        projectDossier.EditCostBeforImplementation(actor, command.WeldingWireCostBeforImplementation, command.SheetCostBeforImplementation, command.PipeCostBeforImplementation, command.OtherMaterialCostBeforImplementation,
-            command.ContractingCostBeforImplementation, command.TotalProjectCostBeforImplementation, command.CostToSalesRatioBeforImplementation, command.WeldingWireCostToSalesRatioBeforImplementation,
+        projectDossier.EditCostBeforImplementation(actor, command.WeldingWireCostBeforImplementation,
+            command.SheetCostBeforImplementation, command.PipeCostBeforImplementation,
+            command.OtherMaterialCostBeforImplementation,
+            command.ContractingCostBeforImplementation, command.TotalProjectCostBeforImplementation,
+            command.CostToSalesRatioBeforImplementation, command.WeldingWireCostToSalesRatioBeforImplementation,
             command.SheetCostToSalesRatioBeforImplementation, command.PipeCostToSalesRatioBeforImplementation);
     }
 
@@ -149,8 +147,10 @@ public class ProjectDossierCommandHandler(
         var actor = claimHelper.GetCurrentUserGuid();
         var projectDossier = projectDossierRepository.Load(command.Guid);
 
-        projectDossier.EditActualCost(actor, command.WeldingWireActualCost, command.SheetActualCost, command.PipeActualCost, command.OtherMaterialActualCost,
-            command.ContractingActualCost, command.TotalProjectActualCost, command.ActualCostToSalesRatio, command.ActualWeldingWireCostToSalesRatio,
+        projectDossier.EditActualCost(actor, command.WeldingWireActualCost, command.SheetActualCost,
+            command.PipeActualCost, command.OtherMaterialActualCost,
+            command.ContractingActualCost, command.TotalProjectActualCost, command.ActualCostToSalesRatio,
+            command.ActualWeldingWireCostToSalesRatio,
             command.ActualSheetCostToSalesRatio, command.ActualPipeCostToSalesRatio);
     }
 
@@ -174,5 +174,4 @@ public class ProjectDossierCommandHandler(
         var projectDossier = projectDossierRepository.Load(command.Guid);
         projectDossier.Deactivate();
     }
-
 }

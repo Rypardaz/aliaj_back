@@ -1,7 +1,7 @@
 ﻿using AM.Application.Contracts.ProjectDossier;
 using PhoenixFramework.Core;
 
-namespace AM.Presentation.Facade.Contract.TenderInquiry;
+namespace AM.Presentation.Facade.Contract.ProjectDossier;
 
 public interface IProjectDossierCommandFacade : IFacadeService
 {

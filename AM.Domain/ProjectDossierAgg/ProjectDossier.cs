@@ -1,5 +1,5 @@
-﻿using AM.Domain.ProjectDossierAgg.Service;
-using PhoenixFramework.Domain;
+﻿using PhoenixFramework.Domain;
+using AM.Domain.ProjectDossierAgg.Service;
 
 namespace AM.Domain.ProjectDossierAgg;
 
@@ -13,23 +13,23 @@ public class ProjectDossier : AuditableAggregateRootBase<long>
     public string Description { get; private set; }
 
     /*Inquiry information*/
-    public string No { get; private set; }
-    public string DocumentReceivedDate { get; private set; }
-    public string SubmissionDeadline { get; private set; }
-    public string GuaranteeReceivedDate { get; private set; }
-    public string InquirySentDate { get; private set; }
+    public string? No { get; private set; }
+    public string? DocumentReceivedDate { get; private set; }
+    public string? SubmissionDeadline { get; private set; }
+    public string? GuaranteeReceivedDate { get; private set; }
+    public string? InquirySentDate { get; private set; }
     public long? QuotedAmount { get; private set; }
     public int? InquiryResultId { get; private set; }
     public int? LossReasonId { get; private set; }
-    public string Winner { get; private set; }
+    public string? Winner { get; private set; }
     public long? WinningAmount { get; private set; }
 
     /*Contract information*/
-    public string ContractDate { get; private set; }
+    public string? ContractDate { get; private set; }
     public long? ContractAmount { get; private set; }
     public int? DownPaymentPercentage { get; private set; }
-    public string ContractDeliveryDate { get; private set; }
-    public string EmployerNotificationDate { get; private set; }
+    public string? ContractDeliveryDate { get; private set; }
+    public string? EmployerNotificationDate { get; private set; }
 
     /*Cost*/
     public long? WeldingWireCost { get; private set; }
@@ -48,20 +48,20 @@ public class ProjectDossier : AuditableAggregateRootBase<long>
     public long? PerformanceDeposit { get; private set; }
 
     /*Shipping estimate hardface*/
-    public string NotificationFactoryDate { get; private set; }
-    public string EngineeringCompletionDate { get; private set; }
-    public string BuyRequestDate { get; private set; }
+    public string? NotificationFactoryDate { get; private set; }
+    public string? EngineeringCompletionDate { get; private set; }
+    public string? BuyRequestDate { get; private set; }
     public int? MaterialPurchaseState { get; private set; }
-    public string ProjectCompletionForecast { get; private set; }
+    public string? ProjectCompletionForecast { get; private set; }
 
     /*Shipping estimate roller*/
     public int? TypeOfCargo { get; private set; }
-    public string JoiningToFactoryDate {get; private set; }
-    public string SendingDeadlineToTaskMaster {get; private set; }
-    public string EstimatedShippingDateFromEshtehard {get; private set; }
-    public string EstimatedDeliveryDateToClient {get; private set; }
-    public string ActualShippingDateFromEshtehard {get; private set; }
-    public string ActualDeliveryDateToClient {get; private set; }
+    public string? JoiningToFactoryDate {get; private set; }
+    public string? SendingDeadlineToTaskMaster {get; private set; }
+    public string? EstimatedShippingDateFromEshtehard {get; private set; }
+    public string? EstimatedDeliveryDateToClient {get; private set; }
+    public string? ActualShippingDateFromEshtehard {get; private set; }
+    public string? ActualDeliveryDateToClient {get; private set; }
 
     /*Cost befor implementation*/
     public long? WeldingWireCostBeforImplementation { get; private set; }

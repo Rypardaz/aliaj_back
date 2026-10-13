@@ -1,5 +1,5 @@
 ﻿using AM.Application.Contracts.ProjectDossier;
-using AM.Presentation.Facade.Contract.TenderInquiry;
+using AM.Presentation.Facade.Contract.ProjectDossier;
 using PhoenixFramework.Application.Command;
 
 namespace AM.Presentation.Facade.Command;

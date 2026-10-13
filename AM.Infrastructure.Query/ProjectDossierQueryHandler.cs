@@ -1,7 +1,7 @@
 ﻿using AM.Application.Contracts.ProjectDossier;
 using AM.Infrastructure.Persist;
+using AM.Infrastructure.Query.Contract.ProjectDossier;
 using AM.Infrastructure.Query.Contract.Shared;
-using AM.Infrastructure.Query.Contract.TenderInquiry;
 using PhoenixFramework.Application.Query;
 using PhoenixFramework.Dapper;
 

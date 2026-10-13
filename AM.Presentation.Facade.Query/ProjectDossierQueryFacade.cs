@@ -1,6 +1,6 @@
 ﻿using AM.Application.Contracts.ProjectDossier;
-using AM.Infrastructure.Query.Contract.TenderInquiry;
-using AM.Presentation.Facade.Contract.TenderInquiry;
+using AM.Infrastructure.Query.Contract.ProjectDossier;
+using AM.Presentation.Facade.Contract.ProjectDossier;
 using PhoenixFramework.Application.Query;
 
 namespace AM.Presentation.Facade.Query;

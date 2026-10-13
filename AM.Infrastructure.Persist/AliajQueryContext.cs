@@ -2,6 +2,7 @@ using AM.Domain.ActivityAgg;
 using AM.Domain.PartAgg;
 using AM.Domain.PartGroupAgg;
 using AM.Domain.ProjectAgg;
+using AM.Domain.ProjectDossierAgg;
 using AM.Domain.RegionAgg;
 using AM.Domain.RoleAgg;
 using AM.Domain.TicketAgg;
@@ -27,6 +28,7 @@ public class AliajQueryContext(DbContextOptions<AliajQueryContext> options)
     public DbSet<UserRole> UserRoles { get; set; }
     public DbSet<UserSession> UserSessions { get; set; }
     public DbSet<Region> Regions { get; set; }
+    public DbSet<ProjectDossier> ProjectDossiers { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

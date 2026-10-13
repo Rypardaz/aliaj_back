@@ -4,6 +4,7 @@ using AM.Domain.MachineLogAgg;
 using AM.Domain.PartAgg;
 using AM.Domain.PartGroupAgg;
 using AM.Domain.ProjectAgg;
+using AM.Domain.ProjectDossierAgg;
 using AM.Domain.RoleAgg;
 using AM.Domain.TicketAgg;
 using AM.Domain.UserAgg;
@@ -27,6 +28,7 @@ public class AliajCommandContext(DbContextOptions<AliajCommandContext> options) 
     public DbSet<Ticket> Tickets { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<Role> Roles { get; set; }
+    public DbSet<ProjectDossier> ProjectDossiers { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -1,13 +1,12 @@
-﻿using PhoenixFramework.Application.Query;
-using PhoenixFramework.Company.Query;
+﻿using PhoenixFramework.Company.Query;
 
-namespace AM.Infrastructure.Query.Contract.TenderInquiry;
+namespace AM.Infrastructure.Query.Contract.ProjectDossier;
 
 public class ProjectDossierViewModel : ViewModelAbilities
 {
     public string ProjectCode { get; set; }
     public string SaleDepartmentName { get; set; }
-    public string TaskMaster { get; set; }
+    public string TaskMasterName { get; set; }
     public string ApplicationTypeName { get; set; }
     public string ProjectTypeName { get; set; }
     public string Description { get; set; }
